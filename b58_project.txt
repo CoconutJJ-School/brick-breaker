@@ -12,22 +12,9 @@ Team Member B
 -------------
 First Name: Crystal
 Last Name: Lim
-Student Number: 
-UofT E-mail Address:
+Student Number: 1003416092
+UofT E-mail Address: crystal.lim@mail.utoronto.ca
 
-Team Member C (Optional)
--------------
-First Name: 
-Last Name:
-Student Number:
-UofT E-mail Address:
-
-Team Member D (Optional)
--------------
-First Name: 
-Last Name:
-Student Number:
-UofT E-mail Address:
 
 Project Details
 ---------------
