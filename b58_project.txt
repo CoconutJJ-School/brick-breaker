@@ -33,16 +33,20 @@ Proposal
 --------
 
 What do you plan to have completed by the end of the first lab session?:
-
+Draw a square of size NxN at the desired X_POS and Y_POS
 
 What do you plan to have completed by the end of the second lab session?:
+Draw a line to the screen of length determined by the user. Perhaps also be able to change color
 
 What do you plan to have completed by the end of the third lab session?:
+Be able to change the color and thickness of the line
 
 What is your backup plan if things don’t work out as planned?
+Scrap the line thickness idea and have it stay constant.
 
 What hardware will you need beyond the DE2 board 
 (be sure to e-mail Brian if it’s anything beyond the basics to make sure there’s enough to go around)
+N/A
 
 Motivations
 -----------
