@@ -9,22 +9,20 @@
 module lab6
 	(
 		CLOCK_50,						//	On Board 50 MHz
-		// Your inputs and outputs here
         KEY,
         SW,
-		// The ports below are for the VGA output.  Do not change.
 		VGA_CLK,   						//	VGA Clock
 		VGA_HS,							//	VGA H_SYNC
 		VGA_VS,							//	VGA V_SYNC
-		VGA_BLANK_N,						//	VGA BLANK
+		VGA_BLANK_N,					//	VGA BLANK
 		VGA_SYNC_N,						//	VGA SYNC
 		VGA_R,   						//	VGA Red[9:0]
 		VGA_G,	 						//	VGA Green[9:0]
 		VGA_B   						//	VGA Blue[9:0]
 	);
 
-	input			CLOCK_50;				//	50 MHz
-	input   [17:0]   SW;
+	input		 	CLOCK_50;				//	50 MHz
+	input   [17:0]  SW;
 	input   [3:0]   KEY;
 
 	// Declare your inputs and outputs here
@@ -32,9 +30,9 @@ module lab6
 	output			VGA_CLK;   				//	VGA Clock
 	output			VGA_HS;					//	VGA H_SYNC
 	output			VGA_VS;					//	VGA V_SYNC
-	output			VGA_BLANK_N;				//	VGA BLANK
+	output			VGA_BLANK_N;			//	VGA BLANK
 	output			VGA_SYNC_N;				//	VGA SYNC
-	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
+	output	[9:0]	VGA_R;       			//	VGA Red[9:0]
 	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
 	
@@ -153,7 +151,7 @@ module control(
                 S_LOAD_Y        = 5'd2,
                 S_LOAD_Y_WAIT   = 5'd3,
                 S_CYCLE_0       = 5'd4,
-			S_CYCLE_1       = 5'd5;
+			    S_CYCLE_1       = 5'd5;
 		
 	 assign x_offset = 8'b0;
 	 assign y_offset = 7'b0;
@@ -179,39 +177,39 @@ module control(
     always @(*)
     begin: enable_signals
         // By default make all our signals 0
-        ld_x = 1'b0;
-        ld_y = 1'b0;
-        writeEn = 1'b0;
+        ld_x <= 1'b0;
+        ld_y <= 1'b0;
+        writeEn <= 1'b0;
 
         case (current_state)
             S_LOAD_X: begin
-                ld_x = 1'b1;
+                ld_x <= 1'b1;
                 end
             S_LOAD_Y: begin
-                ld_y = 1'b1;
+                ld_y <= 1'b1;
                 end
 				
             S_CYCLE_1: begin
-                writeEn = 1'b1;
+                writeEn <= 1'b1;
                 end
-				S_CYCLE_2: begin
+			S_CYCLE_2: begin
 					 
-					 // output offset values
-					 if (x_offset < sz)
-						x_offset = x_offset + 1'b1;
-						next_px = 1'b1;
+				 // output offset values
+				 if (x_offset < sz)
+					x_offset <= x_offset + 1'b1;
+					next_px <= 1'b1;
+				else
+					x_offset <= 0;
+					if(y_offset < sz)
+                        y_offset <= y_offset + 1'b1;
+                        next_px <= 1'b1;
 					else
-						x_offset = 0;
-						if(y_offset < sz)
-							y_offset = y_offset + 1'b1;
-							next_px = 1'b1;
-						else
-							// reset y
-							y_offset = 0;
-							// Go to Load x
-							next_px = 1'b0;
+						// reset y
+						y_offset <= 0;
+						// Go to Load x
+						next_px <= 1'b0;
 					 
-					 end
+				end
                 
         // default:    // don't need default since we already made sure all of our outputs were assigned a value at the start of the always block
         endcase
