@@ -1,0 +1,7 @@
+Info (10281): Verilog HDL Declaration information at project.v(364): object "update_paddle" differs only in case from object "UPDATE_PADDLE" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 364
+Info (10281): Verilog HDL Declaration information at project.v(365): object "update_ball" differs only in case from object "UPDATE_BALL" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 365
+Info (10281): Verilog HDL Declaration information at project.v(366): object "update_block" differs only in case from object "UPDATE_BLOCK" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 366
+Info (10281): Verilog HDL Declaration information at project.v(432): object "drawing" differs only in case from object "DRAWING" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 432
+Info (10281): Verilog HDL Declaration information at project.v(524): object "drawing" differs only in case from object "DRAWING" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 524
+Warning (10268): Verilog HDL information at project.v(657): always construct contains both blocking and non-blocking assignments File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 657
+Info (10281): Verilog HDL Declaration information at project.v(610): object "drawing" differs only in case from object "DRAWING" in the same scope File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 610

@@ -1,0 +1,54 @@
+
+State Machine - |Proj|block_5_colour
+Name block_5_colour.010 
+block_5_colour.000 0 
+block_5_colour.010 1 
+
+State Machine - |Proj|block_4_colour
+Name block_4_colour.010 
+block_4_colour.000 0 
+block_4_colour.010 1 
+
+State Machine - |Proj|block_3_colour
+Name block_3_colour.010 
+block_3_colour.000 0 
+block_3_colour.010 1 
+
+State Machine - |Proj|block_2_colour
+Name block_2_colour.010 
+block_2_colour.000 0 
+block_2_colour.010 1 
+
+State Machine - |Proj|block_1_colour
+Name block_1_colour.010 
+block_1_colour.000 0 
+block_1_colour.010 1 
+
+State Machine - |Proj|state
+Name state.DEAD state.DRAW_BLOCK_5 state.UPDATE_BLOCK_5 state.DRAW_BLOCK_4 state.UPDATE_BLOCK_4 state.DRAW_BLOCK_3 state.UPDATE_BLOCK_3 state.DRAW_BLOCK_2 state.UPDATE_BLOCK_2 state.DRAW_BLOCK_1 state.UPDATE_BLOCK_1 state.DRAW_BALL state.UPDATE_BALL state.ERASE_BALL state.DRAW_PADDLE state.UPDATE_PADDLE state.ERASE_PADDLE state.IDLE state.INIT_BLOCK_5 state.INIT_BLOCK_4 state.INIT_BLOCK_3 state.INIT_BLOCK_2 state.INIT_BLOCK_1 state.INIT_BALL state.INIT_PADDLE state.RESET_BLACK 
+state.RESET_BLACK 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT_PADDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.INIT_BALL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.INIT_BLOCK_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.INIT_BLOCK_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.INIT_BLOCK_3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.INIT_BLOCK_4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.INIT_BLOCK_5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.ERASE_PADDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.UPDATE_PADDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_PADDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.ERASE_BALL 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BALL 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BALL 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BLOCK_1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BLOCK_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BLOCK_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BLOCK_2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BLOCK_3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BLOCK_3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BLOCK_4 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BLOCK_4 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.UPDATE_BLOCK_5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DRAW_BLOCK_5 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DEAD 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
