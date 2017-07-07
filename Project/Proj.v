@@ -103,22 +103,22 @@ module Proj(
 				DRAW_BLOCK_4      = 6'b010110,
 				UPDATE_BLOCK_5    = 6'b010111,
 				DRAW_BLOCK_5      = 6'b011000,
-                //UPDATE_BLOCK_6  = 6'b010111,
-			    //DRAW_BLOCK_6    = 6'b011000,  //remember to increment
-                //UPDATE_BLOCK_7  = 6'b010111,
-			    //DRAW_BLOCK_7    = 6'b011000,
-                //UPDATE_BLOCK_7  = 6'b010111,
-			    //DRAW_BLOCK_7    = 6'b011000,
-                //UPDATE_BLOCK_8  = 6'b010111,
-			    //DRAW_BLOCK_8    = 6'b011000,
-                //UPDATE_BLOCK_9  = 6'b010111,
-                //DRAW_BLOCK_9    = 6'b011000,
-                //UPDATE_BLOCK_10 = 6'b010111,
-			    //DRAW_BLOCK_10    = 6'b011000,
-		//ERASE_MVBLK_1 = ,
-		//UPDATE_MVBLK_1 = ,
-		//DRAW_MVBLK_1 = ,
-                  DEAD    		    = 6'b011001;  //remember to change
+                		//UPDATE_BLOCK_6  = 6'b011001,
+			    	//DRAW_BLOCK_6    = 6'b011010,
+                		//UPDATE_BLOCK_7  = 6'b011011,
+			    	//DRAW_BLOCK_7    = 6'b011100,
+                		//UPDATE_BLOCK_7  = 6'b011101,
+			    	//DRAW_BLOCK_7    = 6'b011110,
+                		//UPDATE_BLOCK_8  = 6'b011111,
+			    	//DRAW_BLOCK_8    = 6'b100000,
+                		//UPDATE_BLOCK_9  = 6'b100001,
+                		//DRAW_BLOCK_9    = 6'b100010,
+                		//UPDATE_BLOCK_10 = 6'b100011,
+			    	//DRAW_BLOCK_10   = 6'b100100,
+				//ERASE_MVBLK_1   = 6'b100101,
+				//UPDATE_MVBLK_1  = 6'b100110,
+				//DRAW_MVBLK_1    = 6'b100111,
+                                DEAD              = 6'b101000;  //remember to change
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
