@@ -137,7 +137,7 @@ module Proj(
 						state = INIT_PADDLE;
 					end
 		  		end
-    			 INIT_PADDLE: begin
+    			 	INIT_PADDLE: begin
 					 if (draw_counter < 6'b10000) begin
 					 p_x = 8'd76;
 					 p_y = 8'd110;
@@ -154,10 +154,10 @@ module Proj(
 				 INIT_BALL: begin
 					 b_x = 8'd80;
 					 b_y = 8'd108;
-						x = b_x;
-						y = b_y;
-						colour = 3'b111;
-						state = INIT_BLOCK_1;
+					 x = b_x;
+					 y = b_y;
+					 colour = 3'b111;
+					 state = INIT_BLOCK_1;
 				 end
 				 INIT_BLOCK_1: begin
 					 bl_1_x = 8'd15;
@@ -189,41 +189,41 @@ module Proj(
 					 block_5_colour = 3'b010;
 						state = IDLE;
 				 end
-                /*
-                 BLOCK COORDS HAVE BEEN UPDATED
-                 INIT_BLOCK_6: begin
+                		/*
+                 		BLOCK COORDS HAVE BEEN UPDATED
+                 		INIT_BLOCK_6: begin
 					 bl_6_x = 8'd15;
 					 bl_6_y = 8'd40;
 					 block_6_colour = 3'b010;
 						state = INIT_BLOCK_7;
 				 end
 
-                 INIT_BLOCK_7: begin
+                 		INIT_BLOCK_7: begin
 					 bl_7_x = 8'd45;
 					 bl_7_y = 8'd40;
 					 block_7_colour = 3'b010;
 						state = INIT_BLOCK_8;
 				 end
-                INIT_BLOCK_8: begin
+                		INIT_BLOCK_8: begin
 					 bl_8_x = 8'd75;
 					 bl_8_y = 8'd40;
 					 block_8_colour = 3'b010;
 						state = INIT_BLOCK_9;
 				 end
-                INIT_BLOCK_9: begin
+                		INIT_BLOCK_9: begin
 					 bl_9_x = 8'd105;
 					 bl_9_y = 8'd40;
 					 block_9_colour = 3'b010;
 						state = INIT_BLOCK_10;
 				 end
-                 INIT_BLOCK_10: begin
+                 		INIT_BLOCK_10: begin
 					 bl_10_x = 8'd135;
 					 bl_10_y = 8'd40;
 					 block_10_colour = 3'b010;
 						state = IDLE;
 				 end
 
-                */
+                		*/
 
 
 				 IDLE: begin
@@ -379,7 +379,7 @@ module Proj(
 						state = IDLE;
 					end
 				 end
-                /*
+                		/*
 				 UPDATE_BLOCK_6: begin
 					if ((block_6_colour != 3'b000) && (b_y > bl_6_y - 8'd1) && (b_y < bl_6_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
@@ -460,7 +460,7 @@ module Proj(
 					end
 				 end
 				 
-                 UPDATE_BLOCK_10: begin
+                 		UPDATE_BLOCK_10: begin
 					if ((block_10_colour != 3'b000) && (b_y > bl_10_y - 8'd1) && (b_y < bl_10_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
