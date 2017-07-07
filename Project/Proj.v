@@ -73,6 +73,7 @@ module Proj(
                 INIT_PADDLE       = 6'b000001,
                 INIT_BALL         = 6'b000010,
                 INIT_BLOCK_1      = 6'b000011,
+
 				INIT_BLOCK_2      = 6'b000100,
 				INIT_BLOCK_3      = 6'b000101,
 				INIT_BLOCK_4      = 6'b000110,
@@ -83,11 +84,13 @@ module Proj(
 				//INIT_BLOCK_9 = 6'b001001,
 				//INIT_BLOCK_10 = 6'b001001,
 				//INIT_MVBLK_1 = 6'b001001,  //Remember to change all these numbers
+
                 IDLE              = 6'b001000,
-				ERASE_PADDLE	  = 6'b001001,
+					 ERASE_PADDLE	    = 6'b001001,
                 UPDATE_PADDLE     = 6'b001010,
-				DRAW_PADDLE	      = 6'b001011,
+					 DRAW_PADDLE	    = 6'b001011,
                 ERASE_BALL        = 6'b001100,
+
 				UPDATE_BALL       = 6'b001101,
 				DRAW_BALL         = 6'b001110,
 				UPDATE_BLOCK_1    = 6'b001111,
@@ -196,6 +199,7 @@ module Proj(
 					 block_5_colour = 3'b010;
 						state = IDLE;  //INIT_BLOCK_6;
 				 end
+
                 /*
                  BLOCK COORDS HAVE BEEN UPDATED
                  INIT_BLOCK_6: begin
@@ -252,6 +256,7 @@ module Proj(
 					end
 				 end
 				*/
+
 
 				 IDLE: begin
 				 if (frame)
@@ -555,7 +560,7 @@ module Proj(
 				*/
 
 
-				DEAD: begin
+				 DEAD: begin
 
 					if (draw_counter < 17'b10000000000000000) begin
 						x = draw_counter[7:0];
