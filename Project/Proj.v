@@ -59,7 +59,7 @@ module Proj(
 	 reg [5:0] state;
 	 reg border_initing, paddle_initing, ball_initing, block_initing;
 	 reg [7:0] x, y;
-	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y;
+	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, mbl_1_x, mbl_1_y;
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
 	 reg [17:0] draw_counter;
@@ -76,6 +76,12 @@ module Proj(
 				INIT_BLOCK_3      = 6'b000101,
 				INIT_BLOCK_4      = 6'b000110,
 				INIT_BLOCK_5      = 6'b000111,
+				//INIT_BLOCK_6 = 6'b001001,
+				//INIT_BLOCK_7 = 6'b001001,
+				//INIT_BLOCK_8 = 6'b001001,
+				//INIT_BLOCK_9 = 6'b001001,
+				//INIT_BLOCK_10 = 6'b001001,
+				//INIT_MVBLK_1 = 6'b001001,  //Remember to change all these numbers
                 IDLE              = 6'b001000,
 				ERASE_PADDLE	  = 6'b001001,
                 UPDATE_PADDLE     = 6'b001010,
@@ -94,7 +100,7 @@ module Proj(
 				UPDATE_BLOCK_5    = 6'b010111,
 				DRAW_BLOCK_5      = 6'b011000,
                 //UPDATE_BLOCK_6  = 6'b010111,
-			    //DRAW_BLOCK_6    = 6'b011000,
+			    //DRAW_BLOCK_6    = 6'b011000,  //remember to increment
                 //UPDATE_BLOCK_7  = 6'b010111,
 			    //DRAW_BLOCK_7    = 6'b011000,
                 //UPDATE_BLOCK_7  = 6'b010111,
@@ -105,7 +111,10 @@ module Proj(
                 //DRAW_BLOCK_9    = 6'b011000,
                 //UPDATE_BLOCK_10 = 6'b010111,
 			    //DRAW_BLOCK_10    = 6'b011000,
-                  DEAD    		    = 6'b011001;
+		//ERASE_MVBLK_1 = ,
+		//UPDATE_MVBLK_2 = ,
+		//DRAW_MVBLK_3 = ,
+                  DEAD    		    = 6'b011001;  //remember to change
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -114,7 +123,7 @@ module Proj(
      // GAME FSM
      always@(posedge CLOCK_50)
         begin
-			border_initing = 1'b0;
+			border_initing = 1'b0;  //unused
 			paddle_initing = 1'b0;
 			ball_initing = 1'b0;
 			block_initing = 1'b0;
@@ -184,7 +193,7 @@ module Proj(
 					 bl_5_x = 8'd135;
 					 bl_5_y = 8'd30;
 					 block_5_colour = 3'b010;
-						state = IDLE;
+						state = IDLE;  //INIT_BLOCK_6;
 				 end
                 /*
                  BLOCK COORDS HAVE BEEN UPDATED
@@ -217,18 +226,36 @@ module Proj(
 					 bl_10_x = 8'd135;
 					 bl_10_y = 8'd40;
 					 block_10_colour = 3'b010;
-						state = IDLE;
+						state = INIT_MOVBLK_1;
 				 end
 
                 */
 
+
+				/* INIT MOVING BLOCK
+
+				INIT_MOVBLK_1: begin
+					 if (draw_counter < 6'b10000) begin
+					 mbl_x = 8'd76;
+					 mbl_y = 8'd15;
+						x = mbl_x + draw_counter[3:0];
+						y = mbl_y + draw_counter[4];
+						draw_counter = draw_counter + 1'b1;
+						colour = 3'b101;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = IDLE;
+					end
+				 end
+				*/
 
 				 IDLE: begin
 				 if (frame)
 					state = ERASE_PADDLE;
 				 end
 				 ERASE_PADDLE: begin
-						if (draw_counter < 6'b100000) begin
+						if (draw_counter < 6'b100000) begin  //why is this 6bits????
 						x = p_x + draw_counter[3:0];
 						y = p_y + draw_counter[4];
 						draw_counter = draw_counter + 1'b1;
@@ -239,8 +266,8 @@ module Proj(
 					end
 				 end
 				 UPDATE_PADDLE: begin
-						if (~KEY[1] && p_x < 8'd144) p_x = p_x + 1'b1;
-						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;
+						if (~KEY[1] && p_x < 8'd144) p_x = p_x + 1'b1; //right
+						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;  //left
 						state = DRAW_PADDLE;
 						
 				 end
@@ -373,7 +400,7 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE;
+						state = IDLE;  //UPDATE_BLOCK_6;
 					end
 				 end
                 /*
@@ -473,13 +500,48 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE;
+						state = ERASE_MOVBLK_1;
 					end
 				 end
 
 
                  */
-				 DEAD: begin
+				 
+
+				/* MOVING BLOCKs
+				ERASE_MOVBLK_1: begin
+						if (draw_counter < 6'b100000) begin  //why is this 6bits????
+						x = p_x + draw_counter[3:0];
+						y = p_y + draw_counter[4];
+						draw_counter = draw_counter + 1'b1;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = UPDATE_MOVBLK_1;
+					end
+				 end
+				 UPDATE_MOVBLK_1: begin
+						if (p_x < 8'd144) p_x = p_x + 1'b1; //right
+						if (p_x > 8'd0) p_x = p_x - 1'b1;  //left
+						state = DRAW_MOVBLK_1;
+						
+				 end
+				 DRAW_MOVBLK_1: begin
+					if (draw_counter < 6'b100000) begin
+						x = p_x + draw_counter[3:0];
+						y = p_y + draw_counter[4];
+						draw_counter = draw_counter + 1'b1;
+						colour = 3'b101;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = IDLE;
+					end
+				 end
+				*/
+
+
+				DEAD: begin
 
 					if (draw_counter < 17'b10000000000000000) begin
 						x = draw_counter[7:0];
