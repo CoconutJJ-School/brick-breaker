@@ -68,44 +68,44 @@ module Proj(
 	 
 	 assign LEDR[5:0] = state;
 	 
-	 localparam  RESET_BLACK       = 6'b000000,
-                INIT_PADDLE       = 6'b000001,
-                INIT_BALL         = 6'b000010,
-                INIT_BLOCK_1      = 6'b000011,
+	             localparam RESET_BLACK       = 6'b000000,
+                		INIT_PADDLE       = 6'b000001,
+                		INIT_BALL         = 6'b000010,
+                		INIT_BLOCK_1      = 6'b000011,
 				INIT_BLOCK_2      = 6'b000100,
 				INIT_BLOCK_3      = 6'b000101,
 				INIT_BLOCK_4      = 6'b000110,
 				INIT_BLOCK_5      = 6'b000111,
-                IDLE              = 6'b001000,
+                		IDLE              = 6'b001000,
 				ERASE_PADDLE	  = 6'b001001,
-                UPDATE_PADDLE     = 6'b001010,
-				DRAW_PADDLE	      = 6'b001011,
-                ERASE_BALL        = 6'b001100,
+                		UPDATE_PADDLE     = 6'b001010,
+				DRAW_PADDLE	  = 6'b001011,
+                		ERASE_BALL        = 6'b001100,
 				UPDATE_BALL       = 6'b001101,
 				DRAW_BALL         = 6'b001110,
 				UPDATE_BLOCK_1    = 6'b001111,
 				DRAW_BLOCK_1      = 6'b010000,
 				UPDATE_BLOCK_2    = 6'b010001,
-		    	DRAW_BLOCK_2      = 6'b010010,
+		    		DRAW_BLOCK_2      = 6'b010010,
 				UPDATE_BLOCK_3    = 6'b010011,
 				DRAW_BLOCK_3      = 6'b010100,
 				UPDATE_BLOCK_4    = 6'b010101,
 				DRAW_BLOCK_4      = 6'b010110,
 				UPDATE_BLOCK_5    = 6'b010111,
 				DRAW_BLOCK_5      = 6'b011000,
-                //UPDATE_BLOCK_6  = 6'b010111,
-			    //DRAW_BLOCK_6    = 6'b011000,
-                //UPDATE_BLOCK_7  = 6'b010111,
-			    //DRAW_BLOCK_7    = 6'b011000,
-                //UPDATE_BLOCK_7  = 6'b010111,
-			    //DRAW_BLOCK_7    = 6'b011000,
-                //UPDATE_BLOCK_8  = 6'b010111,
-			    //DRAW_BLOCK_8    = 6'b011000,
-                //UPDATE_BLOCK_9  = 6'b010111,
-                //DRAW_BLOCK_9    = 6'b011000,
-                //UPDATE_BLOCK_10 = 6'b010111,
-			    //DRAW_BLOCK_10    = 6'b011000,
-                  DEAD    		    = 6'b011001;
+                		//UPDATE_BLOCK_6  = 6'b011001,
+			    	//DRAW_BLOCK_6    = 6'b011010,
+                		//UPDATE_BLOCK_7  = 6'b011011,
+			    	//DRAW_BLOCK_7    = 6'b011100,
+                		//UPDATE_BLOCK_7  = 6'b011101,
+			    	//DRAW_BLOCK_7    = 6'b011110,
+                		//UPDATE_BLOCK_8  = 6'b011111,
+			    	//DRAW_BLOCK_8    = 6'b100000,
+                		//UPDATE_BLOCK_9  = 6'b100001,
+                		//DRAW_BLOCK_9    = 6'b100010,
+                		//UPDATE_BLOCK_10 = 6'b100011,
+			    	//DRAW_BLOCK_10   = 6'b100100,
+                  		DEAD              = 6'b100101; // UPDATED.
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -121,10 +121,13 @@ module Proj(
 			colour = 3'b000;
 			x = 8'b00000000;
 			y = 8'b00000000;
-			if (~KEY[0]) state = RESET_BLACK;
-        case (state)
-		  RESET_BLACK: begin
-			if (draw_counter < 17'b10000000000000000) begin
+			
+			if (~KEY[0]) 
+				state = RESET_BLACK;
+
+        		case (state)
+		  		RESET_BLACK: begin
+					if (draw_counter < 17'b10000000000000000) begin
 						x = draw_counter[7:0];
 						y = draw_counter[16:8];
 						draw_counter = draw_counter + 1'b1;
@@ -133,7 +136,7 @@ module Proj(
 						draw_counter= 8'b00000000;
 						state = INIT_PADDLE;
 					end
-		  end
+		  		end
     			 INIT_PADDLE: begin
 					 if (draw_counter < 6'b10000) begin
 					 p_x = 8'd76;
