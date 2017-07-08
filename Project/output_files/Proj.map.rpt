@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj
-Thu Mar 30 21:38:05 2017
+Fri Jul  7 20:50:37 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -14,29 +14,34 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |Proj|block_5_colour
- 10. State Machine - |Proj|block_4_colour
- 11. State Machine - |Proj|block_3_colour
- 12. State Machine - |Proj|block_2_colour
- 13. State Machine - |Proj|block_1_colour
- 14. State Machine - |Proj|state
- 15. Registers Removed During Synthesis
- 16. General Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 25. altsyncram Parameter Settings by Entity Instance
- 26. altpll Parameter Settings by Entity Instance
- 27. Port Connectivity Checks: "vga_adapter:VGA"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
- 31. Analysis & Synthesis Suppressed Messages
+  9. State Machine - |Proj|block_10_colour
+ 10. State Machine - |Proj|block_9_colour
+ 11. State Machine - |Proj|block_8_colour
+ 12. State Machine - |Proj|block_7_colour
+ 13. State Machine - |Proj|block_6_colour
+ 14. State Machine - |Proj|block_5_colour
+ 15. State Machine - |Proj|block_4_colour
+ 16. State Machine - |Proj|block_3_colour
+ 17. State Machine - |Proj|block_2_colour
+ 18. State Machine - |Proj|block_1_colour
+ 19. State Machine - |Proj|state
+ 20. Registers Removed During Synthesis
+ 21. Removed Registers Triggering Further Register Optimizations
+ 22. General Register Statistics
+ 23. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 24. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated
+ 25. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 26. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 27. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 28. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 29. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 30. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. altpll Parameter Settings by Entity Instance
+ 33. Port Connectivity Checks: "vga_adapter:VGA"
+ 34. Post-Synthesis Netlist Statistics for Top Partition
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
 
 
 
@@ -63,15 +68,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 30 21:38:04 2017       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul  7 20:50:37 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Proj                                        ;
 ; Top-level Entity Name              ; Proj                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 522                                         ;
-;     Total combinational functions  ; 517                                         ;
-;     Dedicated logic registers      ; 144                                         ;
-; Total registers                    ; 144                                         ;
+; Total logic elements               ; 596                                         ;
+;     Total combinational functions  ; 591                                         ;
+;     Dedicated logic registers      ; 157                                         ;
+; Total registers                    ; 157                                         ;
 ; Total pins                         ; 58                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
@@ -178,34 +183,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
-+-------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
-+-------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; ../Project/vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File   ; /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v                           ;         ;
-; ../Project/vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File        ; /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_controller.v                    ;         ;
-; ../Project/vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File        ; /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_address_translator.v            ;         ;
-; ../Project/vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File        ; /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v                       ;         ;
-; ../Project/project.v                            ; yes             ; User Verilog HDL File        ; /cmshome/yanjuli1/Desktop/b58/Project/project.v                                       ;         ;
-; altsyncram.tdf                                  ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                           ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                                     ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                                  ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal160.inc                                  ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
-; a_rdenreg.inc                                   ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                                      ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                                      ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                                    ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_60g1.tdf                          ; yes             ; Auto-Generated Megafunction  ; /cmshome/yanjuli1/Desktop/b58/Proj/db/altsyncram_60g1.tdf                             ;         ;
-; db/decode_lsa.tdf                               ; yes             ; Auto-Generated Megafunction  ; /cmshome/yanjuli1/Desktop/b58/Proj/db/decode_lsa.tdf                                  ;         ;
-; db/decode_e8a.tdf                               ; yes             ; Auto-Generated Megafunction  ; /cmshome/yanjuli1/Desktop/b58/Proj/db/decode_e8a.tdf                                  ;         ;
-; db/mux_0nb.tdf                                  ; yes             ; Auto-Generated Megafunction  ; /cmshome/yanjuli1/Desktop/b58/Proj/db/mux_0nb.tdf                                     ;         ;
-; altpll.tdf                                      ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                                 ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                               ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                               ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-+-------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File   ; /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_pll.v                       ;         ;
+; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File        ; /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_controller.v                ;         ;
+; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File        ; /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_address_translator.v        ;         ;
+; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File        ; /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v                   ;         ;
+; Proj.v                               ; yes             ; Auto-Found Verilog HDL File  ; /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v                                      ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal160.inc                       ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                           ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                           ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_60g1.tdf               ; yes             ; Auto-Generated Megafunction  ; /cmshome/yueming1/Desktop/b58Proj/Project/db/altsyncram_60g1.tdf                      ;         ;
+; db/decode_lsa.tdf                    ; yes             ; Auto-Generated Megafunction  ; /cmshome/yueming1/Desktop/b58Proj/Project/db/decode_lsa.tdf                           ;         ;
+; db/decode_e8a.tdf                    ; yes             ; Auto-Generated Megafunction  ; /cmshome/yueming1/Desktop/b58Proj/Project/db/decode_e8a.tdf                           ;         ;
+; db/mux_0nb.tdf                       ; yes             ; Auto-Generated Megafunction  ; /cmshome/yueming1/Desktop/b58Proj/Project/db/mux_0nb.tdf                              ;         ;
+; altpll.tdf                           ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; stratix_pll.inc                      ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                    ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                    ; yes             ; Megafunction                 ; /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
++--------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -213,20 +218,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 522            ;
+; Estimated Total logic elements              ; 596            ;
 ;                                             ;                ;
-; Total combinational functions               ; 517            ;
+; Total combinational functions               ; 591            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 240            ;
-;     -- 3 input functions                    ; 112            ;
-;     -- <=2 input functions                  ; 165            ;
+;     -- 4 input functions                    ; 337            ;
+;     -- 3 input functions                    ; 117            ;
+;     -- <=2 input functions                  ; 137            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 358            ;
-;     -- arithmetic mode                      ; 159            ;
+;     -- normal mode                          ; 477            ;
+;     -- arithmetic mode                      ; 114            ;
 ;                                             ;                ;
-; Total registers                             ; 144            ;
-;     -- Dedicated logic registers            ; 144            ;
+; Total registers                             ; 157            ;
+;     -- Dedicated logic registers            ; 157            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 58             ;
@@ -238,9 +243,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 124            ;
-; Total fan-out                               ; 2314           ;
-; Average fan-out                             ; 2.94           ;
+; Maximum fan-out                             ; 137            ;
+; Total fan-out                               ; 2682           ;
+; Average fan-out                             ; 3.07           ;
 +---------------------------------------------+----------------+
 
 
@@ -249,8 +254,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Proj                                                   ; 517 (383)         ; 144 (93)     ; 57600       ; 0            ; 0       ; 0         ; 58   ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
-;    |clock:comb_19|                                      ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|clock:comb_19                                                                                  ; clock                  ; work         ;
+; |Proj                                                   ; 591 (457)         ; 157 (106)    ; 57600       ; 0            ; 0       ; 0         ; 58   ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
+;    |clock:comb_21|                                      ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|clock:comb_21                                                                                  ; clock                  ; work         ;
 ;    |vga_adapter:VGA|                                    ; 98 (2)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 12 (0)            ; 4 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_60g1:auto_generated|               ; 12 (0)            ; 4 (4)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated                          ; altsyncram_60g1        ; work         ;
@@ -273,6 +278,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 19200        ; 3            ; 19200        ; 3            ; 57600 ; None ;
 +----------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------+
+; State Machine - |Proj|block_10_colour     ;
++---------------------+---------------------+
+; Name                ; block_10_colour.010 ;
++---------------------+---------------------+
+; block_10_colour.000 ; 0                   ;
+; block_10_colour.010 ; 1                   ;
++---------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------+
+; State Machine - |Proj|block_9_colour    ;
++--------------------+--------------------+
+; Name               ; block_9_colour.010 ;
++--------------------+--------------------+
+; block_9_colour.000 ; 0                  ;
+; block_9_colour.010 ; 1                  ;
++--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------+
+; State Machine - |Proj|block_8_colour    ;
++--------------------+--------------------+
+; Name               ; block_8_colour.010 ;
++--------------------+--------------------+
+; block_8_colour.000 ; 0                  ;
+; block_8_colour.010 ; 1                  ;
++--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------+
+; State Machine - |Proj|block_7_colour    ;
++--------------------+--------------------+
+; Name               ; block_7_colour.010 ;
++--------------------+--------------------+
+; block_7_colour.000 ; 0                  ;
+; block_7_colour.010 ; 1                  ;
++--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------+
+; State Machine - |Proj|block_6_colour    ;
++--------------------+--------------------+
+; Name               ; block_6_colour.010 ;
++--------------------+--------------------+
+; block_6_colour.000 ; 0                  ;
+; block_6_colour.010 ; 1                  ;
++--------------------+--------------------+
 
 
 Encoding Type:  One-Hot
@@ -331,38 +391,51 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Proj|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
-+----------------------+------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
-; Name                 ; state.DEAD ; state.DRAW_BLOCK_5 ; state.UPDATE_BLOCK_5 ; state.DRAW_BLOCK_4 ; state.UPDATE_BLOCK_4 ; state.DRAW_BLOCK_3 ; state.UPDATE_BLOCK_3 ; state.DRAW_BLOCK_2 ; state.UPDATE_BLOCK_2 ; state.DRAW_BLOCK_1 ; state.UPDATE_BLOCK_1 ; state.DRAW_BALL ; state.UPDATE_BALL ; state.ERASE_BALL ; state.DRAW_PADDLE ; state.UPDATE_PADDLE ; state.ERASE_PADDLE ; state.IDLE ; state.INIT_BLOCK_5 ; state.INIT_BLOCK_4 ; state.INIT_BLOCK_3 ; state.INIT_BLOCK_2 ; state.INIT_BLOCK_1 ; state.INIT_BALL ; state.INIT_PADDLE ; state.RESET_BLACK ;
-+----------------------+------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
-; state.RESET_BLACK    ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 0                 ;
-; state.INIT_PADDLE    ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 1                 ; 1                 ;
-; state.INIT_BALL      ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1               ; 0                 ; 1                 ;
-; state.INIT_BLOCK_1   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0               ; 0                 ; 1                 ;
-; state.INIT_BLOCK_2   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.INIT_BLOCK_3   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.INIT_BLOCK_4   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.INIT_BLOCK_5   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.IDLE           ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 1          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.ERASE_PADDLE   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 1                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_PADDLE  ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 1                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_PADDLE    ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 1                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.ERASE_BALL     ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 1                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BALL    ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 1                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BALL      ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BLOCK_1 ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BLOCK_1   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BLOCK_2 ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BLOCK_2   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BLOCK_3 ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BLOCK_3   ; 0          ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BLOCK_4 ; 0          ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BLOCK_4   ; 0          ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.UPDATE_BLOCK_5 ; 0          ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DRAW_BLOCK_5   ; 0          ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-; state.DEAD           ; 1          ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
-+----------------------+------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Proj|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
++-----------------------+------------+---------------------+-----------------------+----------------------+---------------------+-----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
+; Name                  ; state.DEAD ; state.DRAW_MOVBLK_1 ; state.UPDATE_MOVBLK_1 ; state.ERASE_MOVBLK_1 ; state.DRAW_BLOCK_10 ; state.UPDATE_BLOCK_10 ; state.DRAW_BLOCK_9 ; state.UPDATE_BLOCK_9 ; state.DRAW_BLOCK_8 ; state.UPDATE_BLOCK_8 ; state.DRAW_BLOCK_7 ; state.UPDATE_BLOCK_7 ; state.DRAW_BLOCK_6 ; state.UPDATE_BLOCK_6 ; state.DRAW_BLOCK_5 ; state.UPDATE_BLOCK_5 ; state.DRAW_BLOCK_4 ; state.UPDATE_BLOCK_4 ; state.DRAW_BLOCK_3 ; state.UPDATE_BLOCK_3 ; state.DRAW_BLOCK_2 ; state.UPDATE_BLOCK_2 ; state.DRAW_BLOCK_1 ; state.UPDATE_BLOCK_1 ; state.DRAW_BALL ; state.UPDATE_BALL ; state.ERASE_BALL ; state.DRAW_PADDLE ; state.UPDATE_PADDLE ; state.INIT_BLOCK_7 ; state.IDLE ; state.INIT_BLOCK_5 ; state.INIT_BLOCK_4 ; state.INIT_BLOCK_3 ; state.INIT_BLOCK_2 ; state.INIT_BLOCK_1 ; state.INIT_BALL ; state.INIT_PADDLE ; state.RESET_BLACK ;
++-----------------------+------------+---------------------+-----------------------+----------------------+---------------------+-----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
+; state.RESET_BLACK     ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 0                 ;
+; state.INIT_PADDLE     ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 1                 ; 1                 ;
+; state.INIT_BALL       ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_1    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 0               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_2    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_3    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_4    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_5    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.IDLE            ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 1          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.INIT_BLOCK_7    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 1                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_PADDLE   ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 1                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_PADDLE     ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 1                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.ERASE_BALL      ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 1                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BALL     ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 1                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BALL       ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_1  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_1    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_2  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_2    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_3  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_3    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_4  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_4    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_5  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_5    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_6  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_6    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_7  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_7    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_8  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_8    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_9  ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 1                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_9    ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 1                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_BLOCK_10 ; 0          ; 0                   ; 0                     ; 0                    ; 0                   ; 1                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_BLOCK_10   ; 0          ; 0                   ; 0                     ; 0                    ; 1                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.ERASE_MOVBLK_1  ; 0          ; 0                   ; 0                     ; 1                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.UPDATE_MOVBLK_1 ; 0          ; 0                   ; 1                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DRAW_MOVBLK_1   ; 0          ; 1                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
+; state.DEAD            ; 1          ; 0                   ; 0                     ; 0                    ; 0                   ; 0                     ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0                  ; 0                    ; 0               ; 0                 ; 0                ; 0                 ; 0                   ; 0                  ; 0          ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ; 0                 ; 1                 ;
++-----------------------+------------+---------------------+-----------------------+----------------------+---------------------+-----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+--------------------+----------------------+-----------------+-------------------+------------------+-------------------+---------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+-------------------+-------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -370,12 +443,59 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; bl_5_x[7]                               ; Stuck at VCC due to stuck port data_in ;
-; bl_5_x[3..6]                            ; Stuck at GND due to stuck port data_in ;
-; bl_5_x[0..2]                            ; Stuck at VCC due to stuck port data_in ;
-; bl_5_y[5..7]                            ; Stuck at GND due to stuck port data_in ;
-; bl_5_y[1..4]                            ; Stuck at VCC due to stuck port data_in ;
+; bl_10_y[5]                              ; Stuck at VCC due to stuck port data_in ;
+; bl_10_y[4]                              ; Stuck at GND due to stuck port data_in ;
+; bl_10_y[3]                              ; Stuck at VCC due to stuck port data_in ;
+; bl_10_y[0..2,6,7]                       ; Stuck at GND due to stuck port data_in ;
+; bl_10_x[0..2]                           ; Stuck at VCC due to stuck port data_in ;
+; bl_10_x[3..6]                           ; Stuck at GND due to stuck port data_in ;
+; bl_10_x[7]                              ; Stuck at VCC due to stuck port data_in ;
+; bl_9_y[0..2]                            ; Stuck at GND due to stuck port data_in ;
+; bl_9_y[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_9_y[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_9_y[5]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_9_y[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; bl_9_x[0]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_9_x[1,2]                             ; Stuck at GND due to stuck port data_in ;
+; bl_9_x[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_9_x[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_9_x[5,6]                             ; Stuck at VCC due to stuck port data_in ;
+; bl_9_x[7]                               ; Stuck at GND due to stuck port data_in ;
+; bl_8_y[0..2]                            ; Stuck at GND due to stuck port data_in ;
+; bl_8_y[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_8_y[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_8_y[5]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_8_y[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; bl_8_x[0,1]                             ; Stuck at VCC due to stuck port data_in ;
+; bl_8_x[2]                               ; Stuck at GND due to stuck port data_in ;
+; bl_8_x[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_8_x[4,5]                             ; Stuck at GND due to stuck port data_in ;
+; bl_8_x[6]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_8_x[7]                               ; Stuck at GND due to stuck port data_in ;
+; bl_7_y[0..2]                            ; Stuck at GND due to stuck port data_in ;
+; bl_7_y[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_7_y[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_7_y[5]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_7_y[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; bl_7_x[0]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_7_x[1]                               ; Stuck at GND due to stuck port data_in ;
+; bl_7_x[2,3]                             ; Stuck at VCC due to stuck port data_in ;
+; bl_7_x[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_7_x[5]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_7_x[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; bl_6_y[0..2]                            ; Stuck at GND due to stuck port data_in ;
+; bl_6_y[3]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_6_y[4]                               ; Stuck at GND due to stuck port data_in ;
+; bl_6_y[5]                               ; Stuck at VCC due to stuck port data_in ;
+; bl_6_y[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; bl_6_x[0..3]                            ; Stuck at VCC due to stuck port data_in ;
+; bl_6_x[4..7]                            ; Stuck at GND due to stuck port data_in ;
 ; bl_5_y[0]                               ; Stuck at GND due to stuck port data_in ;
+; bl_5_y[1..4]                            ; Stuck at VCC due to stuck port data_in ;
+; bl_5_y[5..7]                            ; Stuck at GND due to stuck port data_in ;
+; bl_5_x[0..2]                            ; Stuck at VCC due to stuck port data_in ;
+; bl_5_x[3..6]                            ; Stuck at GND due to stuck port data_in ;
+; bl_5_x[7]                               ; Stuck at VCC due to stuck port data_in ;
 ; bl_4_y[0]                               ; Stuck at GND due to stuck port data_in ;
 ; bl_4_y[1..4]                            ; Stuck at VCC due to stuck port data_in ;
 ; bl_4_y[5..7]                            ; Stuck at GND due to stuck port data_in ;
@@ -408,11 +528,25 @@ Encoding Type:  One-Hot
 ; bl_1_y[5..7]                            ; Stuck at GND due to stuck port data_in ;
 ; bl_1_x[0..3]                            ; Stuck at VCC due to stuck port data_in ;
 ; bl_1_x[4..7]                            ; Stuck at GND due to stuck port data_in ;
+; mbl_1_y[4..7]                           ; Stuck at GND due to stuck port data_in ;
+; mbl_1_y[0..3]                           ; Stuck at VCC due to stuck port data_in ;
 ; p_y[0]                                  ; Stuck at GND due to stuck port data_in ;
 ; p_y[1..3]                               ; Stuck at VCC due to stuck port data_in ;
 ; p_y[4]                                  ; Stuck at GND due to stuck port data_in ;
 ; p_y[5,6]                                ; Stuck at VCC due to stuck port data_in ;
 ; p_y[7]                                  ; Stuck at GND due to stuck port data_in ;
+; mblock_1_colour[2]                      ; Merged with mblock_1_colour[0]         ;
+; mblock_1_colour[0,1]                    ; Stuck at GND due to stuck port data_in ;
+; block_10_colour~4                       ; Lost fanout                            ;
+; block_10_colour~6                       ; Lost fanout                            ;
+; block_9_colour~4                        ; Lost fanout                            ;
+; block_9_colour~6                        ; Lost fanout                            ;
+; block_8_colour~4                        ; Lost fanout                            ;
+; block_8_colour~6                        ; Lost fanout                            ;
+; block_7_colour~4                        ; Lost fanout                            ;
+; block_7_colour~6                        ; Lost fanout                            ;
+; block_6_colour~4                        ; Lost fanout                            ;
+; block_6_colour~6                        ; Lost fanout                            ;
 ; block_5_colour~4                        ; Lost fanout                            ;
 ; block_5_colour~6                        ; Lost fanout                            ;
 ; block_4_colour~4                        ; Lost fanout                            ;
@@ -429,8 +563,31 @@ Encoding Type:  One-Hot
 ; state~6                                 ; Lost fanout                            ;
 ; state~7                                 ; Lost fanout                            ;
 ; state~8                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 104 ;                                        ;
+; state.UPDATE_BLOCK_6                    ; Stuck at GND due to stuck port data_in ;
+; state.UPDATE_PADDLE                     ; Stuck at GND due to stuck port data_in ;
+; block_7_colour.010                      ; Stuck at GND due to stuck port data_in ;
+; block_8_colour.010                      ; Stuck at GND due to stuck port data_in ;
+; block_9_colour.010                      ; Stuck at GND due to stuck port data_in ;
+; block_10_colour.010                     ; Stuck at GND due to stuck port data_in ;
+; p_x[7]                                  ; Stuck at GND due to stuck port data_in ;
+; p_x[6]                                  ; Stuck at VCC due to stuck port data_in ;
+; p_x[4,5]                                ; Stuck at GND due to stuck port data_in ;
+; p_x[2,3]                                ; Stuck at VCC due to stuck port data_in ;
+; p_x[0,1]                                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 219 ;                                        ;
 +-----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                       ;
++----------------------+---------------------------+----------------------------------------------------------------+
+; Register name        ; Reason for Removal        ; Registers Removed due to This Register                         ;
++----------------------+---------------------------+----------------------------------------------------------------+
+; state.UPDATE_BLOCK_6 ; Stuck at GND              ; p_x[7], p_x[6], p_x[5], p_x[4], p_x[3], p_x[2], p_x[1], p_x[0] ;
+;                      ; due to stuck port data_in ;                                                                ;
+; mbl_1_y[7]           ; Stuck at GND              ; mblock_1_colour[1], mblock_1_colour[0]                         ;
+;                      ; due to stuck port data_in ;                                                                ;
++----------------------+---------------------------+----------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -438,12 +595,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 144   ;
+; Total registers                              ; 157   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -454,15 +611,15 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Proj|vga_adapter:VGA|vga_controller:controller|yCounter[2]                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_x[4]                                                                                            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|p_x[7]                                                                                            ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Proj|y[5]                                                                                              ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Proj|y[2]                                                                                              ;
-; 9:1                ; 18 bits   ; 108 LEs       ; 18 LEs               ; 90 LEs                 ; Yes        ; |Proj|draw_counter[5]                                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[2] ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Proj|Selector35                                                                                        ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector59                                                                                        ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Proj|Selector46                                                                                        ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_y[2]                                                                                            ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Proj|mbl_1_x[0]                                                                                        ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|p_x[2]                                                                                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Proj|mblock_1_colour[1]                                                                                ;
+; 9:1                ; 18 bits   ; 108 LEs       ; 18 LEs               ; 90 LEs                 ; Yes        ; |Proj|draw_counter[12]                                                                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[0] ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Proj|Selector59                                                                                        ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector48                                                                                        ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Proj|Selector44                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -1017,25 +1174,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 58                          ;
-; cycloneiii_ff         ; 144                         ;
-;     ENA               ; 22                          ;
-;     ENA SLD           ; 8                           ;
-;     plain             ; 114                         ;
-; cycloneiii_lcell_comb ; 519                         ;
-;     arith             ; 159                         ;
-;         2 data inputs ; 90                          ;
-;         3 data inputs ; 69                          ;
-;     normal            ; 360                         ;
+; cycloneiii_ff         ; 157                         ;
+;     ENA               ; 32                          ;
+;     plain             ; 125                         ;
+; cycloneiii_lcell_comb ; 593                         ;
+;     arith             ; 114                         ;
+;         2 data inputs ; 77                          ;
+;         3 data inputs ; 37                          ;
+;     normal            ; 479                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 62                          ;
-;         3 data inputs ; 43                          ;
-;         4 data inputs ; 240                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 337                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.40                        ;
-; Average LUT depth     ; 4.33                        ;
+; Max LUT depth         ; 17.00                       ;
+; Average LUT depth     ; 7.26                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1044,7 +1200,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1054,39 +1210,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Mar 30 21:37:54 2017
+    Info: Processing started: Fri Jul  7 20:50:25 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj -c Proj
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v Line: 36
-Info (12021): Found 1 design units, including 1 entities, in source file /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_controller.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_address_translator.v Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 78
-Info (12021): Found 6 design units, including 6 entities, in source file /cmshome/yanjuli1/Desktop/b58/Project/project.v
-    Info (12023): Found entity 1: Proj File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 3
-    Info (12023): Found entity 2: clock File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 342
-    Info (12023): Found entity 3: control File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 359
-    Info (12023): Found entity 4: paddle File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 424
-    Info (12023): Found entity 5: block File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 514
-    Info (12023): Found entity 6: ball File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 601
-Critical Warning (10846): Verilog HDL Instantiation warning at project.v(98): instance has no name File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 98
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
+    Info (12023): Found entity 1: vga_pll File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_pll.v Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
+    Info (12023): Found entity 1: vga_controller File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_controller.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
+    Info (12023): Found entity 1: vga_address_translator File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_address_translator.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
+    Info (12023): Found entity 1: vga_adapter File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 78
+Warning (12019): Can't analyze file -- file project.v is missing
+Warning (12125): Using design file Proj.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: Proj File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 3
+    Info (12023): Found entity 2: clock File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 574
+Critical Warning (10846): Verilog HDL Instantiation warning at Proj.v(121): instance has no name File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 121
 Info (12127): Elaborating entity "Proj" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at project.v(60): object "border_initing" assigned a value but never read File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at project.v(60): object "paddle_initing" assigned a value but never read File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at project.v(60): object "ball_initing" assigned a value but never read File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at project.v(60): object "block_initing" assigned a value but never read File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 60
-Warning (10230): Verilog HDL assignment warning at project.v(114): truncated value with size 9 to match size of target (8) File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 114
-Warning (10230): Verilog HDL assignment warning at project.v(331): truncated value with size 9 to match size of target (8) File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 331
-Warning (10034): Output port "LEDR[17..8]" at project.v(21) has no driver File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-Warning (10034): Output port "LEDR[6]" at project.v(21) has no driver File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 53
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 213
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "border_initing" assigned a value but never read File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 60
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "paddle_initing" assigned a value but never read File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 60
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "ball_initing" assigned a value but never read File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 60
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "block_initing" assigned a value but never read File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 60
+Warning (10230): Verilog HDL assignment warning at Proj.v(140): truncated value with size 9 to match size of target (8) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 140
+Warning (10230): Verilog HDL assignment warning at Proj.v(563): truncated value with size 9 to match size of target (8) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 563
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(208): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 208
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(214): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 214
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(220): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 220
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(226): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 226
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(238): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 238
+Warning (10272): Verilog HDL Case Statement warning at Proj.v(261): case item expression covers a value already covered by a previous case item File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 261
+Warning (10034): Output port "LEDR[17..8]" at Proj.v(21) has no driver File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+Warning (10034): Output port "LEDR[6]" at Proj.v(21) has no driver File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 53
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1103,21 +1262,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_60g1.tdf
-    Info (12023): Found entity 1: altsyncram_60g1 File: /cmshome/yanjuli1/Desktop/b58/Proj/db/altsyncram_60g1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_60g1 File: /cmshome/yueming1/Desktop/b58Proj/Project/db/altsyncram_60g1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_60g1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated" File: /usr/local/cms/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_lsa.tdf
-    Info (12023): Found entity 1: decode_lsa File: /cmshome/yanjuli1/Desktop/b58/Proj/db/decode_lsa.tdf Line: 23
-Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: /cmshome/yanjuli1/Desktop/b58/Proj/db/altsyncram_60g1.tdf Line: 47
+    Info (12023): Found entity 1: decode_lsa File: /cmshome/yueming1/Desktop/b58Proj/Project/db/decode_lsa.tdf Line: 23
+Info (12128): Elaborating entity "decode_lsa" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2" File: /cmshome/yueming1/Desktop/b58Proj/Project/db/altsyncram_60g1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_e8a.tdf
-    Info (12023): Found entity 1: decode_e8a File: /cmshome/yanjuli1/Desktop/b58/Proj/db/decode_e8a.tdf Line: 23
-Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: /cmshome/yanjuli1/Desktop/b58/Proj/db/altsyncram_60g1.tdf Line: 48
+    Info (12023): Found entity 1: decode_e8a File: /cmshome/yueming1/Desktop/b58Proj/Project/db/decode_e8a.tdf Line: 23
+Info (12128): Elaborating entity "decode_e8a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b" File: /cmshome/yueming1/Desktop/b58Proj/Project/db/altsyncram_60g1.tdf Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_0nb.tdf
-    Info (12023): Found entity 1: mux_0nb File: /cmshome/yanjuli1/Desktop/b58/Proj/db/mux_0nb.tdf Line: 23
-Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: /cmshome/yanjuli1/Desktop/b58/Proj/db/altsyncram_60g1.tdf Line: 50
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_0nb File: /cmshome/yueming1/Desktop/b58Proj/Project/db/mux_0nb.tdf Line: 23
+Info (12128): Elaborating entity "mux_0nb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3" File: /cmshome/yueming1/Desktop/b58Proj/Project/db/altsyncram_60g1.tdf Line: 50
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1129,46 +1288,40 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_divide_by" = "2"
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /cmshome/yanjuli1/Desktop/b58/Project/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "clock" for hierarchy "clock:comb_19" File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 98
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "clock" for hierarchy "clock:comb_21" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 121
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 21
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 29
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 21
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 29
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file /cmshome/yanjuli1/Desktop/b58/Proj/output_files/Proj.map.smsg
+Info (17049): 26 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /cmshome/yanjuli1/Desktop/b58/Project/project.v Line: 20
-Info (21057): Implemented 595 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 20
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 20
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 20
+Info (21057): Implemented 669 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 527 logic cells
+    Info (21061): Implemented 601 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 1287 megabytes
-    Info: Processing ended: Thu Mar 30 21:38:05 2017
-    Info: Elapsed time: 00:00:11
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 1285 megabytes
+    Info: Processing ended: Fri Jul  7 20:50:37 2017
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:21
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in /cmshome/yanjuli1/Desktop/b58/Proj/output_files/Proj.map.smsg.
 
 

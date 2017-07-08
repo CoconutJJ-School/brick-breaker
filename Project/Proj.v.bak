@@ -78,12 +78,12 @@ module Proj(
 				INIT_BLOCK_3      = 6'b000101,
 				INIT_BLOCK_4      = 6'b000110,
 				INIT_BLOCK_5      = 6'b000111,
-				INIT_BLOCK_6 = 6'b001001,
-				INIT_BLOCK_7 = 6'b001001,
-				INIT_BLOCK_8 = 6'b001001,
-				INIT_BLOCK_9 = 6'b001001,
-				INIT_BLOCK_10 = 6'b001001,
-				INIT_MOVBLK_1 = 6'b001001,  //Remember to change all these numbers
+				//INIT_BLOCK_6 = 6'b001001,
+				//INIT_BLOCK_7 = 6'b001001,
+				//INIT_BLOCK_8 = 6'b001001,
+				//INIT_BLOCK_9 = 6'b001001,
+				//INIT_BLOCK_10 = 6'b001001,
+				//INIT_MVBLK_1 = 6'b001001,  //Remember to change all these numbers
 
                 IDLE              = 6'b001000,
 					 ERASE_PADDLE	    = 6'b001001,
@@ -103,20 +103,22 @@ module Proj(
 				DRAW_BLOCK_4      = 6'b010110,
 				UPDATE_BLOCK_5    = 6'b010111,
 				DRAW_BLOCK_5      = 6'b011000,
-            UPDATE_BLOCK_6  = 6'b011001,
-			   DRAW_BLOCK_6    = 6'b011010,
-            UPDATE_BLOCK_7  = 6'b011011,
-			   DRAW_BLOCK_7    = 6'b011100,
-            UPDATE_BLOCK_8  = 6'b011101,
-			   DRAW_BLOCK_8    = 6'b011110,
-            UPDATE_BLOCK_9  = 6'b011111,
-            DRAW_BLOCK_9    = 6'b100000,
-            UPDATE_BLOCK_10 = 6'b100001,
-			   DRAW_BLOCK_10   = 6'b100010,
-				ERASE_MOVBLK_1   = 6'b100011,
-				UPDATE_MOVBLK_1  = 6'b100100,
-				DRAW_MOVBLK_1    = 6'b100101,
-            DEAD            = 6'b101010;  //remember to change
+                		//UPDATE_BLOCK_6  = 6'b011001,
+			    	//DRAW_BLOCK_6    = 6'b011010,
+                		//UPDATE_BLOCK_7  = 6'b011011,
+			    	//DRAW_BLOCK_7    = 6'b011100,
+                		//UPDATE_BLOCK_7  = 6'b011101,
+			    	//DRAW_BLOCK_7    = 6'b011110,
+                		//UPDATE_BLOCK_8  = 6'b011111,
+			    	//DRAW_BLOCK_8    = 6'b100000,
+                		//UPDATE_BLOCK_9  = 6'b100001,
+                		//DRAW_BLOCK_9    = 6'b100010,
+                		//UPDATE_BLOCK_10 = 6'b100011,
+			    	//DRAW_BLOCK_10   = 6'b100100,
+				//ERASE_MVBLK_1   = 6'b100101,
+				//UPDATE_MVBLK_1  = 6'b100110,
+				//DRAW_MVBLK_1    = 6'b100111,
+                                DEAD              = 6'b101000;  //remember to change
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -198,7 +200,9 @@ module Proj(
 						state = IDLE;  //INIT_BLOCK_6;
 				 end
 
-                INIT_BLOCK_6: begin
+                /*
+                 BLOCK COORDS HAVE BEEN UPDATED
+                 INIT_BLOCK_6: begin
 					 bl_6_x = 8'd15;
 					 bl_6_y = 8'd40;
 					 block_6_colour = 3'b010;
@@ -230,10 +234,10 @@ module Proj(
 						state = INIT_MOVBLK_1;
 				 end
 
-               
+                */
 
 
-
+				/* INIT MOVING BLOCK
 
 				INIT_MOVBLK_1: begin
 					 if (draw_counter < 5'b10000) begin
@@ -251,7 +255,7 @@ module Proj(
 						state = IDLE;
 					end
 				 end
-				
+				*/
 
 
 				 IDLE: begin
@@ -407,7 +411,7 @@ module Proj(
 						state = IDLE;  //UPDATE_BLOCK_6;
 					end
 				 end
-                
+                /*
 				 UPDATE_BLOCK_6: begin
 					if ((block_6_colour != 3'b000) && (b_y > bl_6_y - 8'd1) && (b_y < bl_6_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
@@ -509,10 +513,10 @@ module Proj(
 				 end
 
 
-                 
+                 */
 				 
 
-				
+				/* MOVING BLOCKs
 				ERASE_MOVBLK_1: begin
 						if (draw_counter < 5'b10000) begin
 						x = mbl_1_x + draw_counter[2:0];
@@ -553,7 +557,7 @@ module Proj(
 						state = IDLE;
 					end
 				 end
-				
+				*/
 
 
 				 DEAD: begin
