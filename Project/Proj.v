@@ -117,13 +117,13 @@ module Proj(
 				ERASE_MOVBLK_1   = 6'b100011,
 				UPDATE_MOVBLK_1  = 6'b100100,
 				DRAW_MOVBLK_1    = 6'b100101,
-            DEAD            = 6'b101010;  
+            DEAD            = 6'b101010,  
 
-                                INIT_CEIL = 6'b101011;
-                                UPDATE_CEIL = 6'b101100;
-                                RESET_PADDLE = 6'b101101;
-                                RESET_BALL = 6'b101110;
-                                CHECK_IFWON = 6'b101111;  //state for checking if player has cleared all the blocks
+                                INIT_CEIL = 6'b101011,
+                                UPDATE_CEIL = 6'b101100,
+                                RESET_PADDLE = 6'b101101,
+                                RESET_BALL = 6'b101110,
+                                CHECK_IFWON = 6'b101111,  //state for checking if player has cleared all the blocks
                                 WON_GAME = 6'b110000;
 
 	 clock(.clock(CLOCK_50), .clk(frame));
