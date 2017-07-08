@@ -18,10 +18,11 @@ UofT E-mail Address: crystal.lim@mail.utoronto.ca
 
 Project Details
 ---------------
-Project Title: Draw!
+Project Title: Brick Breaker
 
 Project Description:
-Allows the user to draw to the screen with different line sizes and colors.
+A game just like ATARI BREAKOUT!
+
 
 Video URL: 
 
@@ -33,16 +34,18 @@ Proposal
 --------
 
 What do you plan to have completed by the end of the first lab session?:
-Draw a square of size NxN at the desired X_POS and Y_POS
+Understand the Brick Breaker Code and add more bricks
 
 What do you plan to have completed by the end of the second lab session?:
-Draw a line to the screen of length determined by the user. Perhaps also be able to change color
+Make sure our code actually works for moving the ceiling down and the moving bricks.
+Get started on implementing the score system
 
 What do you plan to have completed by the end of the third lab session?:
-Be able to change the color and thickness of the line
+Make sure score system works and add Power UPS! Add more balls
 
 What is your backup plan if things don’t work out as planned?
-Scrap the line thickness idea and have it stay constant.
+Scrap all the stuff that doesn't work. If the ceiling implementation doesn't work, make it constantly move down
+instead of having it based on the ball not being caught by the paddle.
 
 What hardware will you need beyond the DE2 board 
 (be sure to e-mail Brian if it’s anything beyond the basics to make sure there’s enough to go around)
@@ -51,15 +54,15 @@ N/A
 Motivations
 -----------
 How does this project relate to the material covered in CSCB58?: 
-This project heavily relies on the information covered in lab6, VGA. 
+This project extends the functionality of the brick breaker from previous years.
 
+Original Work: https://github.com/julesyan/CSCB58-Final-Project
 
 Why is this project interesting/cool (for CSCB58 students, and for non CSCB58 students?): 
-This project attempts to translate very limited hardware interfaces into complex movements on the screen
+It's a great game just like Atari Breakout
 
 Why did you personally choose this project?: 
-We chose this project because we thought it would be nice to have a project that involves the screen. This
-project is not too ambitious to the point where completion may be difficult. But also not dead simple.
+We thought it was a great game and we wanted to add more to it and make more complex.
 
 
 Attributions
@@ -70,10 +73,12 @@ code).
 Updates
 -------
 
-<Example update. Delete this and add your own updates after each lab session>
-Week 1: We built the hardware and tested the sensors. The distance sensor we had intended to use didn't work as
-expected (wasn't precise enough at further distances, only seems to work accurately within 5-10cm), so instead
-we've decided to change the project to use a light sensor instead. Had trouble getting the FSM to work (kept
-getting stuck in state 101, took longer to debug than expected), so we may not be able to add the
-high score feature, have updated that in the project description as (optional).
+Week 1 Update: July 7th
+
+After switching plans to extend the brick breaker project from previous years, we've added moving bricks that go left and right.
+We are planning to add a HI SCORE counter too, however, we are too tired at the moment to add anything else. All programs compile file.
+Haven't yet tested. It took longer than usual to understand the code in the beginning so we couldn't make sure that we were able to add more bricks
+properly during the practical session. We worked on adding more bricks and an additional moving brick, a descending ceiling feature and WIN GAME Screen
+after the practical. The next time we have access to the board we are going to test these new features and make sure they work.
+
 
