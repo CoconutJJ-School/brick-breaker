@@ -60,6 +60,7 @@ module Proj(
 	 reg border_initing, paddle_initing, ball_initing, block_initing;
 	 reg [7:0] x, y;
 	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, mbl_1_x, mbl_1_y;
+         reg [7:0] ceil_y;
 	 reg mbl_1_xdir;
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
@@ -83,7 +84,7 @@ module Proj(
 				INIT_BLOCK_8 = 6'b001001,
 				INIT_BLOCK_9 = 6'b001001,
 				INIT_BLOCK_10 = 6'b001001,
-				INIT_MOVBLK_1 = 6'b001001,  //Remember to change all these numbers
+				INIT_MOVBLK_1 = 6'b001001, 
 
                 IDLE              = 6'b001000,
 					 ERASE_PADDLE	    = 6'b001001,
@@ -116,7 +117,14 @@ module Proj(
 				ERASE_MOVBLK_1   = 6'b100011,
 				UPDATE_MOVBLK_1  = 6'b100100,
 				DRAW_MOVBLK_1    = 6'b100101,
-            DEAD            = 6'b101010;  //remember to change
+            DEAD            = 6'b101010;  
+
+                                INIT_CEIL = 6'b101011;
+                                UPDATE_CEIL = 6'b101100;
+                                RESET_PADDLE = 6'b101101;
+                                RESET_BALL = 6'b101110;
+                                CHECK_IFWON = 6'b101111;  //state for checking if player has cleared all the blocks
+                                WON_GAME = 6'b110000;
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -125,7 +133,7 @@ module Proj(
      // GAME FSM
      always@(posedge CLOCK_50)
         begin
-			border_initing = 1'b0;  //unused
+			border_initing = 1'b0;  //unused?
 			paddle_initing = 1'b0;
 			ball_initing = 1'b0;
 			block_initing = 1'b0;
@@ -165,8 +173,12 @@ module Proj(
 						x = b_x;
 						y = b_y;
 						colour = 3'b111;
-						state = INIT_BLOCK_1;
+						state = INIT_CEIL;
 				 end
+                                 INIT_CEIL: begin
+	                                 ceil_y = 8'd0;
+	                                 state = INIT_BLOCK_1;
+	                                 end
 				 INIT_BLOCK_1: begin
 					 bl_1_x = 8'd15;
 					 bl_1_y = 8'd30;
@@ -195,7 +207,7 @@ module Proj(
 					 bl_5_x = 8'd135;
 					 bl_5_y = 8'd30;
 					 block_5_colour = 3'b010;
-						state = IDLE;  //INIT_BLOCK_6;
+						state = INIT_BLOCK_6;
 				 end
 
                 INIT_BLOCK_6: begin
@@ -259,7 +271,7 @@ module Proj(
 					state = ERASE_PADDLE;
 				 end
 				 ERASE_PADDLE: begin
-						if (draw_counter < 6'b100000) begin  //why is this 6bits????
+						if (draw_counter < 6'b100000) begin 
 						x = p_x + draw_counter[3:0];
 						y = p_y + draw_counter[4];
 						draw_counter = draw_counter + 1'b1;
@@ -303,8 +315,11 @@ module Proj(
 				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15)))
 					b_y_direction = ~b_y_direction;
 					
-					if (b_y >= 8'd120) state = DEAD;
-					else state = DRAW_BALL;
+					if (b_y >= 8'd120) begin 
+	                                        ceil_y = ceil_y + 1'b1;
+	                                        state = UPDATE_CEIL;
+	                                        end
+                                        else state = DRAW_BALL;
 				 end
 				 DRAW_BALL: begin
 					x = b_x;
@@ -313,7 +328,7 @@ module Proj(
 						state = UPDATE_BLOCK_1;
 				 end
 				 UPDATE_BLOCK_1: begin
-					if ((block_1_colour != 3'b000) && (b_y > bl_1_y - 8'd1) && (b_y < bl_1_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
+					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_1_colour = 3'b000;
 					end
@@ -322,7 +337,7 @@ module Proj(
 				 DRAW_BLOCK_1: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_1_x + draw_counter[2:0];
-						y = bl_1_y + draw_counter[3];
+						y = bl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_1_colour;
 						end
@@ -332,7 +347,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_2: begin
-					if ((block_2_colour != 3'b000) && (b_y > bl_2_y - 8'd1) && (b_y < bl_2_y + 8'd2) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
+					if ((block_2_colour != 3'b000) && (b_y > bl_2_y + ceil_y - 8'd1) && (b_y < bl_2_y + ceil_y + 8'd2) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_2_colour = 3'b000;
 					end
@@ -341,7 +356,7 @@ module Proj(
 				 DRAW_BLOCK_2: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_2_x + draw_counter[2:0];
-						y = bl_2_y + draw_counter[3];
+						y = bl_2_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_2_colour;
 						end
@@ -351,7 +366,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_3: begin
-					if ((block_3_colour != 3'b000) && (b_y > bl_3_y - 8'd1) && (b_y < bl_3_y + 8'd2) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
+					if ((block_3_colour != 3'b000) && (b_y > bl_3_y + ceil_y - 8'd1) && (b_y < bl_3_y + ceil_y + 8'd2) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_3_colour = 3'b000;
 					end
@@ -360,7 +375,7 @@ module Proj(
 				 DRAW_BLOCK_3: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_3_x + draw_counter[2:0];
-						y = bl_3_y + draw_counter[3];
+						y = bl_3_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_3_colour;
 						end
@@ -370,7 +385,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_4: begin
-					if ((block_4_colour != 3'b000) && (b_y > bl_4_y - 8'd1) && (b_y < bl_4_y + 8'd2) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
+					if ((block_4_colour != 3'b000) && (b_y > bl_4_y + ceil_y - 8'd1) && (b_y < bl_4_y + ceil_y + 8'd2) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_4_colour = 3'b000;
 					end
@@ -379,7 +394,7 @@ module Proj(
 				 DRAW_BLOCK_4: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_4_x + draw_counter[2:0];
-						y = bl_4_y + draw_counter[3];
+						y = bl_4_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_4_colour;
 						end
@@ -389,7 +404,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_5: begin
-					if ((block_5_colour != 3'b000) && (b_y > bl_5_y - 8'd1) && (b_y < bl_5_y + 8'd2) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
+					if ((block_5_colour != 3'b000) && (b_y > bl_5_y + ceil_y - 8'd1) && (b_y < bl_5_y + ceil_y + 8'd2) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_5_colour = 3'b000;
 					end
@@ -398,18 +413,18 @@ module Proj(
 				 DRAW_BLOCK_5: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_5_x + draw_counter[2:0];
-						y = bl_5_y + draw_counter[3];
+						y = bl_5_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_5_colour;
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE;  //UPDATE_BLOCK_6;
+						state = UPDATE_BLOCK_6;
 					end
 				 end
                 
 				 UPDATE_BLOCK_6: begin
-					if ((block_6_colour != 3'b000) && (b_y > bl_6_y - 8'd1) && (b_y < bl_6_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
+					if ((block_6_colour != 3'b000) && (b_y > bl_6_y + ceil_y - 8'd1) && (b_y < bl_6_y + ceil_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_6_colour = 3'b000;
 					end
@@ -418,7 +433,7 @@ module Proj(
 				 DRAW_BLOCK_6: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_6_x + draw_counter[2:0];
-						y = bl_6_y + draw_counter[3];
+						y = bl_6_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_6_colour;
 						end
@@ -429,7 +444,7 @@ module Proj(
 				 end
                 
 				 UPDATE_BLOCK_7: begin
-					if ((block_7_colour != 3'b000) && (b_y > bl_7_y - 8'd1) && (b_y < bl_7_y + 8'd2) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
+					if ((block_7_colour != 3'b000) && (b_y > bl_7_y + ceil_y - 8'd1) && (b_y < bl_7_y + ceil_y + 8'd2) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_7_colour = 3'b000;
 					end
@@ -438,7 +453,7 @@ module Proj(
 				 DRAW_BLOCK_7: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_7_x + draw_counter[2:0];
-						y = bl_7_y + draw_counter[3];
+						y = bl_7_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_7_colour;
 						end
@@ -449,7 +464,7 @@ module Proj(
 				 end
                 
 				 UPDATE_BLOCK_8: begin
-					if ((block_8_colour != 3'b000) && (b_y > bl_8_y - 8'd1) && (b_y < bl_8_y + 8'd2) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
+					if ((block_8_colour != 3'b000) && (b_y > bl_8_y + ceil_y - 8'd1) && (b_y < bl_8_y + ceil_y + 8'd2) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_8_colour = 3'b000;
 					end
@@ -458,7 +473,7 @@ module Proj(
 				 DRAW_BLOCK_8: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_8_x + draw_counter[2:0];
-						y = bl_8_y + draw_counter[3];
+						y = bl_8_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_8_colour;
 						end
@@ -469,7 +484,7 @@ module Proj(
 				 end
 
 				 UPDATE_BLOCK_9: begin
-					if ((block_9_colour != 3'b000) && (b_y > bl_9_y - 8'd1) && (b_y < bl_9_y + 8'd2) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
+					if ((block_9_colour != 3'b000) && (b_y > bl_9_y + ceil_y - 8'd1) && (b_y < bl_9_y + ceil_y + 8'd2) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_9_colour = 3'b000;
 					end
@@ -478,7 +493,7 @@ module Proj(
 				 DRAW_BLOCK_9: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_9_x + draw_counter[2:0];
-						y = bl_9_y + draw_counter[3];
+						y = bl_9_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_9_colour;
 						end
@@ -489,7 +504,7 @@ module Proj(
 				 end
 				 
                  UPDATE_BLOCK_10: begin
-					if ((block_10_colour != 3'b000) && (b_y > bl_10_y - 8'd1) && (b_y < bl_10_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
+					if ((block_10_colour != 3'b000) && (b_y > bl_10_y + ceil_y - 8'd1) && (b_y < bl_10_y + ceil_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
 					end
@@ -498,7 +513,7 @@ module Proj(
 				 DRAW_BLOCK_10: begin
 					if (draw_counter < 5'b10000) begin
 						x = bl_10_x + draw_counter[2:0];
-						y = bl_10_y + draw_counter[3];
+						y = bl_10_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_10_colour;
 						end
@@ -516,7 +531,7 @@ module Proj(
 				ERASE_MOVBLK_1: begin
 						if (draw_counter < 5'b10000) begin
 						x = mbl_1_x + draw_counter[2:0];
-						y = mbl_1_y + draw_counter[3];
+						y = mbl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						end
 					else begin
@@ -533,7 +548,7 @@ module Proj(
 						else mbl_1_x = mbl_1_x - 1'b1;  //move left
 
 						//if block gets hit
-						if ((block_10_colour != 3'b000) && (b_y > mbl_1_y - 8'd1) && (b_y < mbl_1_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
+						if ((block_10_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
 						end
@@ -544,15 +559,40 @@ module Proj(
 				 DRAW_MOVBLK_1: begin
 					if (draw_counter < 5'b10000) begin
 						x = mbl_1_x + draw_counter[2:0];
-						y = mbl_1_y + draw_counter[3];
+						y = mbl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = mblock_1_colour;
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE;
+						state = CHECK_IFWON;
 					end
 				 end
+
+                                CHECK_IFWON: begin
+                                	if ((block_1_colour == 3'b000) &&
+                                		(block_2_colour == 3'b000) &&
+		                                (block_3_colour == 3'b000) &&
+                                		(block_4_colour == 3'b000) &&
+                                		(block_5_colour == 3'b000) &&
+                                		(block_6_colour == 3'b000) &&
+                                		(block_7_colour == 3'b000) &&
+                                		(block_8_colour == 3'b000) &&
+                                		(block_9_colour == 3'b000) &&
+                                		(block_10_colour == 3'b000) &&
+                                		(mblock_1_colour == 3'b000)
+                                		) state = WON_GAME;
+                                	else state = IDLE;
+                                end
+
+                                WON_GAME: begin
+                                	if (draw_counter < 17'b10000000000000000) begin
+                                		x = draw_counter[7:0];
+		                                y = draw_counter[16:8];
+                                		draw_counter = draw_counter + 1'b1;
+                                		colour = 3'b010;
+                                	end
+                                end
 				
 
 
@@ -565,6 +605,54 @@ module Proj(
 						colour = 3'b100;
 						end
 				end
+
+
+
+                                UPDATE_CEIL: begin
+                                	ceil_y = ceil_y + 8'd10;
+
+                                	//check if blocks have reached bottom, if yes then go to dead state
+                                	// take into account anticipated ceiling position for blocks
+                                	if (((block_1_colour != 3'b000) && (bl_1_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_2_colour != 3'b000) && (bl_2_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_3_colour != 3'b000) && (bl_3_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_4_colour != 3'b000) && (bl_4_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_5_colour != 3'b000) && (bl_5_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_6_colour != 3'b000) && (bl_6_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_7_colour != 3'b000) && (bl_7_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_8_colour != 3'b000) && (bl_8_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_9_colour != 3'b000) && (bl_9_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((block_10_colour != 3'b000) && (bl_10_y + ceil_y + 8'd12 < 8'd108)) ||
+                                		((mblock_1_colour != 3'b000) && (mbl_1_y + ceil_y + 8'd12 < 8'd108))
+                                		) state = DEAD;
+
+                                	else state = RESET_PADDLE; //init ball and paddle again
+	
+                                	end
+	
+                                RESET_PADDLE: begin
+                                	if (draw_counter < 6'b10000) begin
+                                		p_x = 8'd76;
+                                		p_y = 8'd110;
+                                		x = p_x + draw_counter[3:0];
+                                		y = p_y + draw_counter[4];
+                                		draw_counter = draw_counter + 1'b1;
+                                		colour = 3'b111;
+                               		end
+                                	else begin
+                                		draw_counter= 8'b00000000;
+                                		state = RESET_BALL;
+                        		end
+                                end
+
+                                RESET_BALL: begin
+                                	b_x = 8'd80;
+                                	b_y = 8'd108;
+                                	x = b_x;
+                                	y = b_y;
+                                	colour = 3'b111;
+                                	state = UPDATE_BLOCK_1;
+                                end
 
 
          endcase
