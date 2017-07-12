@@ -74,49 +74,49 @@ module Proj(
                 INIT_BALL         = 6'b000010,
                 INIT_BLOCK_1      = 6'b000011,
 
-				INIT_BLOCK_2      = 6'b000100,
-				INIT_BLOCK_3      = 6'b000101,
+					INIT_BLOCK_2      = 6'b000100,
+					INIT_BLOCK_3      = 6'b000101,
 				INIT_BLOCK_4      = 6'b000110,
 				INIT_BLOCK_5      = 6'b000111,
-				INIT_BLOCK_6 = 6'b001001,
+				INIT_BLOCK_6 = 6'b001000,
 				INIT_BLOCK_7 = 6'b001001,
-				INIT_BLOCK_8 = 6'b001001,
-				INIT_BLOCK_9 = 6'b001001,
-				INIT_BLOCK_10 = 6'b001001,
-				INIT_MOVBLK_1 = 6'b001001,  //Remember to change all these numbers
+				INIT_BLOCK_8 = 6'b001010,
+				INIT_BLOCK_9 = 6'b001011,
+				INIT_BLOCK_10 = 6'b001100,
+				INIT_MOVBLK_1 = 6'b001101,  //Remember to change all these numbers
 
-                IDLE              = 6'b001000,
-					 ERASE_PADDLE	    = 6'b001001,
-                UPDATE_PADDLE     = 6'b001010,
-					 DRAW_PADDLE	    = 6'b001011,
-                ERASE_BALL        = 6'b001100,
+				 IDLE              = 6'b001110,
+				 ERASE_PADDLE	    = 6'b001111,
+				 UPDATE_PADDLE     = 6'b010000,
+				 DRAW_PADDLE	    = 6'b010001,
+				 ERASE_BALL        = 6'b010010,
 
-				UPDATE_BALL       = 6'b001101,
-				DRAW_BALL         = 6'b001110,
-				UPDATE_BLOCK_1    = 6'b001111,
-				DRAW_BLOCK_1      = 6'b010000,
-				UPDATE_BLOCK_2    = 6'b010001,
-		    	DRAW_BLOCK_2      = 6'b010010,
-				UPDATE_BLOCK_3    = 6'b010011,
-				DRAW_BLOCK_3      = 6'b010100,
-				UPDATE_BLOCK_4    = 6'b010101,
-				DRAW_BLOCK_4      = 6'b010110,
-				UPDATE_BLOCK_5    = 6'b010111,
-				DRAW_BLOCK_5      = 6'b011000,
-            UPDATE_BLOCK_6  = 6'b011001,
-			   DRAW_BLOCK_6    = 6'b011010,
-            UPDATE_BLOCK_7  = 6'b011011,
-			   DRAW_BLOCK_7    = 6'b011100,
-            UPDATE_BLOCK_8  = 6'b011101,
-			   DRAW_BLOCK_8    = 6'b011110,
-            UPDATE_BLOCK_9  = 6'b011111,
-            DRAW_BLOCK_9    = 6'b100000,
-            UPDATE_BLOCK_10 = 6'b100001,
-			   DRAW_BLOCK_10   = 6'b100010,
-				ERASE_MOVBLK_1   = 6'b100011,
-				UPDATE_MOVBLK_1  = 6'b100100,
-				DRAW_MOVBLK_1    = 6'b100101,
-            DEAD            = 6'b101010;  //remember to change
+				UPDATE_BALL       = 6'b010011,
+				DRAW_BALL         = 6'b010100,
+				UPDATE_BLOCK_1    = 6'b010101,
+				DRAW_BLOCK_1      = 6'b010110,
+				UPDATE_BLOCK_2    = 6'b010111,
+		    	DRAW_BLOCK_2      = 6'b011000,
+				UPDATE_BLOCK_3    = 6'b011001,
+				DRAW_BLOCK_3      = 6'b011010,
+				UPDATE_BLOCK_4    = 6'b011011,
+				DRAW_BLOCK_4      = 6'b011100,
+				UPDATE_BLOCK_5    = 6'b011101,
+				DRAW_BLOCK_5      = 6'b011110,
+            UPDATE_BLOCK_6  = 6'b011111,
+			   DRAW_BLOCK_6    = 6'b100000,
+            UPDATE_BLOCK_7  = 6'b100001,
+			   DRAW_BLOCK_7    = 6'b100010,
+            UPDATE_BLOCK_8  = 6'b100011,
+			   DRAW_BLOCK_8    = 6'b100100,
+            UPDATE_BLOCK_9  = 6'b100101,
+            DRAW_BLOCK_9    = 6'b100110,
+            UPDATE_BLOCK_10 = 6'b100111,
+			   DRAW_BLOCK_10   = 6'b101000,
+				ERASE_MOVBLK_1   = 6'b101001,
+				UPDATE_MOVBLK_1  = 6'b101010,
+				DRAW_MOVBLK_1    = 6'b101011,
+            DEAD            = 6'b101100;  //remember to change
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -195,7 +195,7 @@ module Proj(
 					 bl_5_x = 8'd135;
 					 bl_5_y = 8'd30;
 					 block_5_colour = 3'b010;
-						state = IDLE;  //INIT_BLOCK_6;
+						state = INIT_BLOCK_6;
 				 end
 
                 INIT_BLOCK_6: begin
@@ -259,7 +259,7 @@ module Proj(
 					state = ERASE_PADDLE;
 				 end
 				 ERASE_PADDLE: begin
-						if (draw_counter < 6'b100000) begin  //why is this 6bits????
+						if (draw_counter < 6'b100000) begin 
 						x = p_x + draw_counter[3:0];
 						y = p_y + draw_counter[4];
 						draw_counter = draw_counter + 1'b1;
@@ -300,14 +300,14 @@ module Proj(
 					 if ((b_x == 8'd0) || (b_x == 8'd160)) 
 					b_x_direction = ~b_x_direction;
 			
-				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15)))
-					b_y_direction = ~b_y_direction;
+					if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15)))
+						b_y_direction = ~b_y_direction;
 					
 					if (b_y >= 8'd120) state = DEAD;
 					else state = DRAW_BALL;
 				 end
 				 DRAW_BALL: begin
-					x = b_x;
+						x = b_x;
 						y = b_y;
 						colour = 3'b111;
 						state = UPDATE_BLOCK_1;
@@ -404,7 +404,7 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE;  //UPDATE_BLOCK_6;
+						state = UPDATE_BLOCK_6;
 					end
 				 end
                 
@@ -488,7 +488,7 @@ module Proj(
 					end
 				 end
 				 
-                 UPDATE_BLOCK_10: begin
+             UPDATE_BLOCK_10: begin
 					if ((block_10_colour != 3'b000) && (b_y > bl_10_y - 8'd1) && (b_y < bl_10_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
