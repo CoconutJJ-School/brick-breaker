@@ -61,6 +61,7 @@ module Proj(
 	 reg [7:0] x, y;
 	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, mbl_1_x, mbl_1_y;
     reg [7:0] ceil_y = 8'd0;
+	 reg [3:0] total_bounce = 4'd0;
 	 reg mbl_1_xdir;
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
@@ -145,6 +146,7 @@ module Proj(
 			if (~KEY[0]) begin
 				state = RESET_BLACK;
 				ceil_y = 8'd0;
+				total_bounce = 4'd0;
 			end
 			
         case (state)
@@ -308,10 +310,10 @@ module Proj(
 						state = UPDATE_BALL;
 				 end
 				UPDATE_BALL: begin
-					 if (~b_x_direction) b_x = b_x + 1'b1;
-					 else b_x = b_x - 1'b1;
-					if (b_y_direction) b_y = b_y + 1'b1;
-					 else b_y = b_y - 1'b1;
+					 if (~b_x_direction) b_x = b_x + 1'b1 + (total_bounce % 2);
+					 else b_x = b_x - 1'b1 - (total_bounce % 2);
+					if (b_y_direction) b_y = b_y + 1'b1 + (total_bounce % 2);
+					 else b_y = b_y - 1'b1 - (total_bounce % 2);
 					 if ((b_x == 8'd0) || (b_x == 8'd160)) 
 					b_x_direction = ~b_x_direction;
 			
@@ -332,6 +334,7 @@ module Proj(
 				 UPDATE_BLOCK_1: begin
 					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_1_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_1;
@@ -351,6 +354,7 @@ module Proj(
 				 UPDATE_BLOCK_2: begin
 					if ((block_2_colour != 3'b000) && (b_y > bl_2_y + ceil_y - 8'd1) && (b_y < bl_2_y + ceil_y + 8'd2) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_2_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_2;
@@ -370,6 +374,7 @@ module Proj(
 				 UPDATE_BLOCK_3: begin
 					if ((block_3_colour != 3'b000) && (b_y > bl_3_y + ceil_y - 8'd1) && (b_y < bl_3_y + ceil_y + 8'd2) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_3_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_3;
@@ -389,6 +394,7 @@ module Proj(
 				 UPDATE_BLOCK_4: begin
 					if ((block_4_colour != 3'b000) && (b_y > bl_4_y + ceil_y - 8'd1) && (b_y < bl_4_y + ceil_y + 8'd2) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_4_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_4;
@@ -397,6 +403,7 @@ module Proj(
 					if (draw_counter < 5'b10000) begin
 						x = bl_4_x + draw_counter[2:0];
 						y = bl_4_y + ceil_y + draw_counter[3];
+						total_bounce = total_bounce + 1'd1
 						draw_counter = draw_counter + 1'b1;
 						colour = block_4_colour;
 						end
@@ -408,6 +415,7 @@ module Proj(
 				 UPDATE_BLOCK_5: begin
 					if ((block_5_colour != 3'b000) && (b_y > bl_5_y + ceil_y - 8'd1) && (b_y < bl_5_y + ceil_y + 8'd2) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_5_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_5;
@@ -428,6 +436,7 @@ module Proj(
 				 UPDATE_BLOCK_6: begin
 					if ((block_6_colour != 3'b000) && (b_y > bl_6_y + ceil_y - 8'd1) && (b_y < bl_6_y + ceil_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_6_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_6;
@@ -448,6 +457,7 @@ module Proj(
 				 UPDATE_BLOCK_7: begin
 					if ((block_7_colour != 3'b000) && (b_y > bl_7_y + ceil_y - 8'd1) && (b_y < bl_7_y + ceil_y + 8'd2) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_7_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_7;
@@ -468,6 +478,7 @@ module Proj(
 				 UPDATE_BLOCK_8: begin
 					if ((block_8_colour != 3'b000) && (b_y > bl_8_y + ceil_y - 8'd1) && (b_y < bl_8_y + ceil_y + 8'd2) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_8_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_8;
@@ -488,6 +499,7 @@ module Proj(
 				 UPDATE_BLOCK_9: begin
 					if ((block_9_colour != 3'b000) && (b_y > bl_9_y + ceil_y - 8'd1) && (b_y < bl_9_y + ceil_y + 8'd2) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_9_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_9;
@@ -508,6 +520,7 @@ module Proj(
                  UPDATE_BLOCK_10: begin
 					if ((block_10_colour != 3'b000) && (b_y > bl_10_y + ceil_y - 8'd1) && (b_y < bl_10_y + ceil_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
+						total_bounce = total_bounce + 1'd1
 						block_10_colour = 3'b000;
 					end
 					state = DRAW_BLOCK_10;
