@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj
-Wed Jul 12 20:49:21 2017
+Wed Jul 12 21:48:11 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -69,16 +69,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 12 20:49:21 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 12 21:48:11 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Proj                                        ;
 ; Top-level Entity Name              ; Proj                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 882                                         ;
-;     Total combinational functions  ; 877                                         ;
-;     Dedicated logic registers      ; 188                                         ;
-; Total registers                    ; 188                                         ;
-; Total pins                         ; 58                                          ;
+; Total logic elements               ; 978                                         ;
+;     Total combinational functions  ; 973                                         ;
+;     Dedicated logic registers      ; 204                                         ;
+; Total registers                    ; 204                                         ;
+; Total pins                         ; 100                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -219,23 +219,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 882          ;
+; Estimated Total logic elements              ; 978          ;
 ;                                             ;              ;
-; Total combinational functions               ; 877          ;
+; Total combinational functions               ; 973          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 386          ;
-;     -- 3 input functions                    ; 233          ;
-;     -- <=2 input functions                  ; 258          ;
+;     -- 4 input functions                    ; 438          ;
+;     -- 3 input functions                    ; 252          ;
+;     -- <=2 input functions                  ; 283          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 567          ;
-;     -- arithmetic mode                      ; 310          ;
+;     -- normal mode                          ; 641          ;
+;     -- arithmetic mode                      ; 332          ;
 ;                                             ;              ;
-; Total registers                             ; 188          ;
-;     -- Dedicated logic registers            ; 188          ;
+; Total registers                             ; 204          ;
+;     -- Dedicated logic registers            ; 204          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 58           ;
+; I/O pins                                    ; 100          ;
 ; Total memory bits                           ; 57600        ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
@@ -244,9 +244,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 195          ;
-; Total fan-out                               ; 3532         ;
-; Average fan-out                             ; 2.97         ;
+; Maximum fan-out                             ; 217          ;
+; Total fan-out                               ; 3980         ;
+; Average fan-out                             ; 2.87         ;
 +---------------------------------------------+--------------+
 
 
@@ -255,8 +255,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Proj                                                   ; 877 (743)         ; 188 (137)    ; 57600       ; 0            ; 0       ; 0         ; 58   ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
+; |Proj                                                   ; 973 (811)         ; 204 (153)    ; 57600       ; 0            ; 0       ; 0         ; 100  ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
 ;    |clock:comb_21|                                      ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|clock:comb_21                                                                                  ; clock                  ; work         ;
+;    |hex_decoder:H0|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H0                                                                                 ; hex_decoder            ; work         ;
+;    |hex_decoder:H1|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H1                                                                                 ; hex_decoder            ; work         ;
+;    |hex_decoder:H4|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H4                                                                                 ; hex_decoder            ; work         ;
+;    |hex_decoder:H5|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H5                                                                                 ; hex_decoder            ; work         ;
 ;    |vga_adapter:VGA|                                    ; 98 (2)            ; 30 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 12 (0)            ; 4 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_60g1:auto_generated|               ; 12 (0)            ; 4 (4)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated                          ; altsyncram_60g1        ; work         ;
@@ -466,10 +470,11 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; bl_10_y[5]                              ; Stuck at VCC due to stuck port data_in ;
-; bl_10_y[4]                              ; Stuck at GND due to stuck port data_in ;
+; bl_10_y[0..2]                           ; Stuck at GND due to stuck port data_in ;
 ; bl_10_y[3]                              ; Stuck at VCC due to stuck port data_in ;
-; bl_10_y[0..2,6,7]                       ; Stuck at GND due to stuck port data_in ;
+; bl_10_y[4]                              ; Stuck at GND due to stuck port data_in ;
+; bl_10_y[5]                              ; Stuck at VCC due to stuck port data_in ;
+; bl_10_y[6,7]                            ; Stuck at GND due to stuck port data_in ;
 ; bl_10_x[0..2]                           ; Stuck at VCC due to stuck port data_in ;
 ; bl_10_x[3..6]                           ; Stuck at GND due to stuck port data_in ;
 ; bl_10_x[7]                              ; Stuck at VCC due to stuck port data_in ;
@@ -556,8 +561,8 @@ Encoding Type:  One-Hot
 ; p_y[4,7]                                ; Merged with p_y[0]                     ;
 ; p_y[2,3,5,6]                            ; Merged with p_y[1]                     ;
 ; p_y[0]                                  ; Stuck at GND due to stuck port data_in ;
-; ceil_y[0]                               ; Stuck at GND due to stuck port data_in ;
 ; p_y[1]                                  ; Stuck at VCC due to stuck port data_in ;
+; ceil_y[0]                               ; Stuck at GND due to stuck port data_in ;
 ; mblock_1_colour~5                       ; Lost fanout                            ;
 ; mblock_1_colour~6                       ; Lost fanout                            ;
 ; block_10_colour~4                       ; Lost fanout                            ;
@@ -597,8 +602,6 @@ Encoding Type:  One-Hot
 +--------------------+---------------------------+----------------------------------------+
 ; Register name      ; Reason for Removal        ; Registers Removed due to This Register ;
 +--------------------+---------------------------+----------------------------------------+
-; ceil_y[0]          ; Stuck at GND              ; p_y[1]                                 ;
-;                    ; due to stuck port data_in ;                                        ;
 ; state.RESET_PADDLE ; Stuck at GND              ; state.RESET_BALL                       ;
 ;                    ; due to stuck port data_in ;                                        ;
 +--------------------+---------------------------+----------------------------------------+
@@ -609,12 +612,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 188   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Total registers                              ; 204   ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Clock Enable       ; 47    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -624,20 +627,23 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Proj|vga_adapter:VGA|vga_controller:controller|yCounter[3]                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_y[6]                                                                                            ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Proj|mbl_1_x[1]                                                                                        ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Proj|ceil_y[4]                                                                                         ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|p_x[7]                                                                                            ;
-; 9:1                ; 18 bits   ; 108 LEs       ; 18 LEs               ; 90 LEs                 ; Yes        ; |Proj|draw_counter[15]                                                                                  ;
-; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |Proj|y[6]                                                                                              ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; Yes        ; |Proj|y[3]                                                                                              ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Proj|vga_adapter:VGA|vga_controller:controller|yCounter[4]                                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_y[2]                                                                                            ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Proj|mbl_1_x[7]                                                                                        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Proj|hi_score[6]                                                                                       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |Proj|ceil_y[3]                                                                                         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|p_x[2]                                                                                            ;
+; 9:1                ; 18 bits   ; 108 LEs       ; 18 LEs               ; 90 LEs                 ; Yes        ; |Proj|draw_counter[13]                                                                                  ;
+; 26:1               ; 8 bits    ; 136 LEs       ; 16 LEs               ; 120 LEs                ; Yes        ; |Proj|score[3]                                                                                          ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |Proj|y[5]                                                                                              ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; Yes        ; |Proj|y[2]                                                                                              ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[1] ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Proj|Selector148                                                                                       ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Proj|Selector35                                                                                        ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector78                                                                                        ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector54                                                                                        ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Proj|Selector52                                                                                        ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 8 LEs                ; 64 LEs                 ; No         ; |Proj|Add20                                                                                             ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Proj|Selector49                                                                                        ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector34                                                                                        ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |Proj|Selector79                                                                                        ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |Proj|Selector50                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -1191,26 +1197,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 58                          ;
-; cycloneiii_ff         ; 188                         ;
-;     ENA               ; 31                          ;
+; boundary_port         ; 100                         ;
+; cycloneiii_ff         ; 204                         ;
+;     ENA               ; 39                          ;
 ;     ENA SLD           ; 8                           ;
+;     SCLR SLD          ; 8                           ;
 ;     plain             ; 149                         ;
-; cycloneiii_lcell_comb ; 879                         ;
-;     arith             ; 310                         ;
-;         2 data inputs ; 153                         ;
-;         3 data inputs ; 157                         ;
-;     normal            ; 569                         ;
+; cycloneiii_lcell_comb ; 979                         ;
+;     arith             ; 332                         ;
+;         2 data inputs ; 160                         ;
+;         3 data inputs ; 172                         ;
+;     normal            ; 647                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 24                          ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 76                          ;
-;         4 data inputs ; 386                         ;
+;         1 data inputs ; 29                          ;
+;         2 data inputs ; 96                          ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 438                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.20                        ;
-; Average LUT depth     ; 5.42                        ;
+; Max LUT depth         ; 9.50                        ;
+; Average LUT depth     ; 5.50                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1219,7 +1226,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1229,12 +1236,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Jul 12 20:49:08 2017
+    Info: Processing started: Wed Jul 12 21:47:57 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj -c Proj
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 2 entities, in source file Proj.v
+Info (12021): Found 3 design units, including 3 entities, in source file Proj.v
     Info (12023): Found entity 1: Proj File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 3
-    Info (12023): Found entity 2: clock File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 670
+    Info (12023): Found entity 2: clock File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 723
+    Info (12023): Found entity 3: hex_decoder File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 742
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
     Info (12023): Found entity 1: vga_pll File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
@@ -1243,18 +1251,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
     Info (12023): Found entity 1: vga_address_translator File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
     Info (12023): Found entity 1: vga_adapter File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_adapter.v Line: 78
-Critical Warning (10846): Verilog HDL Instantiation warning at Proj.v(129): instance has no name File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 129
+Critical Warning (10846): Verilog HDL Instantiation warning at Proj.v(137): instance has no name File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 137
 Info (12127): Elaborating entity "Proj" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "border_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "paddle_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "ball_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at Proj.v(60): object "block_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 60
-Warning (10230): Verilog HDL assignment warning at Proj.v(154): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 154
-Warning (10230): Verilog HDL assignment warning at Proj.v(593): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 593
-Warning (10230): Verilog HDL assignment warning at Proj.v(605): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 605
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(66): object "border_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 66
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(66): object "paddle_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 66
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(66): object "ball_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 66
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(66): object "block_initing" assigned a value but never read File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 66
+Warning (10230): Verilog HDL assignment warning at Proj.v(191): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 191
+Warning (10230): Verilog HDL assignment warning at Proj.v(641): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 641
+Warning (10230): Verilog HDL assignment warning at Proj.v(656): truncated value with size 9 to match size of target (8) File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 656
 Warning (10034): Output port "LEDR[17..8]" at Proj.v(21) has no driver File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
 Warning (10034): Output port "LEDR[6]" at Proj.v(21) has no driver File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 53
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 59
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_adapter.v Line: 192
 Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_adapter.v Line: 213
 Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_adapter.v Line: 213
@@ -1302,7 +1310,8 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "clock" for hierarchy "clock:comb_21" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 129
+Info (12128): Elaborating entity "clock" for hierarchy "clock:comb_21" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 137
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:H0" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 145
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
@@ -1316,6 +1325,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[15]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
     Warning (13410): Pin "LEDR[16]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
     Warning (13410): Pin "LEDR[17]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 21
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 37
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
+    Warning (13410): Pin "HEX7[6]" is stuck at GND File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 38
     Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 29
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 28 registers lost all their fanouts during netlist optimizations.
@@ -1323,16 +1346,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]" File: /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v Line: 20
-Info (21057): Implemented 955 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1101 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 887 logic cells
+    Info (21059): Implemented 95 output pins
+    Info (21061): Implemented 991 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 1288 megabytes
-    Info: Processing ended: Wed Jul 12 20:49:21 2017
-    Info: Elapsed time: 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 1289 megabytes
+    Info: Processing ended: Wed Jul 12 21:48:11 2017
+    Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:24
 
 

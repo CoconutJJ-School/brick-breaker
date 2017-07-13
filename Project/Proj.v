@@ -4,7 +4,7 @@ module Proj(
 		CLOCK_50,						//	On Board 50 MHz
 		// Your inputs and outputs here
         KEY,
-		  LEDR,
+		  LEDR, HEX0, HEX1, HEX4, HEX5, HEX6, HEX7,
 		// The ports below are for the VGA output.  Do not change.
 		VGA_CLK,   						//	VGA Clock
 		VGA_HS,							//	VGA H_SYNC
@@ -30,6 +30,12 @@ module Proj(
 	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
 	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
+	output [6:0] HEX0;
+	output [6:0] HEX1;
+	output [6:0] HEX4;
+	output [6:0] HEX5;
+	output [6:0] HEX6;
+	output [6:0] HEX7;
     
 
 	// Create an Instance of a VGA controller - there can be only one!
@@ -61,6 +67,8 @@ module Proj(
 	 reg [7:0] x, y;
 	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, mbl_1_x, mbl_1_y;
     reg [7:0] ceil_y = 8'd0;
+	 reg [7:0] score = 8'd0;
+	 reg [7:0] hi_score = 8'd0;
 	 reg mbl_1_xdir;
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
@@ -129,6 +137,34 @@ module Proj(
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
      assign LEDR[7] = ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd8));
+	  
+	  //current scores
+	  hex_decoder H0(
+        .hex_digit(score[3:0]), 
+        .segments(HEX0)
+        );
+        
+     hex_decoder H1(
+        .hex_digit(score[7:4]), 
+        .segments(HEX1)
+        );
+		  
+		
+		//hi score
+		//show hi
+		assign HEX7[6:0] = 7'b0001001;
+		assign HEX6[6:0] = 7'b1001111;
+		//show hi score
+		hex_decoder H4(
+        .hex_digit(hi_score[3:0]), 
+        .segments(HEX4)
+        );
+        
+     hex_decoder H5(
+        .hex_digit(hi_score[7:4]), 
+        .segments(HEX5)
+        );
+
 	 
 	 
      // GAME FSM
@@ -145,6 +181,7 @@ module Proj(
 			if (~KEY[0]) begin
 				state = RESET_BLACK;
 				ceil_y = 8'd0;
+				score = 8'd0;
 			end
 			
         case (state)
@@ -333,6 +370,7 @@ module Proj(
 					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_1_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_1;
 				 end
@@ -352,6 +390,7 @@ module Proj(
 					if ((block_2_colour != 3'b000) && (b_y > bl_2_y + ceil_y - 8'd1) && (b_y < bl_2_y + ceil_y + 8'd2) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_2_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_2;
 				 end
@@ -371,6 +410,7 @@ module Proj(
 					if ((block_3_colour != 3'b000) && (b_y > bl_3_y + ceil_y - 8'd1) && (b_y < bl_3_y + ceil_y + 8'd2) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_3_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_3;
 				 end
@@ -390,6 +430,7 @@ module Proj(
 					if ((block_4_colour != 3'b000) && (b_y > bl_4_y + ceil_y - 8'd1) && (b_y < bl_4_y + ceil_y + 8'd2) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_4_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_4;
 				 end
@@ -409,6 +450,7 @@ module Proj(
 					if ((block_5_colour != 3'b000) && (b_y > bl_5_y + ceil_y - 8'd1) && (b_y < bl_5_y + ceil_y + 8'd2) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_5_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_5;
 				 end
@@ -429,6 +471,7 @@ module Proj(
 					if ((block_6_colour != 3'b000) && (b_y > bl_6_y + ceil_y - 8'd1) && (b_y < bl_6_y + ceil_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_6_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_6;
 				 end
@@ -449,6 +492,7 @@ module Proj(
 					if ((block_7_colour != 3'b000) && (b_y > bl_7_y + ceil_y - 8'd1) && (b_y < bl_7_y + ceil_y + 8'd2) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_7_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_7;
 				 end
@@ -469,6 +513,7 @@ module Proj(
 					if ((block_8_colour != 3'b000) && (b_y > bl_8_y + ceil_y - 8'd1) && (b_y < bl_8_y + ceil_y + 8'd2) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_8_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_8;
 				 end
@@ -489,6 +534,7 @@ module Proj(
 					if ((block_9_colour != 3'b000) && (b_y > bl_9_y + ceil_y - 8'd1) && (b_y < bl_9_y + ceil_y + 8'd2) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_9_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_9;
 				 end
@@ -509,6 +555,7 @@ module Proj(
 					if ((block_10_colour != 3'b000) && (b_y > bl_10_y + ceil_y - 8'd1) && (b_y < bl_10_y + ceil_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
+						score = score + 8'd1;
 					end
 					state = DRAW_BLOCK_10;
 				 end
@@ -553,6 +600,7 @@ module Proj(
 						if ((block_10_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
+						score = score + 8'd5;
 						end
 
 						state = DRAW_MOVBLK_1;
@@ -594,6 +642,9 @@ module Proj(
                                 		draw_counter = draw_counter + 1'b1;
                                 		colour = 3'b010;
                                 	end
+											ceil_y = 8'd0;
+											if (hi_score < score) hi_score = score;
+											score = 8'd0;
                                 end
 				
 
@@ -606,6 +657,8 @@ module Proj(
 						draw_counter = draw_counter + 1'b1;
 						colour = 3'b100;
 						ceil_y = 8'd0;
+						if (hi_score < score) hi_score = score;
+						score = 8'd0;
 						end
 				end
 
@@ -683,4 +736,33 @@ reg frame;
     end
 	 assign clk = frame;
 endmodule
+
+
+
+module hex_decoder(hex_digit, segments);
+    input [3:0] hex_digit;
+    output reg [6:0] segments;
+   
+    always @(*)
+        case (hex_digit)
+            4'h0: segments = 7'b100_0000;
+            4'h1: segments = 7'b111_1001;
+            4'h2: segments = 7'b010_0100;
+            4'h3: segments = 7'b011_0000;
+            4'h4: segments = 7'b001_1001;
+            4'h5: segments = 7'b001_0010;
+            4'h6: segments = 7'b000_0010;
+            4'h7: segments = 7'b111_1000;
+            4'h8: segments = 7'b000_0000;
+            4'h9: segments = 7'b001_1000;
+            4'hA: segments = 7'b000_1000;
+            4'hB: segments = 7'b000_0011;
+            4'hC: segments = 7'b100_0110;
+            4'hD: segments = 7'b010_0001;
+            4'hE: segments = 7'b000_0110;
+            4'hF: segments = 7'b000_1110;   
+            default: segments = 7'h7f;
+        endcase
+endmodule
+
 

@@ -58,6 +58,14 @@ KEY[0] => ceil_y.OUTPUTSELECT
 KEY[0] => ceil_y.OUTPUTSELECT
 KEY[0] => ceil_y.OUTPUTSELECT
 KEY[0] => ceil_y.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
+KEY[0] => score.OUTPUTSELECT
 KEY[1] => always0.IN1
 KEY[2] => always0.IN1
 KEY[3] => ~NO_FANOUT~
@@ -79,6 +87,48 @@ LEDR[14] <= <GND>
 LEDR[15] <= <GND>
 LEDR[16] <= <GND>
 LEDR[17] <= <GND>
+HEX0[0] <= hex_decoder:H0.segments[0]
+HEX0[1] <= hex_decoder:H0.segments[1]
+HEX0[2] <= hex_decoder:H0.segments[2]
+HEX0[3] <= hex_decoder:H0.segments[3]
+HEX0[4] <= hex_decoder:H0.segments[4]
+HEX0[5] <= hex_decoder:H0.segments[5]
+HEX0[6] <= hex_decoder:H0.segments[6]
+HEX1[0] <= hex_decoder:H1.segments[0]
+HEX1[1] <= hex_decoder:H1.segments[1]
+HEX1[2] <= hex_decoder:H1.segments[2]
+HEX1[3] <= hex_decoder:H1.segments[3]
+HEX1[4] <= hex_decoder:H1.segments[4]
+HEX1[5] <= hex_decoder:H1.segments[5]
+HEX1[6] <= hex_decoder:H1.segments[6]
+HEX4[0] <= hex_decoder:H4.segments[0]
+HEX4[1] <= hex_decoder:H4.segments[1]
+HEX4[2] <= hex_decoder:H4.segments[2]
+HEX4[3] <= hex_decoder:H4.segments[3]
+HEX4[4] <= hex_decoder:H4.segments[4]
+HEX4[5] <= hex_decoder:H4.segments[5]
+HEX4[6] <= hex_decoder:H4.segments[6]
+HEX5[0] <= hex_decoder:H5.segments[0]
+HEX5[1] <= hex_decoder:H5.segments[1]
+HEX5[2] <= hex_decoder:H5.segments[2]
+HEX5[3] <= hex_decoder:H5.segments[3]
+HEX5[4] <= hex_decoder:H5.segments[4]
+HEX5[5] <= hex_decoder:H5.segments[5]
+HEX5[6] <= hex_decoder:H5.segments[6]
+HEX6[0] <= <VCC>
+HEX6[1] <= <VCC>
+HEX6[2] <= <VCC>
+HEX6[3] <= <VCC>
+HEX6[4] <= <GND>
+HEX6[5] <= <GND>
+HEX6[6] <= <VCC>
+HEX7[0] <= <VCC>
+HEX7[1] <= <GND>
+HEX7[2] <= <GND>
+HEX7[3] <= <VCC>
+HEX7[4] <= <GND>
+HEX7[5] <= <GND>
+HEX7[6] <= <GND>
 VGA_CLK <= vga_adapter:VGA.VGA_CLK
 VGA_HS <= vga_adapter:VGA.VGA_HS
 VGA_VS <= vga_adapter:VGA.VGA_VS
@@ -886,5 +936,61 @@ clock => frame_counter[17].CLK
 clock => frame_counter[18].CLK
 clock => frame_counter[19].CLK
 clk <= frame.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Proj|hex_decoder:H0
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Proj|hex_decoder:H1
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Proj|hex_decoder:H4
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Proj|hex_decoder:H5
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
