@@ -129,10 +129,9 @@ module Proj(
 
             INIT_CEIL = 6'b101101,
             UPDATE_CEIL = 6'b101110,
-            RESET_PADDLE = 6'b101111,
-            RESET_BALL = 6'b110000,
-            CHECK_IFWON = 6'b110001,  //state for checking if player has cleared all the blocks
-            WON_GAME = 6'b110010;
+
+            CHECK_IFWON = 6'b101111,  //state for checking if player has cleared all the blocks
+            WON_GAME = 6'b110000;
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -308,64 +307,9 @@ module Proj(
 
 				 IDLE: begin
 				 if (frame)
-					state = ERASE_PADDLE;
+					state = UPDATE_BLOCK_1;
 				 end
-				 ERASE_PADDLE: begin
-						if (draw_counter < 6'b100000) begin 
-						x = p_x + draw_counter[3:0];
-						y = p_y + draw_counter[4];
-						draw_counter = draw_counter + 1'b1;
-						end
-					else begin
-						draw_counter= 8'b00000000;
-						state = UPDATE_PADDLE;
-					end
-				 end
-				 UPDATE_PADDLE: begin
-						if (~KEY[1] && p_x < 8'd144) p_x = p_x + 1'b1; //right
-						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;  //left
-						state = DRAW_PADDLE;
-						
-				 end
-				 DRAW_PADDLE: begin
-					if (draw_counter < 6'b100000) begin
-						x = p_x + draw_counter[3:0];
-						y = p_y + draw_counter[4];
-						draw_counter = draw_counter + 1'b1;
-						colour = 3'b111;
-						end
-					else begin
-						draw_counter= 8'b00000000;
-						state = ERASE_BALL;
-					end
-				 end
-				 ERASE_BALL: begin
-					x = b_x;
-						y = b_y;
-						state = UPDATE_BALL;
-				 end
-				UPDATE_BALL: begin
-					 if (~b_x_direction) b_x = b_x + 1'b1;
-					 else b_x = b_x - 1'b1;
-					if (b_y_direction) b_y = b_y + 1'b1;
-					 else b_y = b_y - 1'b1;
-					 if ((b_x == 8'd0) || (b_x == 8'd160)) 
-					b_x_direction = ~b_x_direction;
-			
-				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15)))
-					b_y_direction = ~b_y_direction;
-					
-					if (b_y >= 8'd120) begin 
-	               state = UPDATE_CEIL;
-	            end
-               else state = DRAW_BALL;
-				 end
-				 DRAW_BALL: begin
-					x = b_x;
-						y = b_y;
-						colour = 3'b111;
-						state = UPDATE_BLOCK_1;
-				 end
+				 
 				 UPDATE_BLOCK_1: begin
 					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
@@ -615,8 +559,66 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = CHECK_IFWON;
+						state = ERASE_PADDLE;
 					end
+				 end
+
+				ERASE_PADDLE: begin
+						if (draw_counter < 6'b100000) begin 
+						x = p_x + draw_counter[3:0];
+						y = p_y + draw_counter[4];
+						draw_counter = draw_counter + 1'b1;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = UPDATE_PADDLE;
+					end
+				 end
+				 UPDATE_PADDLE: begin
+						if (~KEY[1] && p_x < 8'd144) p_x = p_x + 1'b1; //right
+						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;  //left
+						state = DRAW_PADDLE;
+						
+				 end
+				 DRAW_PADDLE: begin
+					if (draw_counter < 6'b100000) begin
+						x = p_x + draw_counter[3:0];
+						y = p_y + draw_counter[4];
+						draw_counter = draw_counter + 1'b1;
+						colour = 3'b111;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = ERASE_BALL;
+					end
+				 end
+				 ERASE_BALL: begin
+					x = b_x;
+						y = b_y;
+						state = UPDATE_BALL;
+				 end
+				UPDATE_BALL: begin
+					 if (~b_x_direction) b_x = b_x + 1'b1;
+					 else b_x = b_x - 1'b1;
+					if (b_y_direction) b_y = b_y + 1'b1;
+					 else b_y = b_y - 1'b1;
+					 if ((b_x == 8'd0) || (b_x == 8'd160)) 
+					b_x_direction = ~b_x_direction;
+			
+				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15))) begin
+					b_y_direction = ~b_y_direction;
+					end
+					
+					if (b_y >= 8'd120) begin 
+	               state = UPDATE_CEIL;
+	            end
+               else state = DRAW_BALL;
+				 end
+				 DRAW_BALL: begin
+					x = b_x;
+						y = b_y;
+						colour = 3'b111;
+						state = CHECK_IFWON;
 				 end
 
                                 CHECK_IFWON: begin
@@ -666,7 +668,7 @@ module Proj(
 
                                 
 										  UPDATE_CEIL: begin
-                                	ceil_y = ceil_y + 8'd10;
+                                	ceil_y = ceil_y + 8'd7;
 
                                 	//check if blocks have reached bottom, if yes then go to dead state
                                 	// take into account anticipated ceiling position for blocks
@@ -688,30 +690,31 @@ module Proj(
                                 	end
 	
                                 
-										  
-										  RESET_PADDLE: begin
-                                	if (draw_counter < 6'b10000) begin
-                                		p_x = 8'd76;
-                                		p_y = 8'd110;
-                                		x = p_x + draw_counter[3:0];
-                                		y = p_y + draw_counter[4];
-                                		draw_counter = draw_counter + 1'b1;
-                                		colour = 3'b111;
-                               		end
-                                	else begin
-                                		draw_counter= 8'b00000000;
-                                		state = RESET_BALL;
-                        		end
-                                end
+										  /* unused old code
+									  RESET_PADDLE: begin
+                            	if (draw_counter < 6'b10000) begin
+                            		p_x = 8'd76;
+                            		p_y = 8'd110;
+                            		x = p_x + draw_counter[3:0];
+                            		y = p_y + draw_counter[4];
+                            		draw_counter = draw_counter + 1'b1;
+                            		colour = 3'b111;
+                           		end
+                            	else begin
+                            		draw_counter= 8'b00000000;
+                            		state = RESET_BALL;
+                    		end
+                            end
 
-                                RESET_BALL: begin
-                                	b_x = 8'd80;
-                                	b_y = 8'd108;
-                                	x = b_x;
-                                	y = b_y;
-                                	colour = 3'b111;
-                                	state = UPDATE_BLOCK_1;
-                                end
+                            RESET_BALL: begin
+                            	b_x = 8'd80;
+                            	b_y = 8'd108;
+                            	x = b_x;
+                            	y = b_y;
+                            	colour = 3'b111;
+                            	state = UPDATE_BLOCK_1;
+                            end
+							*/
 										  
 										  
 
