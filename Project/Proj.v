@@ -75,7 +75,7 @@ module Proj(
 	 reg [17:0] draw_counter;
 	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, mblock_1_colour;
 	 wire frame;
-	 
+	 reg wall_count = 1'b0;
 	 assign LEDR[5:0] = state;
 	 
 	 localparam  RESET_BLACK       = 6'b000000,
@@ -598,15 +598,30 @@ module Proj(
 						state = UPDATE_BALL;
 				 end
 				UPDATE_BALL: begin
-					 if (~b_x_direction) b_x = b_x + 1'b1;
-					 else b_x = b_x - 1'b1;
-					if (b_y_direction) b_y = b_y + 1'b1;
+									
+										 
+					if (~b_x_direction) begin
+						if (wall_count == 0 && b_y % 2 == 0) b_x = b_x + 1'b1;  //attempt to vary ball speed/angle
+						end
+					 else begin
+						if (wall_count == 0 && b_y % 2 == 0) b_x = b_x - 1'b1;
+						end
+
+					
+					 if (b_y_direction) b_y = b_y + 1'b1;
 					 else b_y = b_y - 1'b1;
-					 if ((b_x == 8'd0) || (b_x == 8'd160)) 
+					 
+					if ((b_x == 8'd0) || (b_x == 8'd160)) begin
 					b_x_direction = ~b_x_direction;
+					wall_count = wall_count + 1'b1;
+					end
 			
 				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15))) begin
 					b_y_direction = ~b_y_direction;
+
+					//vary direction of the ball
+					if ((p_y % 1'd2) == 1'd0) b_x_direction = ~b_x_direction;
+
 					end
 					
 					if (b_y >= 8'd120) begin 
