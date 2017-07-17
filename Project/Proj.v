@@ -76,6 +76,14 @@ module Proj(
 	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour, mblock_1_colour, mblock_2_colour;
 	 wire frame;
 	 reg wall_count = 1'b0;
+	 /* 
+	 power 1 is raise ceiling,
+	 2 is shorten paddle,
+	 3 is normal paddle,
+	 4 is lengthen paddle
+	 */
+	 reg power_1, power_2, power_3, power_4;
+	 reg [6:0] p_length;
 	 assign LEDR[5:0] = state;
 	 
 	 localparam  RESET_BLACK       = 6'b000000,
@@ -218,9 +226,13 @@ module Proj(
 			y = 8'b00000000;
 			
 			if (~KEY[0]) begin
-				state = RESET_BLACK;
 				ceil_y = 8'd0;
 				score = 8'd0;
+				power_1 = 0;
+				power_2 = 0;
+				power_3 = 0;
+				power_4 = 0;
+				state = RESET_BLACK;
 			end
 			
         case (state)
@@ -236,6 +248,7 @@ module Proj(
 			end
 		  end
     			 INIT_PADDLE: begin
+    			 	 p_length = 7'b0010000; //reset paddle length to 16
 					 if (draw_counter < 6'b10000) begin
 					 p_x = 8'd76;
 					 p_y = 8'd110;
@@ -437,6 +450,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_1_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_1;
 				 end
@@ -457,6 +473,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_2_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_2;
 				 end
@@ -477,6 +496,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_3_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_3;
 				 end
@@ -497,6 +519,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_4_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_4;
 				 end
@@ -517,6 +542,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_5_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_5;
 				 end
@@ -538,6 +566,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_6_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_6;
 				 end
@@ -559,6 +590,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_7_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b1;
+						power_3 = 1'b0;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_7;
 				 end
@@ -580,6 +614,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_8_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_8;
 				 end
@@ -601,6 +638,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_9_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_9;
 				 end
@@ -622,6 +662,9 @@ module Proj(
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
 						score = score + 8'd1;
+						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
 					end
 					state = DRAW_BLOCK_10;
 				 end
@@ -637,98 +680,113 @@ module Proj(
 						state = UPDATE_BLOCK_11;
 					end
 				 end
-UPDATE_BLOCK_11: begin
-  if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd2) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
- b_y_direction = ~b_y_direction;
- block_11_colour = 3'b000;
- score = score + 8'd1;
- end
- state = DRAW_BLOCK_11;
- end
-  DRAW_BLOCK_11: begin
-if (draw_counter < 5'b10000) begin
- x = bl_11_x + draw_counter[2:0];
- y = bl_11_y + ceil_y + draw_counter[3];
- draw_counter = draw_counter + 1'b1;
- colour = block_11_colour;
- end
- else begin
- draw_counter= 8'b00000000;
- state = UPDATE_BLOCK_12;
- end
- end
+				UPDATE_BLOCK_11: begin
+  					if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd2) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
+ 						b_y_direction = ~b_y_direction;
+ 						block_11_colour = 3'b000;
+ 						score = score + 8'd1;
+ 						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
+ 					end
+ 					state = DRAW_BLOCK_11;
+ 				end
+  				DRAW_BLOCK_11: begin
+					if (draw_counter < 5'b10000) begin
+						x = bl_11_x + draw_counter[2:0];
+ 						y = bl_11_y + ceil_y + draw_counter[3];
+ 						draw_counter = draw_counter + 1'b1;
+ 						colour = block_11_colour;
+ 					end
+ 					else begin
+ 						draw_counter= 8'b00000000;
+ 						state = UPDATE_BLOCK_12;
+ 					end
+ 				end
  
-UPDATE_BLOCK_12: begin
-  if ((block_12_colour != 3'b000) && (b_y > bl_12_y + ceil_y - 8'd1) && (b_y < bl_12_y + ceil_y + 8'd2) && (b_x >= bl_12_x) && (b_x <= bl_12_x + 8'd7)) begin
- b_y_direction = ~b_y_direction;
- block_12_colour = 3'b000;
- score = score + 8'd1;
- end
- state = DRAW_BLOCK_12;
- end
-  DRAW_BLOCK_12: begin
-if (draw_counter < 5'b10000) begin
- x = bl_12_x + draw_counter[2:0];
- y = bl_12_y + ceil_y + draw_counter[3];
- draw_counter = draw_counter + 1'b1;
- colour = block_12_colour;
- end
- else begin
- draw_counter= 8'b00000000;
- state = UPDATE_BLOCK_13;
- end
- end
+				UPDATE_BLOCK_12: begin
+  					if ((block_12_colour != 3'b000) && (b_y > bl_12_y + ceil_y - 8'd1) && (b_y < bl_12_y + ceil_y + 8'd2) && (b_x >= bl_12_x) && (b_x <= bl_12_x + 8'd7)) begin
+ 						b_y_direction = ~b_y_direction;
+ 						block_12_colour = 3'b000;
+ 						score = score + 8'd1;
+ 						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
+ 					end
+ 					state = DRAW_BLOCK_12;
+ 				end
+  				DRAW_BLOCK_12: begin
+					if (draw_counter < 5'b10000) begin
+ 						x = bl_12_x + draw_counter[2:0];
+ 						y = bl_12_y + ceil_y + draw_counter[3];
+ 						draw_counter = draw_counter + 1'b1;
+ 						colour = block_12_colour;
+ 					end
+ 					else begin
+ 						draw_counter= 8'b00000000;
+ 						state = UPDATE_BLOCK_13;
+ 					end
+ 				end
  
-UPDATE_BLOCK_13: begin
-  if ((block_13_colour != 3'b000) && (b_y > bl_13_y + ceil_y - 8'd1) && (b_y < bl_13_y + ceil_y + 8'd2) && (b_x >= bl_13_x) && (b_x <= bl_13_x + 8'd7)) begin
- b_y_direction = ~b_y_direction;
- block_13_colour = 3'b000;
- score = score + 8'd1;
- end
- state = DRAW_BLOCK_13;
- end
-  DRAW_BLOCK_13: begin
-if (draw_counter < 5'b10000) begin
- x = bl_13_x + draw_counter[2:0];
- y = bl_13_y + ceil_y + draw_counter[3];
- draw_counter = draw_counter + 1'b1;
- colour = block_13_colour;
- end
- else begin
- draw_counter= 8'b00000000;
- state = UPDATE_BLOCK_14;
- end
- end
+				UPDATE_BLOCK_13: begin
+  					if ((block_13_colour != 3'b000) && (b_y > bl_13_y + ceil_y - 8'd1) && (b_y < bl_13_y + ceil_y + 8'd2) && (b_x >= bl_13_x) && (b_x <= bl_13_x + 8'd7)) begin
+ 						b_y_direction = ~b_y_direction;
+ 						block_13_colour = 3'b000;
+ 						score = score + 8'd1;
+ 						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
+ 					end
+ 					state = DRAW_BLOCK_13;
+ 				end
+  				DRAW_BLOCK_13: begin
+					if (draw_counter < 5'b10000) begin
+ 						x = bl_13_x + draw_counter[2:0];
+ 						y = bl_13_y + ceil_y + draw_counter[3];
+ 						draw_counter = draw_counter + 1'b1;
+ 						colour = block_13_colour;
+ 					end
+ 					else begin
+ 						draw_counter= 8'b00000000;
+ 						state = UPDATE_BLOCK_14;
+ 					end
+ 				end
  
-UPDATE_BLOCK_14: begin
-  if ((block_14_colour != 3'b000) && (b_y > bl_14_y + ceil_y - 8'd1) && (b_y < bl_14_y + ceil_y + 8'd2) && (b_x >= bl_14_x) && (b_x <= bl_14_x + 8'd7)) begin
- b_y_direction = ~b_y_direction;
- block_14_colour = 3'b000;
- score = score + 8'd1;
- end
- state = DRAW_BLOCK_14;
- end
-  DRAW_BLOCK_14: begin
-if (draw_counter < 5'b10000) begin
- x = bl_14_x + draw_counter[2:0];
- y = bl_14_y + ceil_y + draw_counter[3];
- draw_counter = draw_counter + 1'b1;
- colour = block_14_colour;
- end
- else begin
- draw_counter= 8'b00000000;
- state = UPDATE_BLOCK_15;
- end
- end
+				UPDATE_BLOCK_14: begin
+  					if ((block_14_colour != 3'b000) && (b_y > bl_14_y + ceil_y - 8'd1) && (b_y < bl_14_y + ceil_y + 8'd2) && (b_x >= bl_14_x) && (b_x <= bl_14_x + 8'd7)) begin
+ 						b_y_direction = ~b_y_direction;
+ 						block_14_colour = 3'b000;
+ 						score = score + 8'd1;
+ 						power_2 = 1'b0;
+						power_3 = 1'b1;
+						power_4 = 1'b0;
+ 					end
+ 					state = DRAW_BLOCK_14;
+ 				end
+  				DRAW_BLOCK_14: begin
+					if (draw_counter < 5'b10000) begin
+ 						x = bl_14_x + draw_counter[2:0];
+ 						y = bl_14_y + ceil_y + draw_counter[3];
+ 						draw_counter = draw_counter + 1'b1;
+ 						colour = block_14_colour;
+ 					end
+ 					else begin
+ 						draw_counter= 8'b00000000;
+ 						state = UPDATE_BLOCK_15;
+ 					end
+ 				end
  
-UPDATE_BLOCK_15: begin
-  if ((block_15_colour != 3'b000) && (b_y > bl_15_y + ceil_y - 8'd1) && (b_y < bl_15_y + ceil_y + 8'd2) && (b_x >= bl_15_x) && (b_x <= bl_15_x + 8'd7)) begin
- b_y_direction = ~b_y_direction;
- block_15_colour = 3'b000;
- score = score + 8'd1;
- end
- state = DRAW_BLOCK_15;
- end
+				UPDATE_BLOCK_15: begin
+  					if ((block_15_colour != 3'b000) && (b_y > bl_15_y + ceil_y - 8'd1) && (b_y < bl_15_y + ceil_y + 8'd2) && (b_x >= bl_15_x) && (b_x <= bl_15_x + 8'd7)) begin
+ 						b_y_direction = ~b_y_direction;
+ 						block_15_colour = 3'b000;
+ 						score = score + 8'd1;
+ 						power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
+ 					end
+ 					state = DRAW_BLOCK_15;
+ 				end
   DRAW_BLOCK_15: begin
 if (draw_counter < 5'b10000) begin
  x = bl_15_x + draw_counter[2:0];
@@ -747,6 +805,9 @@ UPDATE_BLOCK_16: begin
  b_y_direction = ~b_y_direction;
  block_16_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_16;
  end
@@ -768,6 +829,9 @@ UPDATE_BLOCK_17: begin
  b_y_direction = ~b_y_direction;
  block_17_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_17;
  end
@@ -789,6 +853,9 @@ UPDATE_BLOCK_18: begin
  b_y_direction = ~b_y_direction;
  block_18_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_18;
  end
@@ -810,6 +877,9 @@ UPDATE_BLOCK_19: begin
  b_y_direction = ~b_y_direction;
  block_19_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_19;
  end
@@ -831,6 +901,9 @@ UPDATE_BLOCK_20: begin
  b_y_direction = ~b_y_direction;
  block_20_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_20;
  end
@@ -852,6 +925,9 @@ UPDATE_BLOCK_21: begin
  b_y_direction = ~b_y_direction;
  block_21_colour = 3'b000;
  score = score + 8'd1;
+ power_2 = 1'b0;
+						power_3 = 1'b0;
+						power_4 = 1'b1;
  end
  state = DRAW_BLOCK_21;
  end
@@ -956,9 +1032,9 @@ if (draw_counter < 5'b10000) begin
 				 end
 
 				ERASE_PADDLE: begin
-						if (draw_counter < 6'b100000) begin 
-						x = p_x + draw_counter[3:0];
-						y = p_y + draw_counter[4];
+						if (draw_counter < 7'b1000000) begin 
+						x = p_x + draw_counter[4:0];
+						y = p_y + draw_counter[5];
 						draw_counter = draw_counter + 1'b1;
 						end
 					else begin
@@ -967,15 +1043,33 @@ if (draw_counter < 5'b10000) begin
 					end
 				 end
 				 UPDATE_PADDLE: begin
-						if (~KEY[1] && p_x < 8'd144) p_x = p_x + 1'b1; //right
+				 		if (power_2) p_length = 7'b0001000; //8
+				 		else if (power_3) p_length = 7'b0010000; //16
+				 		else if (power_4) p_length = 7'b0100000; //32
+				 
+						if (~KEY[1] && p_x < 8'd160 - p_length) p_x = p_x + 1'b1; //right
 						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;  //left
 						state = DRAW_PADDLE;
 						
 				 end
 				 DRAW_PADDLE: begin
-					if (draw_counter < 6'b100000) begin
+					if (draw_counter < (p_length + p_length)) begin
+						//if length is 8
+						if (p_length == 7'b0001000) begin
+						x = p_x + draw_counter[2:0];
+						y = p_y + draw_counter[3];
+						end
+						//if length is 16
+						else if (p_length == 7'b0010000) begin
 						x = p_x + draw_counter[3:0];
 						y = p_y + draw_counter[4];
+						end
+						//if length is 32
+						else if (p_length == 7'b0100000) begin
+						x = p_x + draw_counter[4:0];
+						y = p_y + draw_counter[5];
+						end
+						
 						draw_counter = draw_counter + 1'b1;
 						colour = 3'b111;
 						end
@@ -984,6 +1078,7 @@ if (draw_counter < 5'b10000) begin
 						state = ERASE_BALL;
 					end
 				 end
+				 
 				 ERASE_BALL: begin
 					x = b_x;
 						y = b_y;
