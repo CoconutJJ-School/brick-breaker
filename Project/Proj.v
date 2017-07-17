@@ -65,15 +65,15 @@ module Proj(
 	 reg [5:0] state;
 	 reg border_initing, paddle_initing, ball_initing, block_initing;
 	 reg [7:0] x, y;
-	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, mbl_1_x, mbl_1_y;
+	 reg [7:0] p_x, p_y, b_x, b_y, bl_1_x, bl_1_y, bl_2_x, bl_2_y, bl_3_x, bl_3_y, bl_4_x, bl_4_y, bl_5_x, bl_5_y, bl_6_x, bl_6_y, bl_7_x, bl_7_y, bl_8_x, bl_8_y, bl_9_x, bl_9_y, bl_10_x, bl_10_y, bl_11_x, bl_11_y, bl_12_x, bl_12_y, bl_13_x, bl_13_y, bl_14_x, bl_14_y, bl_15_x, bl_15_y, bl_16_x, bl_16_y, bl_17_x, bl_17_y, bl_18_x, bl_18_y, bl_19_x, bl_19_y, bl_20_x, bl_20_y, bl_21_x, bl_21_y, mbl_1_x, mbl_1_y, mbl_2_x, mbl_2_y;
     reg [7:0] ceil_y = 8'd0;
 	 reg [7:0] score = 8'd0;
 	 reg [7:0] hi_score = 8'd0;
-	 reg mbl_1_xdir;
+	 reg mbl_1_xdir, mbl_2_xdir;
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
 	 reg [17:0] draw_counter;
-	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, mblock_1_colour;
+	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour, mblock_1_colour, mblock_2_colour;
 	 wire frame;
 	 reg wall_count = 1'b0;
 	 assign LEDR[5:0] = state;
@@ -131,7 +131,47 @@ module Proj(
             UPDATE_CEIL = 6'b101110,
 
             CHECK_IFWON = 6'b101111,  //state for checking if player has cleared all the blocks
-            WON_GAME = 6'b110000;
+            WON_GAME = 6'b110000,
+            
+            INIT_BLOCK_11 = 6'b110001,
+            INIT_BLOCK_12 = 6'b110010,
+            INIT_BLOCK_13 = 6'b110011,
+            INIT_BLOCK_14 = 6'b110100,
+            INIT_BLOCK_15 = 6'b110101,
+            INIT_BLOCK_16 = 6'b110110,
+            INIT_BLOCK_17 = 6'b110111,
+            INIT_BLOCK_18 = 6'b111000,
+            INIT_BLOCK_19 = 6'b111001,
+            INIT_BLOCK_20 = 6'b111010,
+            INIT_BLOCK_21 = 6'b111011,
+            INIT_MOVBLK_2 = 6'b111100,
+            ERASE_MOVBLK_2   = 6'b111101,
+			UPDATE_MOVBLK_2  = 6'b111110,
+			DRAW_MOVBLK_2    = 6'b111111,
+			
+			UPDATE_BLOCK_11    = 6'b010101,
+			DRAW_BLOCK_11      = 6'b010110,
+			UPDATE_BLOCK_12    = 6'b010101,
+			DRAW_BLOCK_12      = 6'b010110,
+			UPDATE_BLOCK_13    = 6'b010101,
+			DRAW_BLOCK_13      = 6'b010110,
+			UPDATE_BLOCK_14    = 6'b010101,
+			DRAW_BLOCK_14      = 6'b010110,
+			UPDATE_BLOCK_15    = 6'b010101,
+			DRAW_BLOCK_15      = 6'b010110,
+			UPDATE_BLOCK_16    = 6'b010101,
+			DRAW_BLOCK_16      = 6'b010110,
+			UPDATE_BLOCK_17    = 6'b010101,
+			DRAW_BLOCK_17      = 6'b010110,
+			UPDATE_BLOCK_18    = 6'b010101,
+			DRAW_BLOCK_18      = 6'b010110,
+			UPDATE_BLOCK_19    = 6'b010101,
+			DRAW_BLOCK_19      = 6'b010110,
+			UPDATE_BLOCK_20    = 6'b010101,
+			DRAW_BLOCK_20      = 6'b010110,
+			UPDATE_BLOCK_21    = 6'b010101,
+			DRAW_BLOCK_21      = 6'b010110;
+			
 
 	 clock(.clock(CLOCK_50), .clk(frame));
 	 
@@ -362,6 +402,22 @@ module Proj(
 						mblock_1_colour = 3'b101;
 						colour = mblock_1_colour;
 						mbl_1_xdir = 1'b1;  //this means move right first
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = INIT_MOVBLK_2;
+					end
+				 end
+				 INIT_MOVBLK_2: begin
+					 if (draw_counter < 5'b10000) begin
+					 mbl_2_x = 8'd76;
+					 mbl_2_y = 8'd15;
+						x = mbl_2_x + draw_counter[2:0];
+						y = mbl_2_y + draw_counter[3];
+						draw_counter = draw_counter + 1'b1;
+						mblock_2_colour = 3'b101;
+						colour = mblock_2_colour;
+						mbl_2_xdir = 1'b1;  //this means move right first
 						end
 					else begin
 						draw_counter= 8'b00000000;
@@ -622,6 +678,48 @@ module Proj(
 						y = mbl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						colour = mblock_1_colour;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = ERASE_MOVBLK_2;
+					end
+				 end
+				 
+				 ERASE_MOVBLK_2: begin
+						if (draw_counter < 5'b10000) begin
+						x = mbl_2_x + draw_counter[2:0];
+						y = mbl_2_y + ceil_y + draw_counter[3];
+						draw_counter = draw_counter + 1'b1;
+						end
+					else begin
+						draw_counter= 8'b00000000;
+						state = UPDATE_MOVBLK_2;
+					end
+				 end
+				 UPDATE_MOVBLK_2: begin
+						//change directions
+						if (mbl_2_x == 8'd152) mbl_2_xdir = ~mbl_2_xdir;
+						if (mbl_2_x == 8'd0) mbl_2_xdir = ~mbl_2_xdir;
+
+						if (mbl_2_xdir) mbl_2_x = mbl_2_x - 1'b1; //move left
+						else mbl_2_x = mbl_2_x + 1'b1;  //move right
+
+						//if block gets hit
+						if ((block_10_colour != 3'b000) && (b_y > mbl_2_y + ceil_y - 8'd1) && (b_y < mbl_2_y + ceil_y + 8'd2) && (b_x >= mbl_2_x) && (b_x <= mbl_2_x + 8'd7)) begin
+						b_y_direction = ~b_y_direction;  
+						mblock_2_colour = 3'b000;
+						score = score + 8'd5;
+						end
+
+						state = DRAW_MOVBLK_2;
+						
+				 end
+				 DRAW_MOVBLK_2: begin
+					if (draw_counter < 5'b10000) begin
+						x = mbl_2_x + draw_counter[2:0];
+						y = mbl_2_y + ceil_y + draw_counter[3];
+						draw_counter = draw_counter + 1'b1;
+						colour = mblock_2_colour;
 						end
 					else begin
 						draw_counter= 8'b00000000;
