@@ -940,7 +940,7 @@ if (draw_counter < 5'b10000) begin
  end
  else begin
  draw_counter= 8'b00000000;
- state = UPDATE_BLOCK_22;
+ state = ERASE_MOVBLK_1;
  end
  end
            
@@ -971,6 +971,11 @@ if (draw_counter < 5'b10000) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
 						score = score + 8'd5;
+						//powerup 1
+						if (ceil_y >= 8'd7) begin 
+							ceil_y = ceil_y - 8'd14;
+							state = UPDATE_CEIL;
+							end
 						end
 
 						state = DRAW_MOVBLK_1;
@@ -1013,6 +1018,11 @@ if (draw_counter < 5'b10000) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_2_colour = 3'b000;
 						score = score + 8'd5;
+						//powerup 1
+						if (ceil_y >= 8'd7) begin 
+							ceil_y = ceil_y - 8'd14;
+							state = UPDATE_CEIL;
+							end
 						end
 
 						state = DRAW_MOVBLK_2;
@@ -1144,7 +1154,8 @@ if (draw_counter < 5'b10000) begin
                                         (block_19_colour == 3'b000) &&
                                         (block_20_colour == 3'b000) &&
                                         (block_21_colour == 3'b000) &&
-                                		(mblock_1_colour == 3'b000)
+                                		(mblock_1_colour == 3'b000) &&
+                                		(mblock_2_colour == 3'b000)
                                 		) state = WON_GAME;
                                 	else state = IDLE;
                                 end
@@ -1194,39 +1205,24 @@ if (draw_counter < 5'b10000) begin
                                 		((block_8_colour != 3'b000) && (bl_8_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((block_9_colour != 3'b000) && (bl_9_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((block_10_colour != 3'b000) && (bl_10_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((mblock_1_colour != 3'b000) && (mbl_1_y + ceil_y + 8'd2 > 8'd108))
+                                		((block_11_colour != 3'b000) && (bl_11_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_12_colour != 3'b000) && (bl_12_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_13_colour != 3'b000) && (bl_13_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_14_colour != 3'b000) && (bl_14_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_15_colour != 3'b000) && (bl_15_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_16_colour != 3'b000) && (bl_16_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_17_colour != 3'b000) && (bl_17_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_18_colour != 3'b000) && (bl_18_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_19_colour != 3'b000) && (bl_19_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_20_colour != 3'b000) && (bl_20_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((block_21_colour != 3'b000) && (bl_21_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((mblock_1_colour != 3'b000) && (mbl_1_y + ceil_y + 8'd2 > 8'd108)) ||
+                                		((mblock_2_colour != 3'b000) && (mbl_2_y + ceil_y + 8'd2 > 8'd108))
                                 		) state = DEAD;
 
                                 	else state = RESET_BLACK; //init ball and paddle again
 	
                                 	end
-	
-                                
-										  /* unused old code
-									  RESET_PADDLE: begin
-                            	if (draw_counter < 6'b10000) begin
-                            		p_x = 8'd76;
-                            		p_y = 8'd110;
-                            		x = p_x + draw_counter[3:0];
-                            		y = p_y + draw_counter[4];
-                            		draw_counter = draw_counter + 1'b1;
-                            		colour = 3'b111;
-                           		end
-                            	else begin
-                            		draw_counter= 8'b00000000;
-                            		state = RESET_BALL;
-                    		end
-                            end
-
-                            RESET_BALL: begin
-                            	b_x = 8'd80;
-                            	b_y = 8'd108;
-                            	x = b_x;
-                            	y = b_y;
-                            	colour = 3'b111;
-                            	state = UPDATE_BLOCK_1;
-                            end
-							*/
 										  
 										  
 
