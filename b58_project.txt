@@ -41,7 +41,7 @@ Make sure our code actually works for moving the ceiling down and the moving bri
 Get started on implementing the score system
 
 What do you plan to have completed by the end of the third lab session?:
-Make sure score system works and add Power UPS! Add more balls
+Make sure score system works and add Power UPS! Add more balls (perhaps)
 
 What is your backup plan if things don’t work out as planned?
 Scrap all the stuff that doesn't work. If the ceiling implementation doesn't work, make it constantly move down
@@ -81,4 +81,8 @@ Haven't yet tested. It took longer than usual to understand the code in the begi
 properly during the practical session. We worked on adding more bricks and an additional moving brick, a descending ceiling feature and WIN GAME Screen
 after the practical. The next time we have access to the board we are going to test these new features and make sure they work.
 
+
+Week 2 Update: July 16th
+
+Added and fully tested hi score counter on the hex display, and previous descending bricks, win game screen, additional bricks and moving brick. During the previous practical, we found some bugs in the game where the ball would pass right through the moving brick and the deleted bricks would colour black over the paddle when it reaches the bottom. After the practical, we tried to fix these bugs, but have yet to test them out. We also added more bricks with different colours and another moving brick, while implementing a powerups feature for each kind of brick. We have not yet tested the powerups.
 
