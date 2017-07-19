@@ -541,7 +541,7 @@ module Proj(
 						else mbl_1_x = mbl_1_x - 1'b1;  //move left
 
 						//if block gets hit
-						if ((block_10_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
+						if ((mblock_1_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
 						score = score + 8'd5;
@@ -601,23 +601,28 @@ module Proj(
 									
 										 
 					if (~b_x_direction) begin
-						if (wall_count == 0 && b_y % 2 == 0) b_x = b_x + 1'b1;  //attempt to vary ball speed/angle
+						//if (wall_count == 0 && b_y % 2 == 0) //attempt to vary ball speed/angle
+							b_x = b_x + 1'b1;  
 						end
 					 else begin
-						if (wall_count == 0 && b_y % 2 == 0) b_x = b_x - 1'b1;
+						//if (wall_count == 0 && b_y % 2 == 0) 
+							b_x = b_x - 1'b1;
 						end
 
 					
 					 if (b_y_direction) b_y = b_y + 1'b1;
 					 else b_y = b_y - 1'b1;
 					 
-					if ((b_x == 8'd0) || (b_x == 8'd160)) begin
+					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
 					b_x_direction = ~b_x_direction;
-					wall_count = wall_count + 1'b1;
+					//wall_count = wall_count + 1'b1;
 					end
-			
+				
+				//check if ball hits paddleor the top of screen
 				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15))) begin
 					b_y_direction = ~b_y_direction;
+					
+					//check
 
 					//vary direction of the ball
 					if ((p_y % 1'd2) == 1'd0) b_x_direction = ~b_x_direction;
@@ -703,36 +708,7 @@ module Proj(
                                 	else state = RESET_BLACK; //init ball and paddle again
 	
                                 	end
-	
-                                
-										  /* unused old code
-									  RESET_PADDLE: begin
-                            	if (draw_counter < 6'b10000) begin
-                            		p_x = 8'd76;
-                            		p_y = 8'd110;
-                            		x = p_x + draw_counter[3:0];
-                            		y = p_y + draw_counter[4];
-                            		draw_counter = draw_counter + 1'b1;
-                            		colour = 3'b111;
-                           		end
-                            	else begin
-                            		draw_counter= 8'b00000000;
-                            		state = RESET_BALL;
-                    		end
-                            end
-
-                            RESET_BALL: begin
-                            	b_x = 8'd80;
-                            	b_y = 8'd108;
-                            	x = b_x;
-                            	y = b_y;
-                            	colour = 3'b111;
-                            	state = UPDATE_BLOCK_1;
-                            end
-							*/
 										  
-										  
-
 
          endcase
     end

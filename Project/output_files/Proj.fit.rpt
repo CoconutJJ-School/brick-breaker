@@ -1,5 +1,5 @@
 Fitter report for Proj
-Sun Jul 16 18:32:16 2017
+Tue Jul 18 19:58:26 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -70,15 +70,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Jul 16 18:32:16 2017       ;
+; Fitter Status                      ; Successful - Tue Jul 18 19:58:26 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Proj                                        ;
 ; Top-level Entity Name              ; Proj                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,026 / 114,480 ( < 1 % )                   ;
-;     Total combinational functions  ; 1,015 / 114,480 ( < 1 % )                   ;
+; Total logic elements               ; 1,021 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 1,009 / 114,480 ( < 1 % )                   ;
 ;     Dedicated logic registers      ; 205 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 205                                         ;
 ; Total pins                         ; 100 / 529 ( 19 % )                          ;
@@ -719,8 +719,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1442 ) ; 0.00 % ( 0 / 1442 )        ; 0.00 % ( 0 / 1442 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1442 ) ; 0.00 % ( 0 / 1442 )        ; 0.00 % ( 0 / 1442 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1436 ) ; 0.00 % ( 0 / 1436 )        ; 0.00 % ( 0 / 1436 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1436 ) ; 0.00 % ( 0 / 1436 )        ; 0.00 % ( 0 / 1436 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -743,7 +743,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1430 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1424 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 12 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -759,26 +759,26 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 +---------------------------------------------+----------------------------+
 ; Resource                                    ; Usage                      ;
 +---------------------------------------------+----------------------------+
-; Total logic elements                        ; 1,026 / 114,480 ( < 1 % )  ;
-;     -- Combinational with no register       ; 821                        ;
-;     -- Register only                        ; 11                         ;
-;     -- Combinational with a register        ; 194                        ;
+; Total logic elements                        ; 1,021 / 114,480 ( < 1 % )  ;
+;     -- Combinational with no register       ; 816                        ;
+;     -- Register only                        ; 12                         ;
+;     -- Combinational with a register        ; 193                        ;
 ;                                             ;                            ;
 ; Logic element usage by number of LUT inputs ;                            ;
 ;     -- 4 input functions                    ; 414                        ;
-;     -- 3 input functions                    ; 273                        ;
-;     -- <=2 input functions                  ; 328                        ;
-;     -- Register only                        ; 11                         ;
+;     -- 3 input functions                    ; 266                        ;
+;     -- <=2 input functions                  ; 329                        ;
+;     -- Register only                        ; 12                         ;
 ;                                             ;                            ;
 ; Logic elements by mode                      ;                            ;
-;     -- normal mode                          ; 652                        ;
+;     -- normal mode                          ; 646                        ;
 ;     -- arithmetic mode                      ; 363                        ;
 ;                                             ;                            ;
 ; Total registers*                            ; 205 / 117,053 ( < 1 % )    ;
 ;     -- Dedicated logic registers            ; 205 / 114,480 ( < 1 % )    ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )          ;
 ;                                             ;                            ;
-; Total LABs:  partially or completely used   ; 79 / 7,155 ( 1 % )         ;
+; Total LABs:  partially or completely used   ; 74 / 7,155 ( 1 % )         ;
 ; Virtual pins                                ; 0                          ;
 ; I/O pins                                    ; 100 / 529 ( 19 % )         ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )             ;
@@ -797,11 +797,11 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
 ; Average interconnect usage (total/H/V)      ; 0.4% / 0.4% / 0.4%         ;
-; Peak interconnect usage (total/H/V)         ; 5.6% / 5.8% / 5.2%         ;
-; Maximum fan-out                             ; 218                        ;
-; Highest non-global fan-out                  ; 218                        ;
-; Total fan-out                               ; 4021                       ;
-; Average fan-out                             ; 2.78                       ;
+; Peak interconnect usage (total/H/V)         ; 12.2% / 11.6% / 13.1%      ;
+; Maximum fan-out                             ; 224                        ;
+; Highest non-global fan-out                  ; 224                        ;
+; Total fan-out                               ; 4005                       ;
+; Average fan-out                             ; 2.77                       ;
 +---------------------------------------------+----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -814,26 +814,26 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 +---------------------------------------------+-------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                     ; Low                            ;
 ;                                             ;                         ;                                ;
-; Total logic elements                        ; 1026 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 821                     ; 0                              ;
-;     -- Register only                        ; 11                      ; 0                              ;
-;     -- Combinational with a register        ; 194                     ; 0                              ;
+; Total logic elements                        ; 1021 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 816                     ; 0                              ;
+;     -- Register only                        ; 12                      ; 0                              ;
+;     -- Combinational with a register        ; 193                     ; 0                              ;
 ;                                             ;                         ;                                ;
 ; Logic element usage by number of LUT inputs ;                         ;                                ;
 ;     -- 4 input functions                    ; 414                     ; 0                              ;
-;     -- 3 input functions                    ; 273                     ; 0                              ;
-;     -- <=2 input functions                  ; 328                     ; 0                              ;
-;     -- Register only                        ; 11                      ; 0                              ;
+;     -- 3 input functions                    ; 266                     ; 0                              ;
+;     -- <=2 input functions                  ; 329                     ; 0                              ;
+;     -- Register only                        ; 12                      ; 0                              ;
 ;                                             ;                         ;                                ;
 ; Logic elements by mode                      ;                         ;                                ;
-;     -- normal mode                          ; 652                     ; 0                              ;
+;     -- normal mode                          ; 646                     ; 0                              ;
 ;     -- arithmetic mode                      ; 363                     ; 0                              ;
 ;                                             ;                         ;                                ;
 ; Total registers                             ; 205                     ; 0                              ;
 ;     -- Dedicated logic registers            ; 205 / 114480 ( < 1 % )  ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                       ; 0                              ;
 ;                                             ;                         ;                                ;
-; Total LABs:  partially or completely used   ; 79 / 7155 ( 1 % )       ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 74 / 7155 ( 1 % )       ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                         ;                                ;
 ; Virtual pins                                ; 0                       ; 0                              ;
 ; I/O pins                                    ; 100                     ; 0                              ;
@@ -851,8 +851,8 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ;     -- Registered Output Connections        ; 0                       ; 0                              ;
 ;                                             ;                         ;                                ;
 ; Internal Connections                        ;                         ;                                ;
-;     -- Total Connections                    ; 4022                    ; 47                             ;
-;     -- Registered Connections               ; 1323                    ; 0                              ;
+;     -- Total Connections                    ; 4006                    ; 47                             ;
+;     -- Registered Connections               ; 1307                    ; 0                              ;
 ;                                             ;                         ;                                ;
 ; External Connections                        ;                         ;                                ;
 ;     -- Top                                  ; 0                       ; 40                             ;
@@ -885,7 +885,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; CLOCK_50 ; Y2    ; 2        ; 0            ; 36           ; 14           ; 184                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 218                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; KEY[0]   ; M23   ; 6        ; 115          ; 40           ; 7            ; 224                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; KEY[1]   ; M21   ; 6        ; 115          ; 53           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; KEY[2]   ; N21   ; 6        ; 115          ; 42           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; KEY[3]   ; R24   ; 5        ; 115          ; 35           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -966,7 +966,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; VGA_B[5]    ; C12   ; 8        ; 52           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_B[6]    ; D11   ; 8        ; 23           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_B[7]    ; D12   ; 8        ; 52           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; VGA_B[8]    ; B7    ; 8        ; 29           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; VGA_B[8]    ; E10   ; 8        ; 18           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; VGA_B[9]    ; A7    ; 8        ; 29           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; VGA_CLK     ; A12   ; 8        ; 47           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_G[0]    ; G8    ; 8        ; 11           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -978,7 +978,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; VGA_G[6]    ; F10   ; 8        ; 20           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_G[7]    ; C9    ; 8        ; 23           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_G[8]    ; E8    ; 8        ; 11           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; VGA_G[9]    ; E10   ; 8        ; 18           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; VGA_G[9]    ; C7    ; 8        ; 16           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; VGA_HS      ; G13   ; 8        ; 38           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_R[0]    ; E12   ; 8        ; 33           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_R[1]    ; E11   ; 8        ; 31           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -988,8 +988,8 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; VGA_R[5]    ; J12   ; 8        ; 40           ; 73           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_R[6]    ; H8    ; 8        ; 11           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_R[7]    ; H10   ; 8        ; 20           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; VGA_R[8]    ; A6    ; 8        ; 27           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; VGA_R[9]    ; H13   ; 8        ; 38           ; 73           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; VGA_R[8]    ; D7    ; 8        ; 13           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; VGA_R[9]    ; A4    ; 8        ; 7            ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; VGA_SYNC_N  ; C10   ; 8        ; 35           ; 73           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; VGA_VS      ; C13   ; 8        ; 54           ; 73           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
@@ -1020,11 +1020,11 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; A10      ; DIFFIO_T23n, PADD18                      ; Use as regular IO        ; VGA_B[1]                ; Dual Purpose Pin          ;
 ; B10      ; DIFFIO_T23p, DATA4                       ; Use as regular IO        ; VGA_B[0]                ; Dual Purpose Pin          ;
 ; G13      ; DIFFIO_T22n, PADD19                      ; Use as regular IO        ; VGA_HS                  ; Dual Purpose Pin          ;
-; H13      ; DIFFIO_T22p, DATA15                      ; Use as regular IO        ; VGA_R[9]                ; Dual Purpose Pin          ;
 ; E12      ; DIFFIO_T20n, DATA14, DQS3T/CQ3T#,DPCLK11 ; Use as regular IO        ; VGA_R[0]                ; Dual Purpose Pin          ;
 ; F12      ; DIFFIO_T20p, DATA13                      ; Use as regular IO        ; VGA_R[3]                ; Dual Purpose Pin          ;
-; B7       ; DIFFIO_T18p, DATA5                       ; Use as regular IO        ; VGA_B[8]                ; Dual Purpose Pin          ;
 ; C11      ; DIFFIO_T15n, DATA7                       ; Use as regular IO        ; VGA_B[2]                ; Dual Purpose Pin          ;
+; C7       ; DIFFIO_T9n, DATA10                       ; Use as regular IO        ; VGA_G[9]                ; Dual Purpose Pin          ;
+; D7       ; DIFFIO_T9p, DATA11                       ; Use as regular IO        ; VGA_R[8]                ; Dual Purpose Pin          ;
 +----------+------------------------------------------+--------------------------+-------------------------+---------------------------+
 
 
@@ -1051,9 +1051,9 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 +----------+------------+----------+-----------------------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; A2       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A3       ; 535        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A4       ; 532        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A4       ; 532        ; 8        ; VGA_R[9]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A5       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; A6       ; 504        ; 8        ; VGA_R[8]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A6       ; 504        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A7       ; 501        ; 8        ; VGA_B[9]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A8       ; 517        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1303,7 +1303,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; B4       ; 533        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B6       ; 505        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; B7       ; 502        ; 8        ; VGA_B[8]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B7       ; 502        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B8       ; 518        ; 8        ; VGA_G[5]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B9       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B10      ; 492        ; 8        ; VGA_B[0]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -1331,7 +1331,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; C4       ; 539        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C5       ; 538        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C6       ; 536        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C7       ; 521        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; C7       ; 521        ; 8        ; VGA_G[9]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C8       ; 519        ; 8        ; VGA_G[4]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C9       ; 510        ; 8        ; VGA_G[7]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C10      ; 495        ; 8        ; VGA_SYNC_N                                                ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -1359,7 +1359,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; D4       ; 540        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D5       ; 537        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D6       ; 524        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D7       ; 522        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; D7       ; 522        ; 8        ; VGA_R[8]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D8       ; 520        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D9       ; 511        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D10      ; 496        ; 8        ; VGA_R[2]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -1390,7 +1390,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; E7       ; 523        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E8       ; 526        ; 8        ; VGA_G[8]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; E10      ; 516        ; 8        ; VGA_G[9]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E10      ; 516        ; 8        ; VGA_B[8]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E11      ; 499        ; 8        ; VGA_R[1]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; E12      ; 497        ; 8        ; VGA_R[0]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; E13      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1477,7 +1477,7 @@ The pin-out file can be found in /courses/courses/cscb58s17/limcryst/PROJ/Projec
 ; H10      ; 514        ; 8        ; VGA_R[7]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; H11      ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; H12      ; 507        ; 8        ; VGA_G[3]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
-; H13      ; 494        ; 8        ; VGA_R[9]                                                  ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; H13      ; 494        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H14      ; 480        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H15      ; 464        ; 7        ; LEDR[17]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; H16      ; 459        ; 7        ; LEDR[11]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -1888,8 +1888,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                  ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Proj                                                   ; 1026 (856)  ; 205 (154)                 ; 0 (0)         ; 57600       ; 8    ; 0            ; 0       ; 0         ; 100  ; 0            ; 821 (702)    ; 11 (3)            ; 194 (151)        ; |Proj                                                                                                ; Proj                   ; work         ;
-;    |clock:comb_21|                                      ; 37 (37)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 1 (1)             ; 20 (20)          ; |Proj|clock:comb_21                                                                                  ; clock                  ; work         ;
+; |Proj                                                   ; 1021 (851)  ; 205 (154)                 ; 0 (0)         ; 57600       ; 8    ; 0            ; 0       ; 0         ; 100  ; 0            ; 816 (697)    ; 12 (5)            ; 193 (150)        ; |Proj                                                                                                ; Proj                   ; work         ;
+;    |clock:comb_21|                                      ; 37 (37)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 21 (21)          ; |Proj|clock:comb_21                                                                                  ; clock                  ; work         ;
 ;    |hex_decoder:H0|                                     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Proj|hex_decoder:H0                                                                                 ; hex_decoder            ; work         ;
 ;    |hex_decoder:H1|                                     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Proj|hex_decoder:H1                                                                                 ; hex_decoder            ; work         ;
 ;    |hex_decoder:H4|                                     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Proj|hex_decoder:H4                                                                                 ; hex_decoder            ; work         ;
@@ -2024,14 +2024,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+-------------------+---------+
 ; KEY[3]                    ;                   ;         ;
 ; KEY[0]                    ;                   ;         ;
-;      - Add87~0            ; 1                 ; 6       ;
-;      - Add87~4            ; 1                 ; 6       ;
-;      - Add87~6            ; 1                 ; 6       ;
-;      - Add87~8            ; 1                 ; 6       ;
-;      - Add87~10           ; 1                 ; 6       ;
-;      - Add87~12           ; 1                 ; 6       ;
-;      - Add87~14           ; 1                 ; 6       ;
-;      - Add87~2            ; 1                 ; 6       ;
+;      - Add86~0            ; 1                 ; 6       ;
+;      - Add86~4            ; 1                 ; 6       ;
+;      - Add86~6            ; 1                 ; 6       ;
+;      - Add86~8            ; 1                 ; 6       ;
+;      - Add86~10           ; 1                 ; 6       ;
+;      - Add86~12           ; 1                 ; 6       ;
+;      - Add86~14           ; 1                 ; 6       ;
+;      - Add86~2            ; 1                 ; 6       ;
 ;      - Add73~14           ; 1                 ; 6       ;
 ;      - Add63~8            ; 1                 ; 6       ;
 ;      - Add33~12           ; 1                 ; 6       ;
@@ -2066,96 +2066,100 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - state~62           ; 1                 ; 6       ;
 ;      - state~63           ; 1                 ; 6       ;
 ;      - state~64           ; 1                 ; 6       ;
-;      - Selector80~0       ; 1                 ; 6       ;
-;      - Selector35~2       ; 1                 ; 6       ;
 ;      - state~65           ; 1                 ; 6       ;
-;      - Selector34~0       ; 1                 ; 6       ;
+;      - Selector49~1       ; 1                 ; 6       ;
+;      - Selector80~0       ; 1                 ; 6       ;
+;      - Selector35~6       ; 1                 ; 6       ;
 ;      - state~66           ; 1                 ; 6       ;
+;      - Selector34~0       ; 1                 ; 6       ;
 ;      - state~67           ; 1                 ; 6       ;
 ;      - state~68           ; 1                 ; 6       ;
 ;      - state~69           ; 1                 ; 6       ;
 ;      - state~70           ; 1                 ; 6       ;
 ;      - state~71           ; 1                 ; 6       ;
 ;      - state~72           ; 1                 ; 6       ;
+;      - Selector39~2       ; 1                 ; 6       ;
 ;      - Selector43~0       ; 1                 ; 6       ;
 ;      - Selector47~2       ; 1                 ; 6       ;
 ;      - state~73           ; 1                 ; 6       ;
+;      - score[7]~22        ; 1                 ; 6       ;
 ;      - WideOr52~0         ; 1                 ; 6       ;
 ;      - Selector34~1       ; 1                 ; 6       ;
-;      - Selector34~2       ; 1                 ; 6       ;
 ;      - state~74           ; 1                 ; 6       ;
 ;      - WideOr50~0         ; 1                 ; 6       ;
 ;      - state~75           ; 1                 ; 6       ;
-;      - p_x[7]~8           ; 1                 ; 6       ;
+;      - p_x[0]~8           ; 1                 ; 6       ;
 ;      - WideOr46~2         ; 1                 ; 6       ;
 ;      - WideOr53~0         ; 1                 ; 6       ;
 ;      - WideOr53~1         ; 1                 ; 6       ;
-;      - Selector34~5       ; 1                 ; 6       ;
-;      - Selector34~6       ; 1                 ; 6       ;
 ;      - state~76           ; 1                 ; 6       ;
+;      - Selector34~4       ; 1                 ; 6       ;
+;      - Selector34~5       ; 1                 ; 6       ;
 ;      - state~77           ; 1                 ; 6       ;
 ;      - state~78           ; 1                 ; 6       ;
+;      - state~79           ; 1                 ; 6       ;
 ;      - Selector1~2        ; 1                 ; 6       ;
 ;      - Selector2~4        ; 1                 ; 6       ;
 ;      - Selector4~0        ; 1                 ; 6       ;
 ;      - Selector6~2        ; 1                 ; 6       ;
 ;      - Selector2~5        ; 1                 ; 6       ;
 ;      - Selector3~3        ; 1                 ; 6       ;
-;      - Selector35~5       ; 1                 ; 6       ;
-;      - Selector35~6       ; 1                 ; 6       ;
+;      - Selector35~9       ; 1                 ; 6       ;
+;      - Selector35~10      ; 1                 ; 6       ;
 ;      - Selector53~0       ; 1                 ; 6       ;
-;      - state~79           ; 1                 ; 6       ;
 ;      - state~80           ; 1                 ; 6       ;
 ;      - state~81           ; 1                 ; 6       ;
 ;      - state~82           ; 1                 ; 6       ;
+;      - state~83           ; 1                 ; 6       ;
 ;      - Selector74~2       ; 1                 ; 6       ;
 ;      - ceil_y~0           ; 1                 ; 6       ;
 ;      - ceil_y~1           ; 1                 ; 6       ;
 ;      - Selector38~0       ; 1                 ; 6       ;
 ;      - Selector42~0       ; 1                 ; 6       ;
 ;      - Selector46~0       ; 1                 ; 6       ;
-;      - state~83           ; 1                 ; 6       ;
+;      - state~84           ; 1                 ; 6       ;
 ;      - Selector52~1       ; 1                 ; 6       ;
 ;      - Selector52~2       ; 1                 ; 6       ;
 ;      - Selector52~3       ; 1                 ; 6       ;
 ;      - Selector50~0       ; 1                 ; 6       ;
-;      - state~84           ; 1                 ; 6       ;
 ;      - state~85           ; 1                 ; 6       ;
 ;      - state~86           ; 1                 ; 6       ;
-;      - Selector40~0       ; 1                 ; 6       ;
 ;      - state~87           ; 1                 ; 6       ;
-;      - Selector72~2       ; 1                 ; 6       ;
 ;      - state~88           ; 1                 ; 6       ;
+;      - Selector72~2       ; 1                 ; 6       ;
 ;      - state~89           ; 1                 ; 6       ;
 ;      - state~90           ; 1                 ; 6       ;
-;      - Selector52~6       ; 1                 ; 6       ;
 ;      - state~91           ; 1                 ; 6       ;
+;      - Selector52~6       ; 1                 ; 6       ;
+;      - state~92           ; 1                 ; 6       ;
 ;      - ceil_y~2           ; 1                 ; 6       ;
-;      - Selector140~2      ; 1                 ; 6       ;
-;      - Selector140~3      ; 1                 ; 6       ;
-;      - y[5]~16            ; 1                 ; 6       ;
-;      - WideOr53~3         ; 1                 ; 6       ;
-;      - WideOr51~0         ; 1                 ; 6       ;
-;      - WideOr58~0         ; 1                 ; 6       ;
 ;      - ceil_y~3           ; 1                 ; 6       ;
 ;      - ceil_y~4           ; 1                 ; 6       ;
 ;      - ceil_y~5           ; 1                 ; 6       ;
+;      - Selector140~10     ; 1                 ; 6       ;
+;      - Selector140~15     ; 1                 ; 6       ;
+;      - Selector140~16     ; 1                 ; 6       ;
+;      - y[6]~16            ; 1                 ; 6       ;
+;      - WideOr53~3         ; 1                 ; 6       ;
+;      - WideOr51~0         ; 1                 ; 6       ;
+;      - WideOr58~0         ; 1                 ; 6       ;
 ;      - Add11~1            ; 1                 ; 6       ;
-;      - score~30           ; 1                 ; 6       ;
+;      - score~25           ; 1                 ; 6       ;
 ;      - Selector81~2       ; 1                 ; 6       ;
-;      - score[1]~32        ; 1                 ; 6       ;
-;      - score[1]~33        ; 1                 ; 6       ;
-;      - score[1]~38        ; 1                 ; 6       ;
+;      - score[7]~27        ; 1                 ; 6       ;
+;      - score[7]~29        ; 1                 ; 6       ;
+;      - score[7]~33        ; 1                 ; 6       ;
+;      - score[7]~34        ; 1                 ; 6       ;
 ;      - Add11~2            ; 1                 ; 6       ;
-;      - score~50           ; 1                 ; 6       ;
+;      - score~42           ; 1                 ; 6       ;
 ;      - Add11~3            ; 1                 ; 6       ;
-;      - score~53           ; 1                 ; 6       ;
-;      - score~56           ; 1                 ; 6       ;
-;      - score~59           ; 1                 ; 6       ;
-;      - score~62           ; 1                 ; 6       ;
-;      - score~65           ; 1                 ; 6       ;
-;      - score~68           ; 1                 ; 6       ;
-;      - draw_counter[10]~1 ; 1                 ; 6       ;
+;      - score~45           ; 1                 ; 6       ;
+;      - score~48           ; 1                 ; 6       ;
+;      - score~51           ; 1                 ; 6       ;
+;      - score~54           ; 1                 ; 6       ;
+;      - score~57           ; 1                 ; 6       ;
+;      - score~60           ; 1                 ; 6       ;
+;      - draw_counter[13]~1 ; 1                 ; 6       ;
 ;      - Selector149~1      ; 1                 ; 6       ;
 ;      - Selector149~2      ; 1                 ; 6       ;
 ;      - WideOr54~4         ; 1                 ; 6       ;
@@ -2163,11 +2167,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector128~0      ; 1                 ; 6       ;
 ;      - Selector128~1      ; 1                 ; 6       ;
 ;      - Selector128~2      ; 1                 ; 6       ;
-;      - state~92           ; 1                 ; 6       ;
+;      - state~93           ; 1                 ; 6       ;
 ;      - y~17               ; 1                 ; 6       ;
-;      - y[5]~18            ; 1                 ; 6       ;
-;      - y[5]~19            ; 1                 ; 6       ;
-;      - y[5]~20            ; 1                 ; 6       ;
+;      - y[6]~18            ; 1                 ; 6       ;
+;      - y[6]~19            ; 1                 ; 6       ;
+;      - y[6]~20            ; 1                 ; 6       ;
 ;      - Selector12~2       ; 1                 ; 6       ;
 ;      - Selector0~0        ; 1                 ; 6       ;
 ;      - Selector1~3        ; 1                 ; 6       ;
@@ -2177,12 +2181,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector5~3        ; 1                 ; 6       ;
 ;      - Selector4~2        ; 1                 ; 6       ;
 ;      - Selector91~5       ; 1                 ; 6       ;
-;      - Selector39~4       ; 1                 ; 6       ;
-;      - Selector77~4       ; 1                 ; 6       ;
-;      - Selector77~5       ; 1                 ; 6       ;
+;      - Selector39~3       ; 1                 ; 6       ;
 ;      - Selector41~2       ; 1                 ; 6       ;
 ;      - Selector45~2       ; 1                 ; 6       ;
-;      - Selector39~5       ; 1                 ; 6       ;
 ;      - Selector47~3       ; 1                 ; 6       ;
 ;      - Selector66~4       ; 1                 ; 6       ;
 ;      - Selector66~5       ; 1                 ; 6       ;
@@ -2194,6 +2195,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector62~4       ; 1                 ; 6       ;
 ;      - Selector62~5       ; 1                 ; 6       ;
 ;      - Selector81~3       ; 1                 ; 6       ;
+;      - Selector40~2       ; 1                 ; 6       ;
 ;      - Selector56~4       ; 1                 ; 6       ;
 ;      - Selector56~5       ; 1                 ; 6       ;
 ;      - Selector72~3       ; 1                 ; 6       ;
@@ -2204,50 +2206,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector60~5       ; 1                 ; 6       ;
 ;      - Selector68~4       ; 1                 ; 6       ;
 ;      - Selector68~5       ; 1                 ; 6       ;
-;      - Selector140~18     ; 1                 ; 6       ;
+;      - Selector140~20     ; 1                 ; 6       ;
+;      - Selector140~21     ; 1                 ; 6       ;
+;      - Selector140~22     ; 1                 ; 6       ;
+;      - Selector140~23     ; 1                 ; 6       ;
+;      - Selector140~24     ; 1                 ; 6       ;
 ;      - WideOr54~7         ; 1                 ; 6       ;
 ;      - WideOr46           ; 1                 ; 6       ;
 ;      - Selector106~2      ; 1                 ; 6       ;
 ;      - Selector105~2      ; 1                 ; 6       ;
 ;      - Selector103~2      ; 1                 ; 6       ;
 ;      - Selector102~2      ; 1                 ; 6       ;
-;      - Selector35~9       ; 1                 ; 6       ;
-;      - b_x_direction~5    ; 1                 ; 6       ;
+;      - Selector94~2       ; 1                 ; 6       ;
 ;      - Selector96~2       ; 1                 ; 6       ;
-;      - score[1]~69        ; 1                 ; 6       ;
-;      - score[1]~70        ; 1                 ; 6       ;
-;      - score[1]~71        ; 1                 ; 6       ;
-;      - score[1]~72        ; 1                 ; 6       ;
-;      - score[1]~73        ; 1                 ; 6       ;
-;      - score[1]~74        ; 1                 ; 6       ;
-;      - WideOr49~4         ; 1                 ; 6       ;
+;      - score[7]~61        ; 1                 ; 6       ;
+;      - score[7]~62        ; 1                 ; 6       ;
+;      - score[7]~63        ; 1                 ; 6       ;
+;      - score[7]~64        ; 1                 ; 6       ;
+;      - score[7]~65        ; 1                 ; 6       ;
+;      - score[7]~66        ; 1                 ; 6       ;
+;      - Selector35~14      ; 1                 ; 6       ;
+;      - Selector118~3      ; 1                 ; 6       ;
+;      - WideOr48~4         ; 1                 ; 6       ;
 ;      - WideOr47~2         ; 1                 ; 6       ;
+;      - score[7]~67        ; 1                 ; 6       ;
 ;      - Selector139~2      ; 1                 ; 6       ;
 ;      - Selector130~2      ; 1                 ; 6       ;
-;      - Selector131~2      ; 1                 ; 6       ;
-;      - Selector134~2      ; 1                 ; 6       ;
+;      - Selector136~2      ; 1                 ; 6       ;
 ;      - Selector133~2      ; 1                 ; 6       ;
 ;      - Selector132~2      ; 1                 ; 6       ;
 ;      - Selector129~2      ; 1                 ; 6       ;
+;      - Selector131~2      ; 1                 ; 6       ;
+;      - Selector134~2      ; 1                 ; 6       ;
 ;      - Selector135~2      ; 1                 ; 6       ;
-;      - Selector136~2      ; 1                 ; 6       ;
+;      - b_x_direction~5    ; 1                 ; 6       ;
 ;      - Selector1~7        ; 1                 ; 6       ;
 ;      - Selector2~9        ; 1                 ; 6       ;
 ;      - Selector6~9        ; 1                 ; 6       ;
 ;      - Selector5~8        ; 1                 ; 6       ;
 ;      - Selector78~9       ; 1                 ; 6       ;
-;      - hi_score[2]~11     ; 1                 ; 6       ;
-;      - score[1]~75        ; 1                 ; 6       ;
-;      - y[5]~21            ; 1                 ; 6       ;
-;      - y[5]~22            ; 1                 ; 6       ;
-;      - Selector49~0       ; 1                 ; 6       ;
-;      - Selector49~1       ; 1                 ; 6       ;
+;      - hi_score[1]~11     ; 1                 ; 6       ;
+;      - y[6]~21            ; 1                 ; 6       ;
+;      - y[6]~22            ; 1                 ; 6       ;
 ; CLOCK_50                  ;                   ;         ;
 ; KEY[1]                    ;                   ;         ;
-;      - always0~34         ; 0                 ; 6       ;
-;      - always0~35         ; 0                 ; 6       ;
+;      - always0~39         ; 0                 ; 6       ;
+;      - always0~40         ; 0                 ; 6       ;
 ; KEY[2]                    ;                   ;         ;
-;      - always0~38         ; 0                 ; 6       ;
+;      - always0~43         ; 0                 ; 6       ;
 +---------------------------+-------------------+---------+
 
 
@@ -2258,20 +2264,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                                                                      ; PIN_Y2             ; 183     ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; CLOCK_50                                                                                                      ; PIN_Y2             ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; WideOr46                                                                                                      ; LCCOMB_X73_Y36_N22 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; draw_counter[10]~2                                                                                            ; LCCOMB_X68_Y40_N26 ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; hi_score[2]~10                                                                                                ; LCCOMB_X70_Y32_N16 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; hi_score[2]~11                                                                                                ; LCCOMB_X69_Y36_N22 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; mbl_1_x[7]~1                                                                                                  ; LCCOMB_X72_Y37_N2  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; p_x[7]~25                                                                                                     ; LCCOMB_X72_Y37_N0  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; score[1]~47                                                                                                   ; LCCOMB_X79_Y36_N6  ; 8       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; state~65                                                                                                      ; LCCOMB_X68_Y36_N18 ; 10      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode143w[2] ; LCCOMB_X59_Y43_N24 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode157w[2] ; LCCOMB_X58_Y43_N2  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode166w[2] ; LCCOMB_X58_Y43_N4  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode105w[2]       ; LCCOMB_X62_Y40_N0  ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode118w[2]       ; LCCOMB_X62_Y40_N26 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode126w[2]       ; LCCOMB_X62_Y40_N2  ; 2       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; WideOr46                                                                                                      ; LCCOMB_X66_Y40_N30 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; draw_counter[13]~2                                                                                            ; LCCOMB_X65_Y39_N14 ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; hi_score[1]~10                                                                                                ; LCCOMB_X65_Y42_N18 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; hi_score[1]~11                                                                                                ; LCCOMB_X65_Y39_N30 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; mbl_1_x[1]~1                                                                                                  ; LCCOMB_X67_Y43_N24 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; p_x[0]~26                                                                                                     ; LCCOMB_X63_Y44_N28 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; score[7]~69                                                                                                   ; LCCOMB_X80_Y39_N6  ; 8       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; state~66                                                                                                      ; LCCOMB_X63_Y44_N0  ; 10      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode143w[2] ; LCCOMB_X54_Y46_N24 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode157w[2] ; LCCOMB_X54_Y46_N22 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_e8a:rden_decode_b|w_anode166w[2] ; LCCOMB_X54_Y46_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode105w[2]       ; LCCOMB_X58_Y44_N28 ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode118w[2]       ; LCCOMB_X58_Y44_N2  ; 3       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|decode_lsa:decode2|w_anode126w[2]       ; LCCOMB_X58_Y44_N6  ; 2       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
 ; vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|_clk0                                                   ; PLL_1              ; 39      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 +---------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
@@ -2291,7 +2297,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+--------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                             ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location                                                                                                                       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +----------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+--------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 19200        ; 3            ; 19200        ; 3            ; yes                    ; no                      ; yes                    ; yes                     ; 57600 ; 19200                       ; 3                           ; 19200                       ; 3                           ; 57600               ; 8    ; None ; M9K_X51_Y43_N0, M9K_X51_Y40_N0, M9K_X51_Y42_N0, M9K_X51_Y41_N0, M9K_X64_Y43_N0, M9K_X64_Y42_N0, M9K_X64_Y40_N0, M9K_X64_Y41_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 19200        ; 3            ; 19200        ; 3            ; yes                    ; no                      ; yes                    ; yes                     ; 57600 ; 19200                       ; 3                           ; 19200                       ; 3                           ; 57600               ; 8    ; None ; M9K_X51_Y46_N0, M9K_X64_Y46_N0, M9K_X51_Y47_N0, M9K_X64_Y45_N0, M9K_X51_Y45_N0, M9K_X51_Y48_N0, M9K_X64_Y44_N0, M9K_X51_Y44_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +----------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+--------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -2301,160 +2307,150 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 1,457 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 48 / 10,120 ( < 1 % )     ;
-; C4 interconnects      ; 734 / 209,544 ( < 1 % )   ;
-; Direct links          ; 249 / 342,891 ( < 1 % )   ;
+; Block interconnects   ; 1,441 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 47 / 10,120 ( < 1 % )     ;
+; C4 interconnects      ; 855 / 209,544 ( < 1 % )   ;
+; Direct links          ; 216 / 342,891 ( < 1 % )   ;
 ; Global clocks         ; 2 / 20 ( 10 % )           ;
-; Local interconnects   ; 487 / 119,088 ( < 1 % )   ;
-; R24 interconnects     ; 58 / 9,963 ( < 1 % )      ;
-; R4 interconnects      ; 894 / 289,782 ( < 1 % )   ;
+; Local interconnects   ; 498 / 119,088 ( < 1 % )   ;
+; R24 interconnects     ; 64 / 9,963 ( < 1 % )      ;
+; R4 interconnects      ; 940 / 289,782 ( < 1 % )   ;
 +-----------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.99) ; Number of LABs  (Total = 79) ;
+; Number of Logic Elements  (Average = 13.80) ; Number of LABs  (Total = 74) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 8                            ;
-; 2                                           ; 1                            ;
+; 1                                           ; 4                            ;
+; 2                                           ; 0                            ;
 ; 3                                           ; 1                            ;
-; 4                                           ; 1                            ;
+; 4                                           ; 2                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 3                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 2                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 2                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 5                            ;
-; 15                                          ; 7                            ;
-; 16                                          ; 46                           ;
+; 15                                          ; 12                           ;
+; 16                                          ; 44                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.76) ; Number of LABs  (Total = 79) ;
+; LAB-wide Signals  (Average = 0.91) ; Number of LABs  (Total = 74) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 48                           ;
-; 1 Clock enable                     ; 10                           ;
+; 1 Clock                            ; 52                           ;
+; 1 Clock enable                     ; 14                           ;
 ; 1 Sync. clear                      ; 1                            ;
-; 1 Sync. load                       ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 14.24) ; Number of LABs  (Total = 79) ;
+; Number of Signals Sourced  (Average = 15.16) ; Number of LABs  (Total = 74) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 9                            ;
-; 2                                            ; 3                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 4                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 6                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 6                            ;
+; 9                                            ; 4                            ;
 ; 10                                           ; 1                            ;
-; 11                                           ; 0                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 2                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 4                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 6                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 6                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 6                            ;
+; 15                                           ; 6                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 7                            ;
+; 18                                           ; 7                            ;
 ; 19                                           ; 2                            ;
-; 20                                           ; 12                           ;
-; 21                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 4                            ;
 ; 22                                           ; 4                            ;
-; 23                                           ; 3                            ;
-; 24                                           ; 3                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.94) ; Number of LABs  (Total = 79) ;
+; Number of Signals Sourced Out  (Average = 8.19) ; Number of LABs  (Total = 74) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 16                           ;
+; 1                                               ; 10                           ;
 ; 2                                               ; 3                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 5                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 2                            ;
 ; 5                                               ; 3                            ;
-; 6                                               ; 0                            ;
-; 7                                               ; 6                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 5                            ;
-; 10                                              ; 10                           ;
-; 11                                              ; 5                            ;
+; 6                                               ; 5                            ;
+; 7                                               ; 4                            ;
+; 8                                               ; 6                            ;
+; 9                                               ; 4                            ;
+; 10                                              ; 8                            ;
+; 11                                              ; 4                            ;
 ; 12                                              ; 7                            ;
-; 13                                              ; 4                            ;
-; 14                                              ; 3                            ;
-; 15                                              ; 4                            ;
-; 16                                              ; 3                            ;
-; 17                                              ; 0                            ;
-; 18                                              ; 0                            ;
-; 19                                              ; 0                            ;
-; 20                                              ; 1                            ;
+; 13                                              ; 3                            ;
+; 14                                              ; 4                            ;
+; 15                                              ; 2                            ;
+; 16                                              ; 5                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.08) ; Number of LABs  (Total = 79) ;
+; Number of Distinct Inputs  (Average = 14.97) ; Number of LABs  (Total = 74) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 5                            ;
+; 2                                            ; 3                            ;
 ; 3                                            ; 2                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 3                            ;
-; 7                                            ; 5                            ;
-; 8                                            ; 4                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 4                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 4                            ;
-; 13                                           ; 3                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 4                            ;
+; 8                                            ; 5                            ;
+; 9                                            ; 5                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 2                            ;
 ; 14                                           ; 4                            ;
-; 15                                           ; 3                            ;
-; 16                                           ; 6                            ;
-; 17                                           ; 3                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 7                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 7                            ;
+; 17                                           ; 8                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 5                            ;
+; 20                                           ; 6                            ;
 ; 21                                           ; 2                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 0                            ;
 ; 23                                           ; 2                            ;
-; 24                                           ; 2                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 2                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 1                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 2                            ;
-; 31                                           ; 0                            ;
-; 32                                           ; 0                            ;
+; 29                                           ; 2                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 1                            ;
+; 32                                           ; 1                            ;
 ; 33                                           ; 1                            ;
-; 34                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -3157,7 +3153,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X58_Y37 to location X68_Y48
+    Info (170196): Router estimated peak interconnect usage is 11% of the available device resources in the region that extends from location X58_Y37 to location X68_Y48
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
@@ -3167,13 +3163,13 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /courses/courses/cscb58s17/limcryst/PROJ/Project/output_files/Proj.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 439 warnings
     Info: Peak virtual memory: 1579 megabytes
-    Info: Processing ended: Sun Jul 16 18:32:17 2017
-    Info: Elapsed time: 00:00:13
+    Info: Processing ended: Tue Jul 18 19:58:27 2017
+    Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:14
 
 
