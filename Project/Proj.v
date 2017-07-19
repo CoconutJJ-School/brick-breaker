@@ -1,5 +1,3 @@
-// Part 2 skeleton
-
 module Proj(
 		CLOCK_50,						//	On Board 50 MHz
 		// Your inputs and outputs here
@@ -120,7 +118,7 @@ module Proj(
 				DRAW_BLOCK_4      = 7'b0011100,
 				UPDATE_BLOCK_5    = 7'b0011101,
 				DRAW_BLOCK_5      = 7'b0011110,
-            UPDATE_BLOCK_6  = 7'b0011111,
+            			UPDATE_BLOCK_6  = 7'b0011111,
 			   DRAW_BLOCK_6    = 7'b0100000,
             UPDATE_BLOCK_7  = 7'b0100001,
 			   DRAW_BLOCK_7    = 7'b0100010,
@@ -333,7 +331,8 @@ module Proj(
 					 block_10_colour = 3'b110;
 						state = INIT_BLOCK_11;
 				 end
-				 INIT_BLOCK_11: begin //remember to add the following blocks
+				 
+				 INIT_BLOCK_11: begin 
 					 bl_11_x = 8'd71;
 					 bl_11_y = 8'd25;
 					 block_11_colour = 3'b110;
@@ -343,26 +342,30 @@ module Proj(
 					 bl_12_x = 8'd91;
 					 bl_12_y = 8'd25;
 					 block_12_colour = 3'b110;
-						state = INIT_BLOCK_13;
+						state = INIT_MOVBLK_1; //INIT_BLOCK_13;
 				 end
+				 /*
 				 INIT_BLOCK_13: begin
 					 bl_13_x = 8'd111;
 					 bl_13_y = 8'd25;
 					 block_13_colour = 3'b110;
 						state = INIT_BLOCK_14;
 				 end
+				 
 				 INIT_BLOCK_14: begin
 					 bl_14_x = 8'd131;
 					 bl_14_y = 8'd25;
 					 block_14_colour = 3'b110;
 						state = INIT_BLOCK_15;
 				 end
+				 
 				 INIT_BLOCK_15: begin //blue
 					 bl_15_x = 8'd12;
 					 bl_15_y = 8'd30;
 					 block_15_colour = 3'b001;
 						state = INIT_BLOCK_16;
 				 end
+				 
 				 INIT_BLOCK_16: begin
 					 bl_16_x = 8'd32;
 					 bl_16_y = 8'd30;
@@ -399,6 +402,8 @@ module Proj(
 					 block_21_colour = 3'b001;
 						state = INIT_MOVBLK_1;
 				 end
+				 */
+				 
 
                
 
@@ -418,9 +423,10 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = INIT_MOVBLK_2;
+						state = IDLE; //INIT_MOVBLK_2;
 					end
 				 end
+				 /*
 				 INIT_MOVBLK_2: begin
 					 if (draw_counter < 5'b10000) begin
 					 mbl_2_x = 8'd76;
@@ -437,7 +443,7 @@ module Proj(
 						state = IDLE;
 					end
 				 end
-				
+				*/
 
 
 				 IDLE: begin
@@ -680,6 +686,7 @@ module Proj(
 						state = UPDATE_BLOCK_11;
 					end
 				 end
+				
 				UPDATE_BLOCK_11: begin
   					if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd2) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
@@ -724,10 +731,10 @@ module Proj(
  					end
  					else begin
  						draw_counter= 8'b00000000;
- 						state = UPDATE_BLOCK_13;
+ 						state = ERASE_MOVBLK_1; //UPDATE_BLOCK_13;
  					end
  				end
- 
+ /*
 				UPDATE_BLOCK_13: begin
   					if ((block_13_colour != 3'b000) && (b_y > bl_13_y + ceil_y - 8'd1) && (b_y < bl_13_y + ceil_y + 8'd2) && (b_x >= bl_13_x) && (b_x <= bl_13_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
@@ -776,6 +783,7 @@ module Proj(
  					end
  				end
  
+				
 				UPDATE_BLOCK_15: begin
   					if ((block_15_colour != 3'b000) && (b_y > bl_15_y + ceil_y - 8'd1) && (b_y < bl_15_y + ceil_y + 8'd2) && (b_x >= bl_15_x) && (b_x <= bl_15_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
@@ -943,7 +951,7 @@ if (draw_counter < 5'b10000) begin
  state = ERASE_MOVBLK_1;
  end
  end
-           
+        */
 				 
 
 				
@@ -990,10 +998,10 @@ if (draw_counter < 5'b10000) begin
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = ERASE_MOVBLK_2;
+						state = ERASE_PADDLE; //ERASE_MOVBLK_2;
 					end
 				 end
-				 
+				 /*
 				 ERASE_MOVBLK_2: begin
 						if (draw_counter < 5'b10000) begin
 						x = mbl_2_x + draw_counter[2:0];
@@ -1040,7 +1048,7 @@ if (draw_counter < 5'b10000) begin
 						state = ERASE_PADDLE;
 					end
 				 end
-
+				*/
 				ERASE_PADDLE: begin
 						if (draw_counter < 7'b1000000) begin 
 						x = p_x + draw_counter[4:0];
@@ -1116,7 +1124,7 @@ if (draw_counter < 5'b10000) begin
 					end
 				
 				//check if ball hits paddle or the top of screen
-				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + 8'd15))) begin
+				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + p_length - 8'd1))) begin
 					b_y_direction = ~b_y_direction;
 
 					//vary direction of the ball
@@ -1226,10 +1234,7 @@ if (draw_counter < 5'b10000) begin
                                 	else state = RESET_BLACK; //init ball and paddle again
 	
                                 	end
-										  
-										  
-
-
+								
          endcase
     end
 endmodule
@@ -1278,6 +1283,4 @@ module hex_decoder(hex_digit, segments);
             default: segments = 7'h7f;
         endcase
 endmodule
-
-
 
