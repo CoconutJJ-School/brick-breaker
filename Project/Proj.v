@@ -621,7 +621,7 @@ module Proj(
 						state = ERASE_MOVBLK_1; 
 					end
 				 end
-				
+	
 				 
 
 				
@@ -645,7 +645,7 @@ module Proj(
 						else mbl_1_x = mbl_1_x - 1'b1;  //move left
 
 						//if block gets hit
-						if ((mblock_1_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
+						if ((mblock_1_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd4) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
 						score = score + 8'd5;
