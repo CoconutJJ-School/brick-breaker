@@ -514,7 +514,7 @@ module Proj(
 					state = DRAW_BLOCK_6;
 				 end
 				 DRAW_BLOCK_6: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_6_x + draw_counter[2:0];
 						y = bl_6_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -538,7 +538,7 @@ module Proj(
 					state = DRAW_BLOCK_7;
 				 end
 				 DRAW_BLOCK_7: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_7_x + draw_counter[2:0];
 						y = bl_7_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -562,7 +562,7 @@ module Proj(
 					state = DRAW_BLOCK_8;
 				 end
 				 DRAW_BLOCK_8: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_8_x + draw_counter[2:0];
 						y = bl_8_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -586,7 +586,7 @@ module Proj(
 					state = DRAW_BLOCK_9;
 				 end
 				 DRAW_BLOCK_9: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_9_x + draw_counter[2:0];
 						y = bl_9_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -610,7 +610,7 @@ module Proj(
 					state = DRAW_BLOCK_10;
 				 end
 				 DRAW_BLOCK_10: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_10_x + draw_counter[2:0];
 						y = bl_10_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -626,7 +626,7 @@ module Proj(
 
 				
 				ERASE_MOVBLK_1: begin
-						if (draw_counter < 5'b10000) begin
+						if (draw_counter < 6'b100000) begin
 						x = mbl_1_x + draw_counter[2:0];
 						y = mbl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -661,7 +661,7 @@ module Proj(
 						
 				 end
 				 DRAW_MOVBLK_1: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = mbl_1_x + draw_counter[2:0];
 						y = mbl_1_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -674,7 +674,7 @@ module Proj(
 				 end
 				 
 				 ERASE_MOVBLK_2: begin
-						if (draw_counter < 5'b10000) begin
+						if (draw_counter < 6'b100000) begin
 						x = mbl_2_x + draw_counter[2:0];
 						y = mbl_2_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -709,7 +709,7 @@ module Proj(
 						
 				 end
 				 DRAW_MOVBLK_2: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = mbl_2_x + draw_counter[2:0];
 						y = mbl_2_y + ceil_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
