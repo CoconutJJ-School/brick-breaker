@@ -466,7 +466,7 @@ module Proj(
 				 end
 				 
 				 UPDATE_BLOCK_1: begin
-					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd2) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
+					if ((block_1_colour != 3'b000) && (b_y > bl_1_y + ceil_y - 8'd1) && (b_y < bl_1_y + ceil_y + 8'd4) && (b_x >= bl_1_x) && (b_x <= bl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_1_colour = 3'b000;
 						score = score + 8'd1;
@@ -489,7 +489,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_2: begin
-					if ((block_2_colour != 3'b000) && (b_y > bl_2_y + ceil_y - 8'd1) && (b_y < bl_2_y + ceil_y + 8'd2) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
+					if ((block_2_colour != 3'b000) && (b_y > bl_2_y + ceil_y - 8'd1) && (b_y < bl_2_y + ceil_y + 8'd4) && (b_x >= bl_2_x) && (b_x <= bl_2_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_2_colour = 3'b000;
 						score = score + 8'd1;
@@ -512,7 +512,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_3: begin
-					if ((block_3_colour != 3'b000) && (b_y > bl_3_y + ceil_y - 8'd1) && (b_y < bl_3_y + ceil_y + 8'd2) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
+					if ((block_3_colour != 3'b000) && (b_y > bl_3_y + ceil_y - 8'd1) && (b_y < bl_3_y + ceil_y + 8'd4) && (b_x >= bl_3_x) && (b_x <= bl_3_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_3_colour = 3'b000;
 						score = score + 8'd1;
@@ -535,7 +535,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_4: begin
-					if ((block_4_colour != 3'b000) && (b_y > bl_4_y + ceil_y - 8'd1) && (b_y < bl_4_y + ceil_y + 8'd2) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
+					if ((block_4_colour != 3'b000) && (b_y > bl_4_y + ceil_y - 8'd1) && (b_y < bl_4_y + ceil_y + 8'd4) && (b_x >= bl_4_x) && (b_x <= bl_4_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_4_colour = 3'b000;
 						score = score + 8'd1;
@@ -558,7 +558,7 @@ module Proj(
 					end
 				 end
 				 UPDATE_BLOCK_5: begin
-					if ((block_5_colour != 3'b000) && (b_y > bl_5_y + ceil_y - 8'd1) && (b_y < bl_5_y + ceil_y + 8'd2) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
+					if ((block_5_colour != 3'b000) && (b_y > bl_5_y + ceil_y - 8'd1) && (b_y < bl_5_y + ceil_y + 8'd4) && (b_x >= bl_5_x) && (b_x <= bl_5_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_5_colour = 3'b000;
 						score = score + 8'd1;
@@ -582,7 +582,7 @@ module Proj(
 				 end
                 
 				 UPDATE_BLOCK_6: begin
-					if ((block_6_colour != 3'b000) && (b_y > bl_6_y + ceil_y - 8'd1) && (b_y < bl_6_y + ceil_y + 8'd2) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
+					if ((block_6_colour != 3'b000) && (b_y > bl_6_y + ceil_y - 8'd1) && (b_y < bl_6_y + ceil_y + 8'd4) && (b_x >= bl_6_x) && (b_x <= bl_6_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_6_colour = 3'b000;
 						score = score + 8'd1;
@@ -606,7 +606,7 @@ module Proj(
 				 end
                 
 				 UPDATE_BLOCK_7: begin
-					if ((block_7_colour != 3'b000) && (b_y > bl_7_y + ceil_y - 8'd1) && (b_y < bl_7_y + ceil_y + 8'd2) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
+					if ((block_7_colour != 3'b000) && (b_y > bl_7_y + ceil_y - 8'd1) && (b_y < bl_7_y + ceil_y + 8'd4) && (b_x >= bl_7_x) && (b_x <= bl_7_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_7_colour = 3'b000;
 						score = score + 8'd1;
@@ -630,7 +630,7 @@ module Proj(
 				 end
                 
 				 UPDATE_BLOCK_8: begin
-					if ((block_8_colour != 3'b000) && (b_y > bl_8_y + ceil_y - 8'd1) && (b_y < bl_8_y + ceil_y + 8'd2) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
+					if ((block_8_colour != 3'b000) && (b_y > bl_8_y + ceil_y - 8'd1) && (b_y < bl_8_y + ceil_y + 8'd4) && (b_x >= bl_8_x) && (b_x <= bl_8_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_8_colour = 3'b000;
 						score = score + 8'd1;
@@ -654,7 +654,7 @@ module Proj(
 				 end
 
 				 UPDATE_BLOCK_9: begin
-					if ((block_9_colour != 3'b000) && (b_y > bl_9_y + ceil_y - 8'd1) && (b_y < bl_9_y + ceil_y + 8'd2) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
+					if ((block_9_colour != 3'b000) && (b_y > bl_9_y + ceil_y - 8'd1) && (b_y < bl_9_y + ceil_y + 8'd4) && (b_x >= bl_9_x) && (b_x <= bl_9_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_9_colour = 3'b000;
 						score = score + 8'd1;
@@ -678,7 +678,7 @@ module Proj(
 				 end
 				 
                  UPDATE_BLOCK_10: begin
-					if ((block_10_colour != 3'b000) && (b_y > bl_10_y + ceil_y - 8'd1) && (b_y < bl_10_y + ceil_y + 8'd2) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
+					if ((block_10_colour != 3'b000) && (b_y > bl_10_y + ceil_y - 8'd1) && (b_y < bl_10_y + ceil_y + 8'd4) && (b_x >= bl_10_x) && (b_x <= bl_10_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;
 						block_10_colour = 3'b000;
 						score = score + 8'd1;
@@ -702,7 +702,7 @@ module Proj(
 				 end
 				
 				UPDATE_BLOCK_11: begin
-  					if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd2) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
+  					if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd4) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
  						block_11_colour = 3'b000;
  						score = score + 8'd1;
@@ -726,7 +726,7 @@ module Proj(
  				end
  
 				UPDATE_BLOCK_12: begin
-  					if ((block_12_colour != 3'b000) && (b_y > bl_12_y + ceil_y - 8'd1) && (b_y < bl_12_y + ceil_y + 8'd2) && (b_x >= bl_12_x) && (b_x <= bl_12_x + 8'd7)) begin
+  					if ((block_12_colour != 3'b000) && (b_y > bl_12_y + ceil_y - 8'd1) && (b_y < bl_12_y + ceil_y + 8'd4) && (b_x >= bl_12_x) && (b_x <= bl_12_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
  						block_12_colour = 3'b000;
  						score = score + 8'd1;
@@ -989,7 +989,7 @@ if (draw_counter < 5'b10000) begin
 						else mbl_1_x = mbl_1_x - 1'b1;  //move left
 
 						//if block gets hit
-						if ((mblock_1_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd2) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
+						if ((mblock_1_colour != 3'b000) && (b_y > mbl_1_y + ceil_y - 8'd1) && (b_y < mbl_1_y + ceil_y + 8'd4) && (b_x >= mbl_1_x) && (b_x <= mbl_1_x + 8'd7)) begin
 						b_y_direction = ~b_y_direction;  
 						mblock_1_colour = 3'b000;
 						score = score + 8'd5;
