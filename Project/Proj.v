@@ -271,144 +271,153 @@ module Proj(
 						if (ceil_y > 0) state = IDLE;  //if not first round then skip initialization of blocks
 						else state = INIT_BLOCK_1;
 				 end
+				
 				 INIT_BLOCK_1: begin //red
-					 bl_1_x = 8'd10; 
-					 bl_1_y = 8'd20;
+					 bl_1_x = 8'd34; 
+					 bl_1_y = 8'd30;
 					 block_1_colour = 3'b100;
 						state = INIT_BLOCK_2;
 				 end
+
 				 INIT_BLOCK_2: begin
-					 bl_2_x = 8'd30;
-					 bl_2_y = 8'd20;
+					 bl_2_x = 8'd76;
+					 bl_2_y = 8'd30;
 					 block_2_colour = 3'b100;
 						state = INIT_BLOCK_3;
 				 end
 				 INIT_BLOCK_3: begin
-					 bl_3_x = 8'd50;
-					 bl_3_y = 8'd20;
+					 bl_3_x = 8'd118;
+					 bl_3_y = 8'd30;
 					 block_3_colour = 3'b100;
 						state = INIT_BLOCK_4;
 				 end
 				 INIT_BLOCK_4: begin
-					 bl_4_x = 8'd70;
-					 bl_4_y = 8'd20;
-					 block_4_colour = 3'b100;
+					 bl_4_x = 8'd25;
+					 bl_4_y = 8'd40;
+					 block_4_colour = 3'b110;
 						state = INIT_BLOCK_5;
 				 end
+				
 				 INIT_BLOCK_5: begin
-					 bl_5_x = 8'd90;
-					 bl_5_y = 8'd20;
-					 block_5_colour = 3'b100;
+					 bl_5_x = 8'd58;
+					 bl_5_y = 8'd40;
+					 block_5_colour = 3'b110;
 						state = INIT_BLOCK_6;
 				 end
 
                 		INIT_BLOCK_6: begin
-					 bl_6_x = 8'd110;
-					 bl_6_y = 8'd20;
-					 block_6_colour = 3'b100;
+					 bl_6_x = 8'd91;
+					 bl_6_y = 8'd40;
+					 block_6_colour = 3'b110;
 						state = INIT_BLOCK_7;
 				 end
 
                  		INIT_BLOCK_7: begin
-					 bl_7_x = 8'd130;
-					 bl_7_y = 8'd20;
-					 block_7_colour = 3'b100;
+					 bl_7_x = 8'd124;
+					 bl_7_y = 8'd40;
+					 block_7_colour = 3'b110;
 						state = INIT_BLOCK_8;
 				 end
                 		INIT_BLOCK_8: begin //yellow
-					 bl_8_x = 8'd11;
-					 bl_8_y = 8'd25;
-					 block_8_colour = 3'b110;
+					 bl_8_x = 8'd34;
+					 bl_8_y = 8'd50;
+					 block_8_colour = 3'b001;
 						state = INIT_BLOCK_9;
 				 end
+
                 		INIT_BLOCK_9: begin
-					 bl_9_x = 8'd31;
-					 bl_9_y = 8'd25;
-					 block_9_colour = 3'b110;
+					 bl_9_x = 8'd76;
+					 bl_9_y = 8'd50;
+					 block_9_colour = 3'b001;
 						state = INIT_BLOCK_10;
 				 end
                  		INIT_BLOCK_10: begin
-					 bl_10_x = 8'd51;
-					 bl_10_y = 8'd25;
-					 block_10_colour = 3'b110;
+					 bl_10_x = 8'd118;
+					 bl_10_y = 8'd50;
+					 block_10_colour = 3'b001;
 						state = INIT_BLOCK_11;
 				 end
+
+/*
 				 INIT_BLOCK_11: begin //remember to add the following blocks
-					 bl_11_x = 8'd71;
-					 bl_11_y = 8'd25;
-					 block_11_colour = 3'b110;
+					 bl_11_x = 8'd76;
+					 bl_11_y = 8'd50;
+					 block_11_colour = 3'b001;
 						state = INIT_BLOCK_12;
 				 end
 				 INIT_BLOCK_12: begin
-					 bl_12_x = 8'd91;
-					 bl_12_y = 8'd25;
-					 block_12_colour = 3'b110;
+					 bl_12_x = 8'd104;
+					 bl_12_y = 8'd50;
+					 block_12_colour = 3'b001;
 						state = INIT_BLOCK_13;
 				 end
 				 INIT_BLOCK_13: begin
-					 bl_13_x = 8'd111;
-					 bl_13_y = 8'd25;
-					 block_13_colour = 3'b110;
+					 bl_13_x = 8'd132;
+					 bl_13_y = 8'd50;
+					 block_13_colour = 3'b001;
 						state = INIT_BLOCK_14;
 				 end
+				//==================5th layer (4)========================
 				 INIT_BLOCK_14: begin
-					 bl_14_x = 8'd131;
-					 bl_14_y = 8'd25;
-					 block_14_colour = 3'b110;
+					 bl_14_x = 8'd25;
+					 bl_14_y = 8'd60;
+					 block_14_colour = 3'b101;
 						state = INIT_BLOCK_15;
 				 end
 				 INIT_BLOCK_15: begin //blue
-					 bl_15_x = 8'd12;
-					 bl_15_y = 8'd30;
-					 block_15_colour = 3'b001;
+					 bl_15_x = 8'd58;
+					 bl_15_y = 8'd60;
+					 block_15_colour = 3'b101;
 						state = INIT_BLOCK_16;
 				 end
 				 INIT_BLOCK_16: begin
-					 bl_16_x = 8'd32;
-					 bl_16_y = 8'd30;
-					 block_16_colour = 3'b001;
+					 bl_16_x = 8'd91;
+					 bl_16_y = 8'd60;
+					 block_16_colour = 3'b101;
 						state = INIT_BLOCK_17;
 				 end
 				 INIT_BLOCK_17: begin
-					 bl_17_x = 8'd52;
-					 bl_17_y = 8'd30;
-					 block_17_colour = 3'b001;
+					 bl_17_x = 8'd124;
+					 bl_17_y = 8'd60;
+					 block_17_colour = 3'b101;
 						state = INIT_BLOCK_18;
 				 end
+				//=================6th layer (3)=============================
 				 INIT_BLOCK_18: begin
-					 bl_18_x = 8'd72;
-					 bl_18_y = 8'd30;
+					 bl_18_x = 8'd34;
+					 bl_18_y = 8'd70;
 					 block_18_colour = 3'b001;
 						state = INIT_BLOCK_19;
 				 end
 				 INIT_BLOCK_19: begin
-					 bl_19_x = 8'd92;
-					 bl_19_y = 8'd30;
+					 bl_19_x = 8'd76;
+					 bl_19_y = 8'd70;
 					 block_19_colour = 3'b001;
 						state = INIT_BLOCK_20;
 				 end
 				 INIT_BLOCK_20: begin
-					 bl_20_x = 8'd112;
-					 bl_20_y = 8'd30;
+					 bl_20_x = 8'd118;
+					 bl_20_y = 8'd70;
 					 block_20_colour = 3'b001;
 						state = INIT_BLOCK_21;
 				 end
+				//=================7th layer (1)============================
 				 INIT_BLOCK_21: begin
-					 bl_21_x = 8'd132;
-					 bl_21_y = 8'd30;
+					 bl_21_x = 8'd76;
+					 bl_21_y = 8'd80;
 					 block_21_colour = 3'b001;
 						state = INIT_MOVBLK_1;
 				 end
 
-               
+               			//===========================================================
 
-
+*/
 
 
 				INIT_MOVBLK_1: begin
 					 if (draw_counter < 5'b10000) begin
 					 mbl_1_x = 8'd76;
-					 mbl_1_y = 8'd15;
+					 mbl_1_y = 8'd20;
 						x = mbl_1_x + draw_counter[2:0];
 						y = mbl_1_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
@@ -424,7 +433,7 @@ module Proj(
 				 INIT_MOVBLK_2: begin
 					 if (draw_counter < 5'b10000) begin
 					 mbl_2_x = 8'd76;
-					 mbl_2_y = 8'd15;
+					 mbl_2_y = 8'd60;
 						x = mbl_2_x + draw_counter[2:0];
 						y = mbl_2_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
