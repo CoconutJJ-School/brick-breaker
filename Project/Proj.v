@@ -270,7 +270,7 @@ module Proj(
 						x = b_x;
 						y = b_y;
 						colour = 3'b111;
-						if ((ceil_y > 0) || (mblock_1_colour == 3'b000) || (mblock_2_colour == 3'b000)) state = IDLE;  //if not first round then skip initialization of blocks
+						if ((ceil_y > 0) || (power_1 == 1'b1)) state = IDLE;  //if not first round then skip initialization of blocks
 						else state = INIT_BLOCK_1;
 				 end
 				
@@ -652,6 +652,7 @@ module Proj(
 						//powerup 1
 						if (ceil_y >= 8'd7) begin 
 							ceil_y = ceil_y - 8'd7;
+							power_1 = 1'b1;
 							state = UPDATE_CEIL;
 							end
 						end
@@ -699,6 +700,7 @@ module Proj(
 						//powerup 1
 						if (ceil_y >= 8'd7) begin 
 							ceil_y = ceil_y - 8'd7;
+							power_1 = 1'b1;
 							state = UPDATE_CEIL;
 							end
 						end
