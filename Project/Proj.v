@@ -71,7 +71,9 @@ module Proj(
 	 reg [2:0] colour;
 	 reg b_x_direction, b_y_direction;
 	 reg [17:0] draw_counter;
-	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour, mblock_1_colour, mblock_2_colour;
+	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour;
+	 reg [2:0] mblock_1_colour = 3'b101;
+	 reg [2:0] mblock_2_colour = 3'b101;
 	 wire frame;
 	 reg wall_count = 1'b0;
 	 /* 
@@ -230,6 +232,8 @@ module Proj(
 				power_2 = 0;
 				power_3 = 0;
 				power_4 = 0;
+				mblock_1_colour = 3'b101;
+				mblock_2_colour = 3'b101;
 				state = RESET_BLACK;
 			end
 			
@@ -266,7 +270,7 @@ module Proj(
 						x = b_x;
 						y = b_y;
 						colour = 3'b111;
-						if (ceil_y > 0) state = IDLE;  //if not first round then skip initialization of blocks
+						if ((ceil_y > 0) || (mblock_1_colour == 3'b000) || (mblock_2_colour == 3'b000)) state = IDLE;  //if not first round then skip initialization of blocks
 						else state = INIT_BLOCK_1;
 				 end
 				 INIT_BLOCK_1: begin //red
@@ -329,9 +333,9 @@ module Proj(
 					 bl_10_x = 8'd51;
 					 bl_10_y = 8'd25;
 					 block_10_colour = 3'b110;
-						state = INIT_BLOCK_11;
+						state = INIT_MOVBLK_1; //INIT_BLOCK_11;
 				 end
-				 
+				 /*
 				 INIT_BLOCK_11: begin 
 					 bl_11_x = 8'd71;
 					 bl_11_y = 8'd25;
@@ -342,9 +346,9 @@ module Proj(
 					 bl_12_x = 8'd91;
 					 bl_12_y = 8'd25;
 					 block_12_colour = 3'b110;
-						state = INIT_MOVBLK_1; //INIT_BLOCK_13;
+						state = INIT_BLOCK_13;
 				 end
-				 /*
+				 
 				 INIT_BLOCK_13: begin
 					 bl_13_x = 8'd111;
 					 bl_13_y = 8'd25;
@@ -423,27 +427,27 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = IDLE; //INIT_MOVBLK_2;
+						state = INIT_MOVBLK_2;
 					end
 				 end
-				 /*
+				 
 				 INIT_MOVBLK_2: begin
 					 if (draw_counter < 5'b10000) begin
 					 mbl_2_x = 8'd76;
-					 mbl_2_y = 8'd15;
+					 mbl_2_y = 8'd35;
 						x = mbl_2_x + draw_counter[2:0];
 						y = mbl_2_y + draw_counter[3];
 						draw_counter = draw_counter + 1'b1;
 						mblock_2_colour = 3'b101;
 						colour = mblock_2_colour;
-						mbl_2_xdir = 1'b1;  //this means move right first
+						mbl_2_xdir = 1'b0;  //this means move right first
 						end
 					else begin
 						draw_counter= 8'b00000000;
 						state = IDLE;
 					end
 				 end
-				*/
+				
 
 
 				 IDLE: begin
@@ -683,10 +687,10 @@ module Proj(
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = UPDATE_BLOCK_11;
+						state = ERASE_MOVBLK_1; //UPDATE_BLOCK_11;
 					end
 				 end
-				
+				/*
 				UPDATE_BLOCK_11: begin
   					if ((block_11_colour != 3'b000) && (b_y > bl_11_y + ceil_y - 8'd1) && (b_y < bl_11_y + ceil_y + 8'd2) && (b_x >= bl_11_x) && (b_x <= bl_11_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
@@ -734,7 +738,7 @@ module Proj(
  						state = ERASE_MOVBLK_1; //UPDATE_BLOCK_13;
  					end
  				end
- /*
+ 
 				UPDATE_BLOCK_13: begin
   					if ((block_13_colour != 3'b000) && (b_y > bl_13_y + ceil_y - 8'd1) && (b_y < bl_13_y + ceil_y + 8'd2) && (b_x >= bl_13_x) && (b_x <= bl_13_x + 8'd7)) begin
  						b_y_direction = ~b_y_direction;
@@ -981,7 +985,7 @@ if (draw_counter < 5'b10000) begin
 						score = score + 8'd5;
 						//powerup 1
 						if (ceil_y >= 8'd7) begin 
-							ceil_y = ceil_y - 8'd14;
+							ceil_y = ceil_y - 8'd7;
 							state = UPDATE_CEIL;
 							end
 						end
@@ -998,10 +1002,10 @@ if (draw_counter < 5'b10000) begin
 						end
 					else begin
 						draw_counter= 8'b00000000;
-						state = ERASE_PADDLE; //ERASE_MOVBLK_2;
+						state = ERASE_MOVBLK_2;
 					end
 				 end
-				 /*
+				 
 				 ERASE_MOVBLK_2: begin
 						if (draw_counter < 5'b10000) begin
 						x = mbl_2_x + draw_counter[2:0];
@@ -1018,8 +1022,8 @@ if (draw_counter < 5'b10000) begin
 						if (mbl_2_x == 8'd152) mbl_2_xdir = ~mbl_2_xdir;
 						if (mbl_2_x == 8'd0) mbl_2_xdir = ~mbl_2_xdir;
 
-						if (mbl_2_xdir) mbl_2_x = mbl_2_x - 1'b1; //move left
-						else mbl_2_x = mbl_2_x + 1'b1;  //move right
+						if (mbl_2_xdir) mbl_2_x = mbl_2_x + 1'b1; //move right
+						else mbl_2_x = mbl_2_x - 1'b1;  //move left
 
 						//if block gets hit
 						if ((mblock_2_colour != 3'b000) && (b_y > mbl_2_y + ceil_y - 8'd1) && (b_y < mbl_2_y + ceil_y + 8'd2) && (b_x >= mbl_2_x) && (b_x <= mbl_2_x + 8'd7)) begin
@@ -1028,7 +1032,7 @@ if (draw_counter < 5'b10000) begin
 						score = score + 8'd5;
 						//powerup 1
 						if (ceil_y >= 8'd7) begin 
-							ceil_y = ceil_y - 8'd14;
+							ceil_y = ceil_y - 8'd7;
 							state = UPDATE_CEIL;
 							end
 						end
@@ -1048,7 +1052,7 @@ if (draw_counter < 5'b10000) begin
 						state = ERASE_PADDLE;
 					end
 				 end
-				*/
+				
 				ERASE_PADDLE: begin
 						if (draw_counter < 7'b1000000) begin 
 						x = p_x + draw_counter[4:0];
@@ -1133,6 +1137,7 @@ if (draw_counter < 5'b10000) begin
 				end
 					
 					if (b_y >= 8'd120) begin 
+					ceil_y = ceil_y + 8'd7;
 	               state = UPDATE_CEIL;
 	            end
                else state = DRAW_BALL;
@@ -1178,9 +1183,9 @@ if (draw_counter < 5'b10000) begin
                                 		draw_counter = draw_counter + 1'b1;
                                 		colour = 3'b010;
                                 	end
-											ceil_y = 8'd0;
-											if (hi_score < score) hi_score = score;
-											score = 8'd0;
+						ceil_y = 8'd0;
+						if (hi_score < score) hi_score = score;
+						score = 8'd0;
                                 end
 				
 
@@ -1202,7 +1207,6 @@ if (draw_counter < 5'b10000) begin
 
                                 
 										  UPDATE_CEIL: begin
-                                	ceil_y = ceil_y + 8'd7;
 
                                 	//check if blocks have reached bottom, if yes then go to dead state
                                 	// take into account anticipated ceiling position for blocks
