@@ -74,8 +74,9 @@ module Proj(
 	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour;
 	 reg [2:0] mblock_1_colour;
 	 reg [2:0] mblock_2_colour;
+	 reg [1:0] speed = 2'b0;
 	 wire frame;
-	 reg wall_count = 1'b0;
+	 //reg wall_count = 1'b0;
 	 /* 
 	 power 1 is raise ceiling,
 	 2 is shorten paddle,
@@ -194,6 +195,7 @@ module Proj(
 				power_2 = 0;
 				power_3 = 0;
 				power_4 = 0;
+				speed = 0;
 				state = RESET_BLACK;
 			end
 			
@@ -698,8 +700,8 @@ module Proj(
 				 		else if (power_3) p_length = 7'b0010000; //16
 				 		else if (power_4) p_length = 7'b0100000; //32
 				 
-						if (~KEY[1] && p_x < 8'd160 - p_length) p_x = p_x + 1'b1; //right
-						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1;  //left
+						if (~KEY[1] && p_x < 8'd160 - p_length) p_x = p_x + 1'b1 + speed; //right
+						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1 - speed;  //left
 						state = DRAW_PADDLE;
 						
 				 end
@@ -740,16 +742,16 @@ module Proj(
 										 
 					if (~b_x_direction) begin
 						//if (wall_count == 0 && b_y % 2 == 0) //attempt to vary ball speed/angle
-							b_x = b_x + 1'b1;  
+							b_x = b_x + 1'b1 + speed;  
 						end
 					 else begin
 						//if (wall_count == 0 && b_y % 2 == 0) 
-							b_x = b_x - 1'b1;
+							b_x = b_x - 1'b1 - speed;
 						end
 
 					
-					 if (b_y_direction) b_y = b_y + 1'b1;
-					 else b_y = b_y - 1'b1;
+					 if (b_y_direction) b_y = b_y + 1'b1 + speed;
+					 else b_y = b_y - 1'b1 - speed;
 					 
 					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
 					b_x_direction = ~b_x_direction;
@@ -757,7 +759,7 @@ module Proj(
 					end
 				
 				//check if ball hits paddle or the top of screen
-				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2) && (b_x >= p_x) && (b_x <= p_x + p_length - 8'd1))) begin
+				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2 + speed) && (b_x >= p_x) && (b_x <= p_x + p_length - 8'd1))) begin
 					b_y_direction = ~b_y_direction;
 
 					//vary direction of the ball
@@ -796,6 +798,13 @@ module Proj(
                                 end
 
                                 WON_GAME: begin
+										  
+										  speed = speed + 1'b1;
+										  ceil_y = 8'd0;
+										  power_1 = 1'b0;
+										  state = RESET_BLACK;
+										  
+										  /*
                                 	if (draw_counter < 17'b10000000000000000) begin
                                 		x = draw_counter[7:0];
 		                                y = draw_counter[16:8];
@@ -805,6 +814,7 @@ module Proj(
 						ceil_y = 8'd0;
 						if (hi_score < score) hi_score = score;
 						score = 8'd0;
+						*/
                                 end
 				
 
