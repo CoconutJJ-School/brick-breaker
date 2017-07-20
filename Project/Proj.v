@@ -398,9 +398,9 @@ module Proj(
 					state = DRAW_BLOCK_1;
 				 end
 				 DRAW_BLOCK_1: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_1_x + draw_counter[2:0];
-						y = bl_1_y + ceil_y + draw_counter[3];
+						y = bl_1_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_1_colour;
 						end
@@ -421,9 +421,9 @@ module Proj(
 					state = DRAW_BLOCK_2;
 				 end
 				 DRAW_BLOCK_2: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_2_x + draw_counter[2:0];
-						y = bl_2_y + ceil_y + draw_counter[3];
+						y = bl_2_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_2_colour;
 						end
@@ -444,9 +444,9 @@ module Proj(
 					state = DRAW_BLOCK_3;
 				 end
 				 DRAW_BLOCK_3: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_3_x + draw_counter[2:0];
-						y = bl_3_y + ceil_y + draw_counter[3];
+						y = bl_3_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_3_colour;
 						end
@@ -467,9 +467,9 @@ module Proj(
 					state = DRAW_BLOCK_4;
 				 end
 				 DRAW_BLOCK_4: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_4_x + draw_counter[2:0];
-						y = bl_4_y + ceil_y + draw_counter[3];
+						y = bl_4_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_4_colour;
 						end
@@ -490,9 +490,9 @@ module Proj(
 					state = DRAW_BLOCK_5;
 				 end
 				 DRAW_BLOCK_5: begin
-					if (draw_counter < 5'b10000) begin
+					if (draw_counter < 6'b100000) begin
 						x = bl_5_x + draw_counter[2:0];
-						y = bl_5_y + ceil_y + draw_counter[3];
+						y = bl_5_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_5_colour;
 						end
