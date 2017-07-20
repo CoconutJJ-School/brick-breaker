@@ -72,8 +72,8 @@ module Proj(
 	 reg b_x_direction, b_y_direction;
 	 reg [17:0] draw_counter;
 	 reg [2:0] block_1_colour, block_2_colour, block_3_colour, block_4_colour, block_5_colour, block_6_colour, block_7_colour, block_8_colour, block_9_colour, block_10_colour, block_11_colour, block_12_colour, block_13_colour, block_14_colour, block_15_colour, block_16_colour, block_17_colour, block_18_colour, block_19_colour, block_20_colour, block_21_colour;
-	 reg [2:0] mblock_1_colour = 3'b101;
-	 reg [2:0] mblock_2_colour = 3'b101;
+	 reg [2:0] mblock_1_colour;
+	 reg [2:0] mblock_2_colour;
 	 wire frame;
 	 reg wall_count = 1'b0;
 	 /* 
@@ -141,44 +141,10 @@ module Proj(
             CHECK_IFWON = 7'b0101111,  //state for checking if player has cleared all the blocks
             WON_GAME = 7'b0110000,
             
-            INIT_BLOCK_11 = 7'b0110001,
-            INIT_BLOCK_12 = 7'b0110010,
-            INIT_BLOCK_13 = 7'b0110011,
-            INIT_BLOCK_14 = 7'b0110100,
-            INIT_BLOCK_15 = 7'b0110101,
-            INIT_BLOCK_16 = 7'b0110110,
-            INIT_BLOCK_17 = 7'b0110111,
-            INIT_BLOCK_18 = 7'b0111000,
-            INIT_BLOCK_19 = 7'b0111001,
-            INIT_BLOCK_20 = 7'b0111010,
-            INIT_BLOCK_21 = 7'b0111011,
-            INIT_MOVBLK_2 = 7'b0111100,
-            ERASE_MOVBLK_2   = 7'b0111101,
-			UPDATE_MOVBLK_2  = 7'b0111110,
-			DRAW_MOVBLK_2    = 7'b0111111,
-			
-			UPDATE_BLOCK_11    = 7'b1000000,
-			DRAW_BLOCK_11      = 7'b1000001,
-			UPDATE_BLOCK_12    = 7'b1000010,
-			DRAW_BLOCK_12      = 7'b1000011,
-			UPDATE_BLOCK_13    = 7'b1000100,
-			DRAW_BLOCK_13      = 7'b1000101,
-			UPDATE_BLOCK_14    = 7'b1000110,
-			DRAW_BLOCK_14      = 7'b1000111,
-			UPDATE_BLOCK_15    = 7'b1001000,
-			DRAW_BLOCK_15      = 7'b1001001,
-			UPDATE_BLOCK_16    = 7'b1001010,
-			DRAW_BLOCK_16      = 7'b1001011,
-			UPDATE_BLOCK_17    = 7'b1001100,
-			DRAW_BLOCK_17      = 7'b1001101,
-			UPDATE_BLOCK_18    = 7'b1001110,
-			DRAW_BLOCK_18      = 7'b1001111,
-			UPDATE_BLOCK_19    = 7'b1010000,
-			DRAW_BLOCK_19      = 7'b1010001,
-			UPDATE_BLOCK_20    = 7'b1010010,
-			DRAW_BLOCK_20      = 7'b1010011,
-			UPDATE_BLOCK_21    = 7'b1010100,
-			DRAW_BLOCK_21      = 7'b1010101;
+            ERASE_MOVBLK_2 = 7'b0110001,
+            UPDATE_MOVBLK_2 = 7'b0110010,
+            DRAW_MOVBLK_2 = 7'b0110011,
+				INIT_MOVBLK_2 = 7'b0110100;
 			
 
 	 clock(.clock(CLOCK_50), .clk(frame));
@@ -217,10 +183,6 @@ module Proj(
      // GAME FSM
      always@(posedge CLOCK_50)
         begin
-			border_initing = 1'b0;  //unused?
-			paddle_initing = 1'b0;
-			ball_initing = 1'b0;
-			block_initing = 1'b0;
 			colour = 3'b000;
 			x = 8'b00000000;
 			y = 8'b00000000;
@@ -232,8 +194,6 @@ module Proj(
 				power_2 = 0;
 				power_3 = 0;
 				power_4 = 0;
-				mblock_1_colour = 3'b101;
-				mblock_2_colour = 3'b101;
 				state = RESET_BLACK;
 			end
 			
@@ -270,7 +230,10 @@ module Proj(
 						x = b_x;
 						y = b_y;
 						colour = 3'b111;
-						if ((ceil_y > 0) || (power_1 == 1'b1)) state = IDLE;  //if not first round then skip initialization of blocks
+						if ((ceil_y > 0) || (power_1 == 1'b1)) begin 
+							power_1 = 1'b0;
+							state = IDLE;  //if not first round then skip initialization of blocks
+							end
 						else state = INIT_BLOCK_1;
 				 end
 				
@@ -282,33 +245,33 @@ module Proj(
 				 end
 
 				 INIT_BLOCK_2: begin
-					 bl_2_x = 8'd76;
+					 bl_2_x = 8'd46;
 					 bl_2_y = 8'd30;
 					 block_2_colour = 3'b100;
 						state = INIT_BLOCK_3;
 				 end
 				 INIT_BLOCK_3: begin
-					 bl_3_x = 8'd118;
+					 bl_3_x = 8'd58;
 					 bl_3_y = 8'd30;
 					 block_3_colour = 3'b100;
 						state = INIT_BLOCK_4;
 				 end
 				 INIT_BLOCK_4: begin //green-blue
-					 bl_4_x = 8'd25;
+					 bl_4_x = 8'd88;
 					 bl_4_y = 8'd38;
 					 block_4_colour = 3'b011;
 						state = INIT_BLOCK_5;
 				 end
 				
 				 INIT_BLOCK_5: begin
-					 bl_5_x = 8'd58;
+					 bl_5_x = 8'd100;
 					 bl_5_y = 8'd38;
 					 block_5_colour = 3'b011;
 						state = INIT_BLOCK_6;
 				 end
 
                 		INIT_BLOCK_6: begin
-					 bl_6_x = 8'd91;
+					 bl_6_x = 8'd112;
 					 bl_6_y = 8'd38;
 					 block_6_colour = 3'b011;
 						state = INIT_BLOCK_7;
@@ -328,14 +291,14 @@ module Proj(
 				 end
 
                 		INIT_BLOCK_9: begin
-					 bl_9_x = 8'd76;
+					 bl_9_x = 8'd46;
 					 bl_9_y = 8'd45;
 					 block_9_colour = 3'b001;
 						state = INIT_BLOCK_10;
 				 end
                  		INIT_BLOCK_10: begin
 
-					 bl_10_x = 8'd51;
+					 bl_10_x = 8'd58;
 					 bl_10_y = 8'd45;
 					 block_10_colour = 3'b001;
 						state = INIT_MOVBLK_1; //INIT_BLOCK_11;
@@ -516,7 +479,7 @@ module Proj(
 				 DRAW_BLOCK_6: begin
 					if (draw_counter < 6'b100000) begin
 						x = bl_6_x + draw_counter[2:0];
-						y = bl_6_y + ceil_y + draw_counter[3];
+						y = bl_6_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_6_colour;
 						end
@@ -540,7 +503,7 @@ module Proj(
 				 DRAW_BLOCK_7: begin
 					if (draw_counter < 6'b100000) begin
 						x = bl_7_x + draw_counter[2:0];
-						y = bl_7_y + ceil_y + draw_counter[3];
+						y = bl_7_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_7_colour;
 						end
@@ -564,7 +527,7 @@ module Proj(
 				 DRAW_BLOCK_8: begin
 					if (draw_counter < 6'b100000) begin
 						x = bl_8_x + draw_counter[2:0];
-						y = bl_8_y + ceil_y + draw_counter[3];
+						y = bl_8_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_8_colour;
 						end
@@ -588,7 +551,7 @@ module Proj(
 				 DRAW_BLOCK_9: begin
 					if (draw_counter < 6'b100000) begin
 						x = bl_9_x + draw_counter[2:0];
-						y = bl_9_y + ceil_y + draw_counter[3];
+						y = bl_9_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_9_colour;
 						end
@@ -612,7 +575,7 @@ module Proj(
 				 DRAW_BLOCK_10: begin
 					if (draw_counter < 6'b100000) begin
 						x = bl_10_x + draw_counter[2:0];
-						y = bl_10_y + ceil_y + draw_counter[3];
+						y = bl_10_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = block_10_colour;
 						end
@@ -628,7 +591,7 @@ module Proj(
 				ERASE_MOVBLK_1: begin
 						if (draw_counter < 6'b100000) begin
 						x = mbl_1_x + draw_counter[2:0];
-						y = mbl_1_y + ceil_y + draw_counter[3];
+						y = mbl_1_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						end
 					else begin
@@ -650,8 +613,7 @@ module Proj(
 						mblock_1_colour = 3'b000;
 						score = score + 8'd5;
 						//powerup 1
-						if (ceil_y >= 8'd7) begin 
-							ceil_y = ceil_y - 8'd7;
+						if (ceil_y != 8'd0) begin 
 							power_1 = 1'b1;
 							state = UPDATE_CEIL;
 							end
@@ -663,7 +625,7 @@ module Proj(
 				 DRAW_MOVBLK_1: begin
 					if (draw_counter < 6'b100000) begin
 						x = mbl_1_x + draw_counter[2:0];
-						y = mbl_1_y + ceil_y + draw_counter[3];
+						y = mbl_1_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = mblock_1_colour;
 						end
@@ -676,7 +638,7 @@ module Proj(
 				 ERASE_MOVBLK_2: begin
 						if (draw_counter < 6'b100000) begin
 						x = mbl_2_x + draw_counter[2:0];
-						y = mbl_2_y + ceil_y + draw_counter[3];
+						y = mbl_2_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						end
 					else begin
@@ -698,8 +660,7 @@ module Proj(
 						mblock_2_colour = 3'b000;
 						score = score + 8'd5;
 						//powerup 1
-						if (ceil_y >= 8'd7) begin 
-							ceil_y = ceil_y - 8'd7;
+						if (ceil_y != 8'd0) begin 
 							power_1 = 1'b1;
 							state = UPDATE_CEIL;
 							end
@@ -711,7 +672,7 @@ module Proj(
 				 DRAW_MOVBLK_2: begin
 					if (draw_counter < 6'b100000) begin
 						x = mbl_2_x + draw_counter[2:0];
-						y = mbl_2_y + ceil_y + draw_counter[3];
+						y = mbl_2_y + ceil_y + draw_counter[4:3];
 						draw_counter = draw_counter + 1'b1;
 						colour = mblock_2_colour;
 						end
@@ -805,7 +766,7 @@ module Proj(
 				end
 					
 					if (b_y >= 8'd120) begin 
-					ceil_y = ceil_y + 8'd7;
+					
 	               state = UPDATE_CEIL;
 	            end
                else state = DRAW_BALL;
@@ -828,16 +789,6 @@ module Proj(
                                 		(block_8_colour == 3'b000) &&
                                 		(block_9_colour == 3'b000) &&
                                 		(block_10_colour == 3'b000) &&
-                                        (block_11_colour == 3'b000) &&
-                                        (block_12_colour == 3'b000) &&
-                                        (block_13_colour == 3'b000) &&
-                                        (block_14_colour == 3'b000) &&
-                                        (block_15_colour == 3'b000) &&
-                                        (block_16_colour == 3'b000) &&
-                                        (block_17_colour == 3'b000) &&
-                                        (block_19_colour == 3'b000) &&
-                                        (block_20_colour == 3'b000) &&
-                                        (block_21_colour == 3'b000) &&
                                 		(mblock_1_colour == 3'b000) &&
                                 		(mblock_2_colour == 3'b000)
                                 		) state = WON_GAME;
@@ -875,6 +826,9 @@ module Proj(
 
                                 
 										  UPDATE_CEIL: begin
+										  
+										  if (power_1 == 1'b1) ceil_y = ceil_y - 8'd7;
+										  else ceil_y = ceil_y + 8'd7;
 
                                 	//check if blocks have reached bottom, if yes then go to dead state
                                 	// take into account anticipated ceiling position for blocks
@@ -888,17 +842,6 @@ module Proj(
                                 		((block_8_colour != 3'b000) && (bl_8_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((block_9_colour != 3'b000) && (bl_9_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((block_10_colour != 3'b000) && (bl_10_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_11_colour != 3'b000) && (bl_11_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_12_colour != 3'b000) && (bl_12_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_13_colour != 3'b000) && (bl_13_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_14_colour != 3'b000) && (bl_14_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_15_colour != 3'b000) && (bl_15_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_16_colour != 3'b000) && (bl_16_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_17_colour != 3'b000) && (bl_17_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_18_colour != 3'b000) && (bl_18_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_19_colour != 3'b000) && (bl_19_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_20_colour != 3'b000) && (bl_20_y + ceil_y + 8'd2 > 8'd108)) ||
-                                		((block_21_colour != 3'b000) && (bl_21_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((mblock_1_colour != 3'b000) && (mbl_1_y + ceil_y + 8'd2 > 8'd108)) ||
                                 		((mblock_2_colour != 3'b000) && (mbl_2_y + ceil_y + 8'd2 > 8'd108))
                                 		) state = DEAD;
