@@ -179,7 +179,10 @@ module Proj(
         .segments(HEX5)
         );
 
-	 
+	 reg [1:0] clk_count = 2'b00;
+	 reg [1:0] random_factor = 2'b00;
+	 reg xchange = 0;
+	 reg b_count = 0;
 	 
      // GAME FSM
      always@(posedge CLOCK_50)
@@ -198,6 +201,9 @@ module Proj(
 				speed = 0;
 				state = RESET_BLACK;
 			end
+			
+			//clock counter
+			clk_count = clk_count + 1'b1;
 			
         case (state)
 		  RESET_BLACK: begin
@@ -738,24 +744,55 @@ module Proj(
 						state = UPDATE_BALL;
 				 end
 				UPDATE_BALL: begin
-									
-										 
-					if (~b_x_direction) begin
-						//if (wall_count == 0 && b_y % 2 == 0) //attempt to vary ball speed/angle
-							b_x = b_x + 1'b1 + speed;  
-						end
-					 else begin
-						//if (wall_count == 0 && b_y % 2 == 0) 
-							b_x = b_x - 1'b1 - speed;
-						end
+				
+					//check if x or y is slowed down
+					//if x changed then y increments normally
+					if (xchange) begin
+					
+						//increment y
+						if (b_y_direction) b_y = b_y + 1'b1 + speed;
+					 	else b_y = b_y - 1'b1 - speed;
+					 	
+					 	//regulate frequency of x movement				
+						if (b_count == random_factor) begin
+							//move x
+					 		if (~b_x_direction) b_x = b_x + 1'b1 + speed;
+					 		else b_x = b_x - 1'b1 - speed;
+					 		//reset counter
+					 		b_count = 2'b0;
+					 	end
+					 	else b_count = b_count + 2'b01;
+					 
+					end
+					
+					//otherwise vice versa
+					else begin
+					
+						//increment x
+						if (~b_x_direction) b_x = b_x + 1'b1 + speed;
+					 	else b_x = b_x - 1'b1 - speed;
+					 	
+					 	//regulate frequency of y movement
+					 	if (b_count == random_factor) begin
+							//move y
+					 		if (b_y_direction) b_y = b_y + 1'b1 + speed;
+					 		else b_y = b_y - 1'b1 - speed;
+					 		//reset counter
+					 		b_count = 2'b0;
+					 	end
+					 	else b_count = b_count + 2'b01;
+					end
+					
+					
 
 					
-					 if (b_y_direction) b_y = b_y + 1'b1 + speed;
-					 else b_y = b_y - 1'b1 - speed;
 					 
+					 
+					//check if it hits the wall
 					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
 					b_x_direction = ~b_x_direction;
-					//wall_count = wall_count + 1'b1;
+					random_factor = clk_counter;
+					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddle
 					end
 				
 				//check if ball hits paddle or the top of screen
@@ -763,7 +800,7 @@ module Proj(
 					b_y_direction = ~b_y_direction;
 
 					//vary direction of the ball
-					if ((p_y % 1'd2) == 1'd0) b_x_direction = ~b_x_direction;
+					if ((p_x % 1'd2) == 1'd0) b_x_direction = ~b_x_direction;
 
 				end
 					
@@ -804,7 +841,7 @@ module Proj(
 										  power_1 = 1'b0;
 										  state = RESET_BLACK;
 										  
-										  /*
+										  /* simple win game screen
                                 	if (draw_counter < 17'b10000000000000000) begin
                                 		x = draw_counter[7:0];
 		                                y = draw_counter[16:8];
