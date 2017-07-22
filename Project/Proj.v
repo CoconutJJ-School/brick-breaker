@@ -626,8 +626,7 @@ module Proj(
 							state = UPDATE_CEIL;
 							end
 						end
-
-						state = DRAW_MOVBLK_1;
+						else state = DRAW_MOVBLK_1;
 						
 				 end
 				 DRAW_MOVBLK_1: begin
@@ -673,8 +672,7 @@ module Proj(
 							state = UPDATE_CEIL;
 							end
 						end
-
-						state = DRAW_MOVBLK_2;
+						else state = DRAW_MOVBLK_2;
 						
 				 end
 				 DRAW_MOVBLK_2: begin
