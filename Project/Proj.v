@@ -778,8 +778,8 @@ module Proj(
 					 		//reset counter
 					 		b_count = 2'b0;
 					 	end
-					 	else b_count = b_count + 2'b01;
-					end
+							else b_count = b_count + 2'b01;
+						end
 					
 					
 
@@ -789,7 +789,7 @@ module Proj(
 					//check if it hits the wall
 					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
 					b_x_direction = ~b_x_direction;
-					random_factor = clk_counter;
+					random_factor = clk_count;
 					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddle
 					end
 				
