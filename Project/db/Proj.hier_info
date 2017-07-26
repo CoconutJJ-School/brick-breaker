@@ -74,6 +74,7 @@ KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
+KEY[0] => b_count.OUTPUTSELECT
 KEY[1] => always0.IN1
 KEY[2] => always0.IN1
 KEY[3] => ~NO_FANOUT~

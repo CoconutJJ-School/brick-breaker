@@ -75,14 +75,14 @@ Updates
 
 Week 1 Update: July 7th
 
-After switching plans to extend the brick breaker project from previous years, we've added moving bricks that go left and right.
-We are planning to add a HI SCORE counter too, however, we are too tired at the moment to add anything else. All programs compile file.
-Haven't yet tested. It took longer than usual to understand the code in the beginning so we couldn't make sure that we were able to add more bricks
-properly during the practical session. We worked on adding more bricks and an additional moving brick, a descending ceiling feature and WIN GAME Screen
-after the practical. The next time we have access to the board we are going to test these new features and make sure they work.
+After switching plans to extend the brick breaker project from previous years, we've added moving bricks that go left and right. We are planning to add a HI SCORE counter too, however, we are too tired at the moment to add anything else. All programs compile file. Haven't yet tested. It took longer than usual to understand the code in the beginning so we couldn't make sure that we were able to add more bricks properly during the practical session. We worked on adding more bricks and an additional moving brick, a descending ceiling feature and WIN GAME Screen after the practical. The next time we have access to the board we are going to test these new features and make sure they work.
 
 
 Week 2 Update: July 16th
 
 Added and fully tested hi score counter on the hex display, and previous descending bricks, win game screen, additional bricks and moving brick. During the previous practical, we found some bugs in the game where the ball would pass right through the moving brick and the deleted bricks would colour black over the paddle when it reaches the bottom. After the practical, we tried to fix these bugs, but have yet to test them out. We also added more bricks with different colours and another moving brick, while implementing a powerups feature for each kind of brick. We have not yet tested the powerups.
+
+Week 3 Update: July 23rd
+
+We were not able to book a makerspace session. However, we've added multiple levels to the game and which differ by the speed of the ball. We still need to test whether or not pseudo-random ball bouncing mechanism works or not. We have squashed all the bugs we have seen so far. The powerups and colourful bricks have been confirmed to be working as expected. We are still trying to change the speed the of the ball which appropriate to each level and remaining possible to complete the game. 
 
