@@ -179,10 +179,22 @@ module Proj(
         .segments(HEX5)
         );
 
-	 reg clk_count = 1'b0;
-	 reg [1:0] random_factor = 2'b00;
+		  
+		  
+		  
+		  
+		  
+	 //reg clk_count = 1'b0;
+	 wire [4:0] num_generated;
+	 reg [1:0] random_factor = 2'b01;
 	 reg xchange = 0;
 	 reg b_count = 1'b1;
+	 
+	 
+	 
+	 fibonacci_lfsr_5bit rando1(.clk(CLOCK_50), .rst_n(CLOCK_50), .data(num_generated));
+	 
+	 
 	 
      // GAME FSM
      always@(posedge CLOCK_50)
@@ -204,7 +216,8 @@ module Proj(
 			end
 			
 			//clock counter
-			clk_count = clk_count + 1'b1;
+			//clk_count = clk_count + 1'b1;
+			//xchange = random_factor[0];
 			
         case (state)
 		  RESET_BLACK: begin
@@ -748,49 +761,82 @@ module Proj(
 					//if x changed then y increments normally
 					if (xchange) begin
 					
-						//increment y
-						if (b_y_direction) b_y = b_y + 1'b1 + speed;
-					 	else b_y = b_y - 1'b1 - speed;
-					 	
-					 	//regulate frequency of x movement				
-						if (b_count == random_factor) begin
-							//move x
-					 		if (~b_x_direction) b_x = b_x + 1'b1 + speed;
-					 		else b_x = b_x - 1'b1 - speed;
-					 		//reset counter
-					 		b_count = 2'b1;
-					 	end
-					 	else b_count = b_count + 2'b01;
-					 
-					end
+						if(b_y_direction) b_y = b_y + 1'b1 + speed;
+						else b_y = b_y - 1'b1 - speed;
+						
+						if(~b_x_direction) b_x = b_x + 1'b1 + speed;
+						
+						else b_x = b_x - (num_generated % 1'd2) - speed;
+						
+						
+						
 					
-					//otherwise vice versa
+					end 
+					
 					else begin
 					
-						//increment x
-						if (~b_x_direction) b_x = b_x + 1'b1 + speed;
-					 	else b_x = b_x - 1'b1 - speed;
-					 	
-					 	//regulate frequency of y movement
-					 	if (b_count == random_factor) begin
-							//move y
-					 		if (b_y_direction) b_y = b_y + 1'b1 + speed;
-					 		else b_y = b_y - 1'b1 - speed;
-					 		//reset counter
-					 		b_count = 2'b1;
-					 	end
-							else b_count = b_count + 2'b01;
-						end
+						if(b_y_direction) b_y = b_y + 1'b1 + speed;
+						else b_y = b_y - 1'b1 - speed;
+						
+						if(~b_x_direction) b_x = b_x + 1'b1 + speed;
+						
+						else b_x = b_x - 1'b1 - speed;
 					
+					
+					end
+					
+//					if (xchange) begin
+//					
+//						//increment y
+//						if (b_y_direction) b_y = b_y + 1'b1 + speed;
+//					 	else b_y = b_y - 1'b1 - speed;
+//					 	
+//					 	//regulate frequency of x movement				
+//						if (b_count == random_factor) begin
+//							//move x
+//					 		if (~b_x_direction) b_x = b_x + 1'b1 + speed;
+//					 		else b_x = b_x - 1'b1 - speed;
+//					 		//reset counter
+//					 		b_count = 2'b0;
+//					 	end
+//					 	else b_count = b_count + 2'b01;
+//					 
+//					end
+//					
+//					//otherwise vice versa
+//					else begin
+//					
+//						//increment x
+//						if (~b_x_direction) b_x = b_x + 1'b1 + speed;
+//					 	else b_x = b_x - 1'b1 - speed;
+//					 	
+//					 	//regulate frequency of y movement
+//					 	if (b_count == random_factor) begin
+//							//move y
+//					 		if (b_y_direction) b_y = b_y + 1'b1 + speed;
+//					 		else b_y = b_y - 1'b1 - speed;
+//					 		//reset counter
+//					 		b_count = 2'b0;
+//					 	end
+//							else b_count = b_count + 2'b01;
+//						end
+//					
 					
 
 					
 					 
 					 
 					//check if it hits the wall
-					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
-					b_x_direction = ~b_x_direction;
-					random_factor = random_factor + clk_count;
+					if (b_x <= 8'd0) begin
+						b_x_direction = 1'b0;
+						
+					
+					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddl
+					end
+					else if (b_x >= 8'd157) begin
+						b_x_direction = 1'b1;
+						
+					
 					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddle
 					end
 				
@@ -815,7 +861,7 @@ module Proj(
 						y = b_y;
 						colour = 3'b111;
 						state = CHECK_IFWON;
-				 end
+				 end_x >= 8'd157
 
                                 CHECK_IFWON: begin
                                 	if ((block_1_colour == 3'b000) &&
@@ -917,6 +963,42 @@ reg frame;
     end
 	 assign clk = frame;
 endmodule
+
+
+
+/*
+// this random number generator module is from
+//https://stackoverflow.com/questions/14497877/how-to-implement-a-pseudo-hardware-random-number-generator
+
+*/
+module fibonacci_lfsr_5bit(
+  input clk,
+  input rst_n,
+
+  output reg [4:0] data
+);
+
+reg [4:0] data_next;
+
+always @* begin
+  data_next[4] = data[4]^data[1];
+  data_next[3] = data[3]^data[0];
+  data_next[2] = data[2]^data_next[4];
+  data_next[1] = data[1]^data_next[3];
+  data_next[0] = data[0]^data_next[2];
+end
+
+always @(posedge clk or negedge rst_n)
+  if(!rst_n)
+    data <= 5'h1f;
+  else
+    data <= data_next;
+
+endmodule
+
+
+
+
 
 
 

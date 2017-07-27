@@ -1,5 +1,5 @@
 |Proj
-CLOCK_50 => CLOCK_50.IN2
+CLOCK_50 => CLOCK_50.IN4
 KEY[0] => ceil_y.OUTPUTSELECT
 KEY[0] => ceil_y.OUTPUTSELECT
 KEY[0] => ceil_y.OUTPUTSELECT
@@ -74,7 +74,6 @@ KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
 KEY[0] => state.OUTPUTSELECT
-KEY[0] => b_count.OUTPUTSELECT
 KEY[1] => always0.IN1
 KEY[2] => always0.IN1
 KEY[3] => ~NO_FANOUT~
@@ -1001,5 +1000,23 @@ segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Proj|fibonacci_lfsr_5bit:rando1
+clk => data[0]~reg0.CLK
+clk => data[1]~reg0.CLK
+clk => data[2]~reg0.CLK
+clk => data[3]~reg0.CLK
+clk => data[4]~reg0.CLK
+rst_n => data[0]~reg0.PRESET
+rst_n => data[1]~reg0.PRESET
+rst_n => data[2]~reg0.PRESET
+rst_n => data[3]~reg0.PRESET
+rst_n => data[4]~reg0.PRESET
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
