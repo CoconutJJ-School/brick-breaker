@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proj
-Wed Jul 26 21:19:28 2017
+Wed Jul 26 21:33:04 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -70,15 +70,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 26 21:19:28 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 26 21:33:04 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Proj                                        ;
 ; Top-level Entity Name              ; Proj                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,386                                       ;
-;     Total combinational functions  ; 1,381                                       ;
-;     Dedicated logic registers      ; 230                                         ;
-; Total registers                    ; 230                                         ;
+; Total logic elements               ; 1,384                                       ;
+;     Total combinational functions  ; 1,379                                       ;
+;     Dedicated logic registers      ; 228                                         ;
+; Total registers                    ; 228                                         ;
 ; Total pins                         ; 100                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
@@ -220,20 +220,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 1,386        ;
+; Estimated Total logic elements              ; 1,384        ;
 ;                                             ;              ;
-; Total combinational functions               ; 1381         ;
+; Total combinational functions               ; 1379         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 574          ;
-;     -- 3 input functions                    ; 389          ;
-;     -- <=2 input functions                  ; 418          ;
+;     -- 4 input functions                    ; 573          ;
+;     -- 3 input functions                    ; 382          ;
+;     -- <=2 input functions                  ; 424          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 866          ;
-;     -- arithmetic mode                      ; 515          ;
+;     -- normal mode                          ; 865          ;
+;     -- arithmetic mode                      ; 514          ;
 ;                                             ;              ;
-; Total registers                             ; 230          ;
-;     -- Dedicated logic registers            ; 230          ;
+; Total registers                             ; 228          ;
+;     -- Dedicated logic registers            ; 228          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 100          ;
@@ -245,9 +245,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 280          ;
-; Total fan-out                               ; 5237         ;
-; Average fan-out                             ; 2.88         ;
+; Maximum fan-out                             ; 263          ;
+; Total fan-out                               ; 5219         ;
+; Average fan-out                             ; 2.87         ;
 +---------------------------------------------+--------------+
 
 
@@ -256,7 +256,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |Proj                                                   ; 1381 (1219)       ; 230 (179)    ; 57600       ; 0            ; 0       ; 0         ; 100  ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
+; |Proj                                                   ; 1379 (1217)       ; 228 (177)    ; 57600       ; 0            ; 0       ; 0         ; 100  ; 0            ; |Proj                                                                                                ; Proj                   ; work         ;
 ;    |clock:comb_21|                                      ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|clock:comb_21                                                                                  ; clock                  ; work         ;
 ;    |hex_decoder:H0|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H0                                                                                 ; hex_decoder            ; work         ;
 ;    |hex_decoder:H1|                                     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Proj|hex_decoder:H1                                                                                 ; hex_decoder            ; work         ;
@@ -577,11 +577,12 @@ Encoding Type:  One-Hot
 ; bl_1_x[2..4]                            ; Stuck at GND due to stuck port data_in ;
 ; bl_1_x[5]                               ; Stuck at VCC due to stuck port data_in ;
 ; bl_1_x[6,7]                             ; Stuck at GND due to stuck port data_in ;
+; mbl_1_y[0]                              ; Stuck at GND due to stuck port data_in ;
 ; mbl_2_y[6,7]                            ; Stuck at GND due to stuck port data_in ;
 ; mbl_2_y[4,5]                            ; Stuck at VCC due to stuck port data_in ;
 ; mbl_2_y[3]                              ; Stuck at GND due to stuck port data_in ;
 ; mbl_2_y[0..2]                           ; Stuck at VCC due to stuck port data_in ;
-; mbl_1_y[0,1]                            ; Stuck at GND due to stuck port data_in ;
+; mbl_1_y[1]                              ; Stuck at GND due to stuck port data_in ;
 ; mbl_1_y[2]                              ; Stuck at VCC due to stuck port data_in ;
 ; mbl_1_y[3]                              ; Stuck at GND due to stuck port data_in ;
 ; mbl_1_y[4]                              ; Stuck at VCC due to stuck port data_in ;
@@ -631,7 +632,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 230   ;
+; Total registers                              ; 228   ;
 ; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -646,15 +647,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Proj|vga_adapter:VGA|vga_controller:controller|yCounter[5]                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_x[4]                                                                                            ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Proj|vga_adapter:VGA|vga_controller:controller|yCounter[1]                                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Proj|b_y[3]                                                                                            ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Proj|mbl_2_x[0]                                                                                        ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Proj|mbl_1_x[0]                                                                                        ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|p_x[6]                                                                                            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|ceil_y[5]                                                                                         ;
-; 21:1               ; 3 bits    ; 42 LEs        ; 6 LEs                ; 36 LEs                 ; Yes        ; |Proj|power_2                                                                                           ;
-; 27:1               ; 8 bits    ; 144 LEs       ; 16 LEs               ; 128 LEs                ; Yes        ; |Proj|score[7]                                                                                          ;
-; 13:1               ; 18 bits   ; 144 LEs       ; 18 LEs               ; 126 LEs                ; Yes        ; |Proj|draw_counter[6]                                                                                   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Proj|ceil_y[6]                                                                                         ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 6 LEs                ; 36 LEs                 ; Yes        ; |Proj|power_4                                                                                           ;
+; 27:1               ; 8 bits    ; 144 LEs       ; 16 LEs               ; 128 LEs                ; Yes        ; |Proj|score[3]                                                                                          ;
+; 13:1               ; 18 bits   ; 144 LEs       ; 18 LEs               ; 126 LEs                ; Yes        ; |Proj|draw_counter[15]                                                                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Proj|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|mux_0nb:mux3|result_node[1] ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Proj|p_length                                                                                          ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Proj|Selector161                                                                                       ;
@@ -1225,25 +1226,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 100                         ;
-; cycloneiii_ff         ; 230                         ;
+; cycloneiii_ff         ; 228                         ;
 ;     ENA               ; 56                          ;
 ;     SCLR SLD          ; 8                           ;
-;     plain             ; 166                         ;
-; cycloneiii_lcell_comb ; 1388                        ;
-;     arith             ; 515                         ;
-;         2 data inputs ; 245                         ;
-;         3 data inputs ; 270                         ;
-;     normal            ; 873                         ;
+;     plain             ; 164                         ;
+; cycloneiii_lcell_comb ; 1386                        ;
+;     arith             ; 514                         ;
+;         2 data inputs ; 250                         ;
+;         3 data inputs ; 264                         ;
+;     normal            ; 872                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 47                          ;
+;         1 data inputs ; 48                          ;
 ;         2 data inputs ; 129                         ;
-;         3 data inputs ; 119                         ;
-;         4 data inputs ; 574                         ;
+;         3 data inputs ; 118                         ;
+;         4 data inputs ; 573                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.00                       ;
-; Average LUT depth     ; 6.64                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 6.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1262,7 +1263,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Jul 26 21:19:14 2017
+    Info: Processing started: Wed Jul 26 21:32:51 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj -c Proj
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file /courses/courses/cscb58s17/limcryst/PROJ/Project/Proj.v is missing
@@ -1275,21 +1276,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
     Info (12023): Found entity 1: vga_adapter File: /cmshome/yueming1/Desktop/b58Proj/Project/vga_adapter/vga_adapter.v Line: 78
 Warning (10229): Verilog HDL Expression warning at Proj.v(769): truncated literal to match 1 bits File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 769
-Warning (10229): Verilog HDL Expression warning at Proj.v(849): truncated literal to match 1 bits File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 849
+Warning (10229): Verilog HDL Expression warning at Proj.v(837): truncated literal to match 1 bits File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 837
 Warning (12125): Using design file Proj.v, which is not specified as a design file for the current project, but contains definitions for 4 design units and 4 entities in project
     Info (12023): Found entity 1: Proj File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 1
-    Info (12023): Found entity 2: clock File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 950
-    Info (12023): Found entity 3: fibonacci_lfsr_5bit File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 974
-    Info (12023): Found entity 4: hex_decoder File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 1005
+    Info (12023): Found entity 2: clock File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 938
+    Info (12023): Found entity 3: fibonacci_lfsr_5bit File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 962
+    Info (12023): Found entity 4: hex_decoder File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 993
 Critical Warning (10846): Verilog HDL Instantiation warning at Proj.v(151): instance has no name File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 151
 Info (12127): Elaborating entity "Proj" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Proj.v(190): object "xchange" assigned a value but never read File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 190
 Warning (10230): Verilog HDL assignment warning at Proj.v(226): truncated value with size 9 to match size of target (8) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 226
 Warning (10216): Verilog HDL warning at Proj.v(769): expression attempts to divide or modulo by zero. Treated expression value as Don't Care (X) during synthesis. File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 769
+Warning (10230): Verilog HDL assignment warning at Proj.v(822): truncated value with size 32 to match size of target (1) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 822
+Warning (10230): Verilog HDL assignment warning at Proj.v(828): truncated value with size 32 to match size of target (1) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 828
 Warning (10230): Verilog HDL assignment warning at Proj.v(834): truncated value with size 32 to match size of target (1) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 834
-Warning (10230): Verilog HDL assignment warning at Proj.v(840): truncated value with size 32 to match size of target (1) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 840
-Warning (10230): Verilog HDL assignment warning at Proj.v(846): truncated value with size 32 to match size of target (1) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 846
-Warning (10216): Verilog HDL warning at Proj.v(849): expression attempts to divide or modulo by zero. Treated expression value as Don't Care (X) during synthesis. File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 849
-Warning (10230): Verilog HDL assignment warning at Proj.v(909): truncated value with size 9 to match size of target (8) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 909
+Warning (10216): Verilog HDL warning at Proj.v(837): expression attempts to divide or modulo by zero. Treated expression value as Don't Care (X) during synthesis. File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 837
+Warning (10230): Verilog HDL assignment warning at Proj.v(897): truncated value with size 9 to match size of target (8) File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 897
 Warning (10034): Output port "LEDR[17..8]" at Proj.v(19) has no driver File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 19
 Warning (10034): Output port "LEDR[6]" at Proj.v(19) has no driver File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 19
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 57
@@ -1377,16 +1379,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]" File: /cmshome/yueming1/Desktop/b58Proj/Project/Proj.v Line: 18
-Info (21057): Implemented 1507 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1505 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 95 output pins
-    Info (21061): Implemented 1397 logic cells
+    Info (21061): Implemented 1395 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 1288 megabytes
-    Info: Processing ended: Wed Jul 26 21:19:28 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 1291 megabytes
+    Info: Processing ended: Wed Jul 26 21:33:04 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:23
 
 

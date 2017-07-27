@@ -759,7 +759,7 @@ module Proj(
 				
 					//check if x or y is slowed down
 					//if x changed then y increments normally
-					if (xchange) begin
+
 					
 						if(b_y_direction) b_y = b_y + 1'b1 + speed;
 						else b_y = b_y - 1'b1 - speed;
@@ -771,19 +771,7 @@ module Proj(
 						
 						
 					
-					end 
-					
-					else begin
-					
-						if(b_y_direction) b_y = b_y + 1'b1 + speed;
-						else b_y = b_y - 1'b1 - speed;
-						
-						if(~b_x_direction) b_x = b_x + 1'b1 + speed;
-						
-						else b_x = b_x - 1'b1 - speed;
-					
-					
-					end
+
 					
 //					if (xchange) begin
 //					
