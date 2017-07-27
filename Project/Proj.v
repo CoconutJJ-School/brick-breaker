@@ -188,7 +188,7 @@ module Proj(
 	 wire [4:0] num_generated;
 	 reg [1:0] random_factor = 2'b01;
 	 reg xchange = 0;
-	 reg b_count = 1'b1;
+	 //reg b_count = 1'b1;
 	 
 	 
 	 
@@ -212,7 +212,7 @@ module Proj(
 				power_4 = 0;
 				speed = 0;
 				state = RESET_BLACK;
-				b_count = 1'b1;
+				//b_count = 1'b1;
 			end
 			
 			//clock counter
@@ -766,7 +766,7 @@ module Proj(
 						
 						if(~b_x_direction) b_x = b_x + 1'b1 + speed;
 						
-						else b_x = b_x - (num_generated % 1'd2) - speed;
+						else b_x = b_x - (random_factor % 1'd2) - speed;
 						
 						
 						
@@ -830,7 +830,7 @@ module Proj(
 					if (b_x <= 8'd0) begin
 						b_x_direction = 1'b0;
 						
-					
+					random_factor = num_generated[1:0];
 					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddl
 					end
 					else if (b_x >= 8'd157) begin
@@ -861,7 +861,7 @@ module Proj(
 						y = b_y;
 						colour = 3'b111;
 						state = CHECK_IFWON;
-				 end_x >= 8'd157
+				 end
 
                                 CHECK_IFWON: begin
                                 	if ((block_1_colour == 3'b000) &&

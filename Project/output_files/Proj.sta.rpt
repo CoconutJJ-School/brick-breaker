@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Proj
-Wed Jul 26 20:59:37 2017
+Wed Jul 26 21:19:48 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -123,7 +123,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+---------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                            ; Note ;
 +------------+-----------------+---------------------------------------+------+
-; 76.84 MHz  ; 76.84 MHz       ; CLOCK_50                              ;      ;
+; 76.89 MHz  ; 76.89 MHz       ; CLOCK_50                              ;      ;
 ; 145.18 MHz ; 145.18 MHz      ; VGA|mypll|altpll_component|pll|clk[0] ;      ;
 +------------+-----------------+---------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
@@ -140,7 +140,7 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; CLOCK_50                              ; 6.986  ; 0.000         ;
+; CLOCK_50                              ; 6.995  ; 0.000         ;
 ; VGA|mypll|altpll_component|pll|clk[0] ; 33.112 ; 0.000         ;
 +---------------------------------------+--------+---------------+
 
@@ -182,106 +182,106 @@ No paths to report.
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node           ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
-; 6.986 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.083     ; 12.929     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.114 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.776     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.154 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.729     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.187 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.699     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.265 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.625     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.322 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.572     ;
-; 7.387 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.387 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.503     ;
-; 7.406 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.406 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.484     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.477 ; state.DRAW_MOVBLK_2 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.111     ; 12.410     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
-; 7.524 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.358     ;
+; 6.995 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.083     ; 12.920     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.146 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.744     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.186 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.697     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.219 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.112     ; 12.667     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.297 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.593     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.354 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.104     ; 12.540     ;
+; 7.398 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.398 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.492     ;
+; 7.411 ; mbl_1_x[5]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.411 ; mbl_1_x[5]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.473     ;
+; 7.414 ; mbl_1_x[1]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.414 ; mbl_1_x[1]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.470     ;
+; 7.419 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.419 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.108     ; 12.471     ;
+; 7.419 ; mbl_1_x[2]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.464     ;
+; 7.435 ; mbl_1_x[7]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.435 ; mbl_1_x[7]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.115     ; 12.448     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
+; 7.559 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.116     ; 12.323     ;
 ; 7.564 ; ceil_y[2]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
 ; 7.564 ; ceil_y[2]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
 ; 7.564 ; ceil_y[2]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.564 ; ceil_y[2]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.564 ; ceil_y[2]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.564 ; ceil_y[2]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.564 ; ceil_y[2]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.564 ; ceil_y[2]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.325     ;
-; 7.596 ; ceil_y[4]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.596 ; ceil_y[4]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.293     ;
-; 7.662 ; ceil_y[3]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.662 ; ceil_y[3]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.109     ; 12.227     ;
-; 7.666 ; mbl_1_x[5]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.218     ;
-; 7.666 ; mbl_1_x[5]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.218     ;
-; 7.666 ; mbl_1_x[5]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.114     ; 12.218     ;
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -403,69 +403,69 @@ No paths to report.
 ; 0.402 ; b_x[0]                          ; b_x[0]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; mblock_2_colour.101             ; mblock_2_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; mblock_1_colour.101             ; mblock_1_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_x_direction                   ; b_x_direction                                                                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; xchange                         ; xchange                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; b_x[3]                          ; b_x[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_x[7]                          ; b_x[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_x[5]                          ; b_x[5]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; b_x[3]                          ; b_x[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_x[2]                          ; b_x[2]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; draw_counter[17]                ; draw_counter[17]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; draw_counter[16]                ; draw_counter[16]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_y[0]                          ; b_y[0]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_y[1]                          ; b_y[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_y[4]                          ; b_y[4]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; b_y[7]                          ; b_y[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; state.DRAW_BLOCK_5              ; state.DRAW_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; state.UPDATE_BLOCK_5            ; state.UPDATE_BLOCK_5                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.DRAW_BLOCK_1              ; state.DRAW_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; state.DRAW_BLOCK_4              ; state.DRAW_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; state.UPDATE_BLOCK_6            ; state.UPDATE_BLOCK_6                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.DRAW_BLOCK_1              ; state.DRAW_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; state.WON_GAME                  ; state.WON_GAME                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; speed[1]                        ; speed[1]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.402 ; speed[0]                        ; speed[0]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 0.669      ;
 ; 0.403 ; state.ERASE_BALL                ; state.ERASE_BALL                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; block_6_colour.011              ; block_6_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; block_4_colour.011              ; block_4_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; block_9_colour.001              ; block_9_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; block_10_colour.001             ; block_10_colour.001                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_3              ; state.INIT_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_MOVBLK_1             ; state.INIT_MOVBLK_1                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.DRAW_BLOCK_3              ; state.DRAW_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.UPDATE_BLOCK_3            ; state.UPDATE_BLOCK_3                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; block_6_colour.011              ; block_6_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; block_4_colour.011              ; block_4_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.DRAW_PADDLE               ; state.DRAW_PADDLE                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.INIT_BLOCK_2              ; state.INIT_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; state.UPDATE_BLOCK_2            ; state.UPDATE_BLOCK_2                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_MOVBLK_1             ; state.INIT_MOVBLK_1                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.UPDATE_BLOCK_3            ; state.UPDATE_BLOCK_3                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.DRAW_BLOCK_3              ; state.DRAW_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.UPDATE_BLOCK_4            ; state.UPDATE_BLOCK_4                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.UPDATE_BLOCK_7            ; state.UPDATE_BLOCK_7                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.UPDATE_BLOCK_9            ; state.UPDATE_BLOCK_9                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.UPDATE_BLOCK_10           ; state.UPDATE_BLOCK_10                                                                                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; state.DRAW_BLOCK_10             ; state.DRAW_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.UPDATE_BLOCK_2            ; state.UPDATE_BLOCK_2                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_3              ; state.INIT_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_2              ; state.INIT_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; power_4                         ; power_4                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.403 ; power_3                         ; power_3                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.669      ;
 ; 0.406 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a3~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.432      ; 1.060      ;
@@ -620,7 +620,7 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                            ; Note ;
 +------------+-----------------+---------------------------------------+------+
-; 84.07 MHz  ; 84.07 MHz       ; CLOCK_50                              ;      ;
+; 84.13 MHz  ; 84.13 MHz       ; CLOCK_50                              ;      ;
 ; 160.38 MHz ; 160.38 MHz      ; VGA|mypll|altpll_component|pll|clk[0] ;      ;
 +------------+-----------------+---------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
@@ -631,7 +631,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; CLOCK_50                              ; 8.105  ; 0.000         ;
+; CLOCK_50                              ; 8.113  ; 0.000         ;
 ; VGA|mypll|altpll_component|pll|clk[0] ; 33.765 ; 0.000         ;
 +---------------------------------------+--------+---------------+
 
@@ -673,106 +673,106 @@ No paths to report.
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node           ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
-; 8.105 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 11.820     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.260 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.639     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.299 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.595     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.324 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.572     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.391 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.508     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.444 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.459     ;
-; 8.449 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.449 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.452     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.594 ; state.DRAW_MOVBLK_2 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.302     ;
-; 8.603 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.603 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.298     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.608 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.284     ;
-; 8.634 ; ceil_y[2]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.634 ; ceil_y[2]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.266     ;
-; 8.730 ; ceil_y[4]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.730 ; ceil_y[4]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.170     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.751 ; state.DRAW_PADDLE   ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.141     ;
-; 8.789 ; mbl_1_x[5]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.104     ;
-; 8.789 ; mbl_1_x[5]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.104     ;
-; 8.789 ; mbl_1_x[5]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.104     ;
+; 8.113 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 11.812     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.289 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.610     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.328 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.105     ; 11.566     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.353 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.103     ; 11.543     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.420 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.100     ; 11.479     ;
+; 8.459 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.459 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.442     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.473 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.096     ; 11.430     ;
+; 8.537 ; mbl_1_x[5]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.537 ; mbl_1_x[5]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.356     ;
+; 8.538 ; mbl_1_x[1]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.538 ; mbl_1_x[1]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.355     ;
+; 8.541 ; mbl_1_x[2]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.541 ; mbl_1_x[2]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.352     ;
+; 8.556 ; mbl_1_x[7]          ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.556 ; mbl_1_x[7]          ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.106     ; 11.337     ;
+; 8.613 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.613 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.098     ; 11.288     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.639 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.107     ; 11.253     ;
+; 8.644 ; ceil_y[2]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.256     ;
+; 8.644 ; ceil_y[2]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.256     ;
+; 8.644 ; ceil_y[2]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.099     ; 11.256     ;
 +-------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -894,68 +894,68 @@ No paths to report.
 ; 0.354 ; state.ERASE_BALL                ; state.ERASE_BALL                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; mblock_2_colour.101             ; mblock_2_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; mblock_1_colour.101             ; mblock_1_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_x_direction                   ; b_x_direction                                                                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; xchange                         ; xchange                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; b_x[3]                          ; b_x[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_x[7]                          ; b_x[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_x[5]                          ; b_x[5]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; b_x[3]                          ; b_x[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_x[2]                          ; b_x[2]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_9_colour.001              ; block_9_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_10_colour.001             ; block_10_colour.001                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; draw_counter[17]                ; draw_counter[17]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; draw_counter[16]                ; draw_counter[16]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_y[0]                          ; b_y[0]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_y[1]                          ; b_y[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_y[4]                          ; b_y[4]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; b_y[7]                          ; b_y[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; block_4_colour.011              ; block_4_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_9_colour.001              ; block_9_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_10_colour.001             ; block_10_colour.001                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_PADDLE               ; state.DRAW_PADDLE                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.INIT_MOVBLK_1             ; state.INIT_MOVBLK_1                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.UPDATE_BLOCK_3            ; state.UPDATE_BLOCK_3                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.DRAW_BLOCK_5              ; state.DRAW_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_5            ; state.UPDATE_BLOCK_5                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.DRAW_BLOCK_3              ; state.DRAW_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.UPDATE_BLOCK_3            ; state.UPDATE_BLOCK_3                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_PADDLE               ; state.DRAW_PADDLE                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.DRAW_BLOCK_1              ; state.DRAW_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.UPDATE_BLOCK_2            ; state.UPDATE_BLOCK_2                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_4            ; state.UPDATE_BLOCK_4                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.DRAW_BLOCK_4              ; state.DRAW_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_6            ; state.UPDATE_BLOCK_6                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_7            ; state.UPDATE_BLOCK_7                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_9            ; state.UPDATE_BLOCK_9                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.UPDATE_BLOCK_10           ; state.UPDATE_BLOCK_10                                                                                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.DRAW_BLOCK_10             ; state.DRAW_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_1              ; state.DRAW_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.UPDATE_BLOCK_2            ; state.UPDATE_BLOCK_2                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; state.WON_GAME                  ; state.WON_GAME                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; speed[1]                        ; speed[1]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
 ; 0.354 ; speed[0]                        ; speed[0]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; block_6_colour.011              ; block_6_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; state.INIT_BLOCK_3              ; state.INIT_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; state.INIT_BLOCK_2              ; state.INIT_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; power_4                         ; power_4                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.355 ; power_3                         ; power_3                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
 ; 0.372 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a5~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.390      ; 0.963      ;
@@ -1111,7 +1111,7 @@ No synchronizer chains to report.
 +---------------------------------------+--------+---------------+
 ; Clock                                 ; Slack  ; End Point TNS ;
 +---------------------------------------+--------+---------------+
-; CLOCK_50                              ; 13.377 ; 0.000         ;
+; CLOCK_50                              ; 13.382 ; 0.000         ;
 ; VGA|mypll|altpll_component|pll|clk[0] ; 36.641 ; 0.000         ;
 +---------------------------------------+--------+---------------+
 
@@ -1153,106 +1153,106 @@ No paths to report.
 +--------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node           ; To Node       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
-; 13.377 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.044     ; 6.566      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.572 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.347      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.579 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.333      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.596 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.317      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.642 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.277      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.674 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.249      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.758 ; state.DRAW_MOVBLK_2 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.155      ;
-; 13.781 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.781 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.141      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.795 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.114      ;
-; 13.823 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.823 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.099      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.854 ; state.DRAW_PADDLE   ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.055      ;
-; 13.861 ; speed[0]            ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.040     ; 6.086      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.870 ; state.DRAW_BLOCK_2  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.053      ;
-; 13.887 ; ceil_y[3]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.887 ; ceil_y[3]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.034      ;
-; 13.892 ; state.DRAW_BLOCK_7  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.021      ;
-; 13.892 ; state.DRAW_BLOCK_7  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.021      ;
+; 13.382 ; b_x_direction       ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.044     ; 6.561      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.588 ; state.DRAW_BLOCK_10 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.331      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.595 ; state.DRAW_BLOCK_4  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.075     ; 6.317      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.612 ; state.DRAW_BLOCK_6  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.301      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.658 ; state.DRAW_BLOCK_3  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.068     ; 6.261      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.690 ; state.DRAW_BLOCK_8  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.233      ;
+; 13.790 ; ceil_y[1]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.790 ; ceil_y[1]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.132      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.813 ; state.INIT_BLOCK_1  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.096      ;
+; 13.832 ; ceil_y[0]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.832 ; ceil_y[0]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.065     ; 6.090      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.850 ; state.DRAW_MOVBLK_2 ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.074     ; 6.063      ;
+; 13.864 ; speed[0]            ; b_y_direction ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.040     ; 6.083      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.873 ; state.DRAW_PADDLE   ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.078     ; 6.036      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.890 ; state.DRAW_BLOCK_2  ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.064     ; 6.033      ;
+; 13.896 ; ceil_y[3]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[2]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[3]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[4]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[5]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[6]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.896 ; ceil_y[3]           ; score[7]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.025      ;
+; 13.897 ; ceil_y[2]           ; score[0]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.024      ;
+; 13.897 ; ceil_y[2]           ; score[1]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.066     ; 6.024      ;
 +--------+---------------------+---------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -1373,72 +1373,72 @@ No paths to report.
 ; 0.159 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a5~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.225      ; 0.488      ;
 ; 0.175 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a3~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.219      ; 0.498      ;
 ; 0.176 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a4~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.222      ; 0.502      ;
-; 0.181 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; b_x_direction                   ; b_x_direction                                                                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; xchange                         ; xchange                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; b_x[7]                          ; b_x[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; b_x[2]                          ; b_x[2]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; b_x[1]                          ; b_x[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; draw_counter[17]                ; draw_counter[17]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; draw_counter[16]                ; draw_counter[16]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; block_4_colour.011              ; block_4_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; p_length[4]                     ; p_length[4]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; p_length[3]                     ; p_length[3]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; p_length[5]                     ; p_length[5]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; p_length[0]                     ; p_length[0]                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_PADDLE               ; state.DRAW_PADDLE                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.INIT_MOVBLK_1             ; state.INIT_MOVBLK_1                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.DRAW_BLOCK_5              ; state.DRAW_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.UPDATE_BLOCK_5            ; state.UPDATE_BLOCK_5                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.DRAW_PADDLE               ; state.DRAW_PADDLE                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.UPDATE_BLOCK_6            ; state.UPDATE_BLOCK_6                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_BLOCK_6              ; state.DRAW_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.UPDATE_BLOCK_8            ; state.UPDATE_BLOCK_8                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_BLOCK_7              ; state.DRAW_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_BLOCK_9              ; state.DRAW_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_BLOCK_8              ; state.DRAW_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.UPDATE_BLOCK_9            ; state.UPDATE_BLOCK_9                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.DRAW_BLOCK_1              ; state.DRAW_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.UPDATE_BLOCK_2            ; state.UPDATE_BLOCK_2                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.UPDATE_BLOCK_6            ; state.UPDATE_BLOCK_6                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; state.UPDATE_BLOCK_9            ; state.UPDATE_BLOCK_9                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.DRAW_BLOCK_2              ; state.DRAW_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.CHECK_IFWON               ; state.CHECK_IFWON                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.INIT_BLOCK_8              ; state.INIT_BLOCK_8                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.INIT_BLOCK_9              ; state.INIT_BLOCK_9                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.INIT_BLOCK_10             ; state.INIT_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; state.WON_GAME                  ; state.WON_GAME                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; state.INIT_BLOCK_1              ; state.INIT_BLOCK_1                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; speed[1]                        ; speed[1]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.181 ; speed[0]                        ; speed[0]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.307      ;
 ; 0.182 ; b_x[0]                          ; b_x[0]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.ERASE_BALL                ; state.ERASE_BALL                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; mblock_2_colour.101             ; mblock_2_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; mblock_1_colour.101             ; mblock_1_colour.101                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; b_x[5]                          ; b_x[5]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; b_x[3]                          ; b_x[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; b_x[5]                          ; b_x[5]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_9_colour.001              ; block_9_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_10_colour.001             ; block_10_colour.001                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; block_6_colour.011              ; block_6_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_5_colour.011              ; block_5_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_1_colour.100              ; block_1_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_3_colour.100              ; block_3_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; block_2_colour.100              ; block_2_colour.100                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; b_y[0]                          ; b_y[0]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; b_y[1]                          ; b_y[1]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; b_y[4]                          ; b_y[4]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; b_y[7]                          ; b_y[7]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_9_colour.001              ; block_9_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_10_colour.001             ; block_10_colour.001                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; block_8_colour.001              ; block_8_colour.001                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_3              ; state.INIT_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.DRAW_BLOCK_3              ; state.DRAW_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.UPDATE_BLOCK_3            ; state.UPDATE_BLOCK_3                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.INIT_BLOCK_2              ; state.INIT_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.DRAW_BLOCK_3              ; state.DRAW_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.UPDATE_BLOCK_4            ; state.UPDATE_BLOCK_4                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.DRAW_BLOCK_4              ; state.DRAW_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.UPDATE_BLOCK_7            ; state.UPDATE_BLOCK_7                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.UPDATE_BLOCK_10           ; state.UPDATE_BLOCK_10                                                                                 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; state.DRAW_BLOCK_10             ; state.DRAW_BLOCK_10                                                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; state.UPDATE_BALL               ; state.UPDATE_BALL                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_3              ; state.INIT_BLOCK_3                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_5              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_6                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_7              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_2              ; state.INIT_BLOCK_2                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_4                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; power_4                         ; power_4                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.182 ; power_3                         ; power_3                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
 ; 0.183 ; x[0]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a6~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.216      ; 0.503      ;
@@ -1446,8 +1446,8 @@ No paths to report.
 ; 0.199 ; p_x[0]                          ; xchange                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.325      ;
 ; 0.200 ; score[7]                        ; score[7]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.325      ;
 ; 0.204 ; speed[0]                        ; speed[1]                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.042      ; 0.330      ;
-; 0.206 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.331      ;
 ; 0.206 ; state.INIT_BLOCK_4              ; state.INIT_BLOCK_5                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.331      ;
+; 0.206 ; state.INIT_BLOCK_6              ; state.INIT_BLOCK_7                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.331      ;
 ; 0.215 ; state.INIT_BLOCK_6              ; block_7_colour.011                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.340      ;
 ; 0.215 ; state.UPDATE_BALL               ; b_y[3]                                                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.340      ;
 ; 0.256 ; x[1]                            ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_60g1:auto_generated|ram_block1a5~porta_address_reg0 ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.222      ; 0.582      ;
@@ -1591,8 +1591,8 @@ No synchronizer chains to report.
 +----------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                  ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                       ; 6.986  ; 0.147 ; N/A      ; N/A     ; 9.373               ;
-;  CLOCK_50                              ; 6.986  ; 0.147 ; N/A      ; N/A     ; 9.373               ;
+; Worst-case Slack                       ; 6.995  ; 0.147 ; N/A      ; N/A     ; 9.373               ;
+;  CLOCK_50                              ; 6.995  ; 0.147 ; N/A      ; N/A     ; 9.373               ;
 ;  VGA|mypll|altpll_component|pll|clk[0] ; 33.112 ; 0.182 ; N/A      ; N/A     ; 19.707              ;
 ; Design-wide TNS                        ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50                              ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -2276,7 +2276,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Jul 26 20:59:34 2017
+    Info: Processing started: Wed Jul 26 21:19:46 2017
 Info: Command: quartus_sta Proj -c Proj
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -2293,10 +2293,10 @@ Info (332143): No user constrained clock uncertainty found in the design. Callin
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332146): Worst-case setup slack is 6.986
+Info (332146): Worst-case setup slack is 6.995
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.986               0.000 CLOCK_50 
+    Info (332119):     6.995               0.000 CLOCK_50 
     Info (332119):    33.112               0.000 VGA|mypll|altpll_component|pll|clk[0] 
 Info (332146): Worst-case hold slack is 0.352
     Info (332119):     Slack       End Point TNS Clock 
@@ -2314,10 +2314,10 @@ Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 8.105
+Info (332146): Worst-case setup slack is 8.113
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.105               0.000 CLOCK_50 
+    Info (332119):     8.113               0.000 CLOCK_50 
     Info (332119):    33.765               0.000 VGA|mypll|altpll_component|pll|clk[0] 
 Info (332146): Worst-case hold slack is 0.352
     Info (332119):     Slack       End Point TNS Clock 
@@ -2333,10 +2333,10 @@ Info (332146): Worst-case minimum pulse width slack is 9.648
     Info (332119):    19.709               0.000 VGA|mypll|altpll_component|pll|clk[0] 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 13.377
+Info (332146): Worst-case setup slack is 13.382
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    13.377               0.000 CLOCK_50 
+    Info (332119):    13.382               0.000 CLOCK_50 
     Info (332119):    36.641               0.000 VGA|mypll|altpll_component|pll|clk[0] 
 Info (332146): Worst-case hold slack is 0.147
     Info (332119):     Slack       End Point TNS Clock 
@@ -2353,9 +2353,9 @@ Info (332146): Worst-case minimum pulse width slack is 9.373
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1179 megabytes
-    Info: Processing ended: Wed Jul 26 20:59:37 2017
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 1178 megabytes
+    Info: Processing ended: Wed Jul 26 21:19:48 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

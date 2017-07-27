@@ -1,5 +1,5 @@
 Fitter report for Proj
-Wed Jul 26 20:59:30 2017
+Wed Jul 26 21:19:42 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -72,7 +72,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Jul 26 20:59:30 2017       ;
+; Fitter Status                      ; Successful - Wed Jul 26 21:19:41 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; Proj                                        ;
 ; Top-level Entity Name              ; Proj                                        ;
@@ -799,7 +799,7 @@ The pin-out file can be found in /cmshome/yueming1/Desktop/b58Proj/Project/outpu
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )              ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )              ;
 ; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.5%         ;
-; Peak interconnect usage (total/H/V)         ; 9.4% / 9.4% / 9.4%         ;
+; Peak interconnect usage (total/H/V)         ; 9.4% / 9.5% / 9.4%         ;
 ; Maximum fan-out                             ; 280                        ;
 ; Highest non-global fan-out                  ; 280                        ;
 ; Total fan-out                               ; 5219                       ;
@@ -2280,9 +2280,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Selector143~2     ; 1                 ; 6       ;
 ;      - Selector162~2     ; 1                 ; 6       ;
 ;      - Selector157~2     ; 1                 ; 6       ;
+;      - Selector152~2     ; 1                 ; 6       ;
 ;      - Selector155~2     ; 1                 ; 6       ;
 ;      - Selector156~2     ; 1                 ; 6       ;
-;      - Selector152~2     ; 1                 ; 6       ;
 ;      - Selector153~2     ; 1                 ; 6       ;
 ;      - Selector159~2     ; 1                 ; 6       ;
 ;      - Selector158~2     ; 1                 ; 6       ;
@@ -2366,14 +2366,14 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 1,970 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 1,967 / 342,891 ( < 1 % ) ;
 ; C16 interconnects     ; 40 / 10,120 ( < 1 % )     ;
-; C4 interconnects      ; 991 / 209,544 ( < 1 % )   ;
-; Direct links          ; 343 / 342,891 ( < 1 % )   ;
+; C4 interconnects      ; 990 / 209,544 ( < 1 % )   ;
+; Direct links          ; 334 / 342,891 ( < 1 % )   ;
 ; Global clocks         ; 2 / 20 ( 10 % )           ;
-; Local interconnects   ; 620 / 119,088 ( < 1 % )   ;
-; R24 interconnects     ; 57 / 9,963 ( < 1 % )      ;
-; R4 interconnects      ; 1,195 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 622 / 119,088 ( < 1 % )   ;
+; R24 interconnects     ; 58 / 9,963 ( < 1 % )      ;
+; R4 interconnects      ; 1,198 / 289,782 ( < 1 % ) ;
 +-----------------------+---------------------------+
 
 
@@ -3240,7 +3240,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.26 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3250,7 +3250,7 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file /cmshome/yueming1/Desktop/b58Proj/Project/output_files/Proj.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 439 warnings
     Info: Peak virtual memory: 1583 megabytes
-    Info: Processing ended: Wed Jul 26 20:59:30 2017
+    Info: Processing ended: Wed Jul 26 21:19:42 2017
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:15
 
