@@ -188,7 +188,7 @@ module Proj(
 	 wire [4:0] num_generated;
 	 reg [1:0] random_factor = 2'b01;
 	 reg xchange = 0;
-	 //reg b_count = 1'b1;
+	 reg b_count = 1'b1;
 	 
 	 
 	 
@@ -212,7 +212,7 @@ module Proj(
 				power_4 = 0;
 				speed = 0;
 				state = RESET_BLACK;
-				//b_count = 1'b1;
+				b_count = 1'b1;
 			end
 			
 			//clock counter
@@ -718,8 +718,8 @@ module Proj(
 				 		else if (power_3) p_length = 7'b0010000; //16
 				 		else if (power_4) p_length = 7'b0100000; //32
 				 
-						if (~KEY[1] && p_x < 8'd160 - p_length) p_x = p_x + 1'b1 + speed; //right
-						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 1'b1 - speed;  //left
+						if (~KEY[1] && p_x < 8'd160 - p_length) p_x = p_x + 2'b10 + speed; //right
+						if (~KEY[2] && p_x > 8'd0) p_x = p_x - 2'b10 - speed;  //left
 						state = DRAW_PADDLE;
 						
 				 end
@@ -757,81 +757,27 @@ module Proj(
 				 end
 				UPDATE_BALL: begin
 				
-					//check if x or y is slowed down
-					//if x changed then y increments normally
+				if (~b_x_direction) begin
+						//if (wall_count == 0 && b_y % 2 == 0) //attempt to vary ball speed/angle
+							b_x = b_x + 1'b1 + (random_factor % 2) + speed;  
+						end
+					 else begin
+						//if (wall_count == 0 && b_y % 2 == 0) 
+							b_x = b_x - 1'b1 - speed;
+						end
 
 					
-						if(b_y_direction) b_y = b_y + 1'b1 + speed;
-						else b_y = b_y - 1'b1 - speed;
-						
-						if(~b_x_direction) b_x = b_x + 1'b1 + speed;
-						
-						else b_x = b_x - (random_factor % 1'd2) - speed;
-						
-						
-						
-					
-
-					
-//					if (xchange) begin
-//					
-//						//increment y
-//						if (b_y_direction) b_y = b_y + 1'b1 + speed;
-//					 	else b_y = b_y - 1'b1 - speed;
-//					 	
-//					 	//regulate frequency of x movement				
-//						if (b_count == random_factor) begin
-//							//move x
-//					 		if (~b_x_direction) b_x = b_x + 1'b1 + speed;
-//					 		else b_x = b_x - 1'b1 - speed;
-//					 		//reset counter
-//					 		b_count = 2'b0;
-//					 	end
-//					 	else b_count = b_count + 2'b01;
-//					 
-//					end
-//					
-//					//otherwise vice versa
-//					else begin
-//					
-//						//increment x
-//						if (~b_x_direction) b_x = b_x + 1'b1 + speed;
-//					 	else b_x = b_x - 1'b1 - speed;
-//					 	
-//					 	//regulate frequency of y movement
-//					 	if (b_count == random_factor) begin
-//							//move y
-//					 		if (b_y_direction) b_y = b_y + 1'b1 + speed;
-//					 		else b_y = b_y - 1'b1 - speed;
-//					 		//reset counter
-//					 		b_count = 2'b0;
-//					 	end
-//							else b_count = b_count + 2'b01;
-//						end
-//					
-					
-
-					
+					 if (b_y_direction) b_y = b_y + 1'b1 + speed;
+					 else b_y = b_y - 1'b1 - speed;
 					 
-					 
-					//check if it hits the wall
-					if (b_x <= 8'd0) begin
-						b_x_direction = 1'b0;
-						
-					random_factor = num_generated[1:0];
-					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddl
-					end
-					else if (b_x >= 8'd157) begin
-						b_x_direction = 1'b1;
-						
-					
-					xchange = p_x % 2; //whether x or y position of the ball varies depends on position of paddle
+					if ((b_x <= 8'd0) || (b_x >= 8'd160)) begin
+					b_x_direction = ~b_x_direction;
+					//wall_count = wall_count + 1'b1;
 					end
 				
 				//check if ball hits paddle or the top of screen
 				if ((b_y == 8'd0) || ((b_y_direction) && (b_y > p_y - 8'd1) && (b_y < p_y + 8'd2 + speed) && (b_x >= p_x) && (b_x <= p_x + p_length - 8'd1))) begin
 					b_y_direction = ~b_y_direction;
-					xchange = p_x % 2;
 
 					//vary direction of the ball
 					if ((p_x % 1'd2) == 1'd0) b_x_direction = ~b_x_direction;
